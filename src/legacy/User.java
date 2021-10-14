@@ -1,8 +1,12 @@
+package legacy;
+
+import legacy.Register;
+
 import java.util.HashMap;
 import java.util.Map;
 
 public class User implements Register {
-    /* The user who use the Niubi System. It should override the setPassword method from Register interface.
+    /* The user who use the Niubi System. It should override the setPassword method from legacy.Register interface.
      */
     String password;
     Object user_notes;
