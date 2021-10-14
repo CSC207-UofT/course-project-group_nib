@@ -8,9 +8,12 @@ public class WelcomePartController {
     private boolean all_finished;
     UserInfo user;
 
-    public WelcomePartController(){
+    public WelcomePartController() {
         s = new Scanner(System.in);
         all_finished = false;
+    }
+
+    public void Login_or_Register(){
         user = new UserInfo();
         System.out.println("Welcome to Group_NiB's resource sharing system!");
         String str = Welcome();
@@ -19,10 +22,11 @@ public class WelcomePartController {
             Login();
             all_finished = true;
         }
-        if (str.equals("register")) {
+        else if (str.equals("register")) {
             Register();
             all_finished = true;
-        }
+        }else{
+        System.out.println("We will exit the program. Thank you!");}
     }
 
     public String Welcome(){
@@ -37,9 +41,15 @@ public class WelcomePartController {
             String username = s.nextLine();
             System.out.println("Please enter your password");
             String password = s.nextLine();
-            login = user.Login(username, password);
+            login = user.Login(username, password);// Recursion
             if (!login){
-                System.out.println("Login failed. Please try again.");
+                System.out.println("Login failed. Please try again by press enter, or type 'exit' to exit.");
+                String next = s.nextLine();
+                if (next.equals("exit")){
+                    break;
+                }else if (next.length() <= 0){
+                    Login();
+                }
             }else {
                 System.out.println("You are in! We are redirecting you to the user home page.");
             }
@@ -53,7 +63,7 @@ public class WelcomePartController {
             String username = s.nextLine();
             System.out.println("Please enter your password");
             String password = s.nextLine();
-            registered = user.Register(username, password);
+            registered = user.Register(username, password);//Recursion
             if (!registered){
                 System.out.println("legacy.Register failed. Usually it is due to the username duplication. " +
                         "Please try another name.");
@@ -70,7 +80,7 @@ public class WelcomePartController {
 
     public static void main(String[] args) {
         WelcomePartController controller = new WelcomePartController();
-        System.out.println(controller.Finished());
+        controller.Login_or_Register();
     }
 }
 
