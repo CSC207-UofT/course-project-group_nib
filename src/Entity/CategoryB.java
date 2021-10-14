@@ -3,6 +3,7 @@ package Entity;
 import notes.Note;
 
 public class CategoryB extends Note {
+    /* Thought, Belief, and Behaviour*/
     private double user_rate;
     private boolean editable;
     private boolean commentable;
