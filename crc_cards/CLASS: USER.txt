@@ -1,0 +1,10 @@
+CLASS: USER 
+
+    - Responsibility
+        - store user information on niubi system
+        - override the setPassword method from legacy.Register interface
+
+    - Collaborators
+        - legacy.Register
+        - data.userinfo
+    
