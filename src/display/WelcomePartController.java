@@ -63,7 +63,7 @@ public class WelcomePartController {
             String username = s.nextLine();
             System.out.println("Please enter your password");
             String password = s.nextLine();
-            registered = user.Register(username, password);//Recurssion
+            registered = user.Register(username, password);//Recursion
             if (!registered){
                 System.out.println("legacy.Register failed. Usually it is due to the username duplication. " +
                         "Please try another name.");
