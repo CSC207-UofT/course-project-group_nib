@@ -2,14 +2,32 @@ package notes;
 
 import legacy.User;
 
-import java.util.Arrays;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
-public class Note extends User {
-    public Note() {
+public abstract class Note extends User implements Ratable, Editable, Codable{
+    private double user_rate;
+    private boolean editable;
+    private String changes;
+
+    public Note(double user_rate, boolean editable, String changes) {
         super();
+        this.user_rate = user_rate;
+        this.editable = editable;
+        this.changes = changes;
     }
+    @Override
+    public void getUserRate(double user_rate) {
+        this.user_rate = user_rate;
+
+    }
+
+    @Override
+    public void canEdit(boolean editable) {
+        this.editable = editable;
+    }
+
+    @Override
+    public void getChanges(String changes) {
+        this.changes = changes;
+
+    }
+
 }
