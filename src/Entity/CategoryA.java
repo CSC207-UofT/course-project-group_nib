@@ -1,9 +1,9 @@
-package notes;
+package Entity;
 
-import com.sun.jdi.StringReference;
-import legacy.User;
+import notes.Note;
 
-public abstract class Note extends User implements Ratable, Editable, Codable, Commentable, Referable, Reference {
+public class CategoryA extends Note {
+    /* Creative and Cultural Representations */
     private double user_rate;
     private boolean editable;
     private boolean commentable;
@@ -11,21 +11,15 @@ public abstract class Note extends User implements Ratable, Editable, Codable, C
     private String changes;
     private String comment;
     private String reference;
-
-    public Note(){
-        super();
+//    public CategoryA(){
+//        super();
+//    }
+    public CategoryA(double user_rate, boolean editable, boolean commentable, boolean referable, String changes, String comment){
+        super( user_rate,  editable,  commentable,  referable,  changes,  comment);
     }
 
-    public Note(double user_rate, boolean editable, boolean commentable, boolean referable, String changes, String comment) {
-        super();
-        this.user_rate = user_rate;
-        this.editable = editable;
-        this.commentable = commentable;
-        this.referable = referable;
-        this.changes = changes;
-        this.comment = comment;
-        this.reference = "Original";
-    }
+
+
     @Override
     public void getUserRate(double user_rate) {
         this.user_rate = user_rate;
@@ -56,10 +50,5 @@ public abstract class Note extends User implements Ratable, Editable, Codable, C
     @Override
     public void canRefer(boolean referable) {
         this.referable = referable;
-    }
-
-    @Override
-    public void getLink(String reference) {
-        this.reference = reference;
     }
 }
