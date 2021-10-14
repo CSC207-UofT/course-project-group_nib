@@ -11,3 +11,8 @@ Supplementary information are documented in the following google docs:
 https://docs.google.com/document/d/18qug4j3n8m-kE65wCc_9-WdFveQrIDm31-fQrdmMKzA/edit?usp=sharing
 
 
+Task 2 Write a Specification
+
+There are various courses in the system where users can upload their notes corresponding to each course.  Each note is classified by school, courses or chapters. The note is labeled with the date updated, and indicates whether it can be edited or downloaded by the user. If a note is the original form from the user who uploads it, a tag called “Original” will be labeled as well. If the note is not original, it should have references listing the referenced articles.
+
+Each user can login to their account by password. If the user doesn’t have the password yet, he should register and set a new one. The user can leave comments and rate the notes. If a user uploaded a note, its name will be shown as the author of the note, and indicate the type of the note, such as pdf, jpeg, typing or handwritten.
