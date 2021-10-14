@@ -1,8 +1,8 @@
 package Entity;
 
-import notes.Note;
+import notes.NoteManagement;
 
-public class CategoryD extends Note {
+public class CategoryD extends NoteManagement {
     /*Living Things and Their Environment */
     private double user_rate;
     private boolean editable;

@@ -1,8 +1,8 @@
 package Entity;
 
-import notes.Note;
+import notes.NoteManagement;
 
-public class CategoryB extends Note {
+public class CategoryB extends NoteManagement {
     /* Thought, Belief, and Behaviour*/
     private double user_rate;
     private boolean editable;

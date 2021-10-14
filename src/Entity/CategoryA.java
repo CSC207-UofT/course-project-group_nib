@@ -1,8 +1,8 @@
 package Entity;
 
-import notes.Note;
+import notes.NoteManagement;
 
-public class CategoryA extends Note {
+public class CategoryA extends NoteManagement {
     /* Creative and Cultural Representations */
     private double user_rate;
     private boolean editable;

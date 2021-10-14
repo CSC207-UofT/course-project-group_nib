@@ -1,8 +1,8 @@
 package Entity;
 
-import notes.Note;
+import notes.NoteManagement;
 
-public class CategoryE extends Note {
+public class CategoryE extends NoteManagement {
     /* The Physical and Mathematical Universes  */
     private double user_rate;
     private boolean editable;

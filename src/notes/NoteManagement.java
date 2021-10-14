@@ -3,7 +3,7 @@ package notes;
 import com.sun.jdi.StringReference;
 import legacy.User;
 
-public abstract class Note extends User implements Ratable, Editable, Codable, Commentable, Referable, Reference {
+public abstract class NoteManagement implements Ratable, Editable, Codable, Commentable, Referable, Reference {
     private double user_rate;
     private boolean editable;
     private boolean commentable;
@@ -12,11 +12,11 @@ public abstract class Note extends User implements Ratable, Editable, Codable, C
     private String comment;
     private String reference;
 
-    public Note(){
+    public NoteManagement(){
         super();
     }
 
-    public Note(double user_rate, boolean editable, boolean commentable, boolean referable, String changes, String comment) {
+    public NoteManagement(double user_rate, boolean editable, boolean commentable, boolean referable, String changes, String comment) {
         super();
         this.user_rate = user_rate;
         this.editable = editable;
