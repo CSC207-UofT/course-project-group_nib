@@ -1,0 +1,12 @@
+Usecase Class: TableReader
+
+    - Responsibility
+        - Store user account info.
+        - Read and check if user info are valid. (i.e. if new username is unique; if password matches the username)
+
+    - Collaborators
+        - User. TableReader is the usecase class of the entity class User.
+        - WelcomePartController, where users can register or log in.
+            - If the user is registering, the info will be stored in TableReader
+            - If the user is logging in, TableReader will read and check if the username and password matches.
+        - package data. Both of UserInfo and TableReader should be in the same package, as they store the user data.

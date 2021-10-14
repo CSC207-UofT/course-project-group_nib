@@ -1,0 +1,15 @@
+Entity Class: User
+
+    - Responsibility
+        - allow users to register their accounts
+        - store user information on niubi system
+        - override the setPassword method from legacy.Register interface
+
+    - Collaborators
+        - legacy.Register, which is an interface that allows users to register.
+        - data.userinfo, which is a usecase class that checks if the user info is valid and can register or log in
+        successfully.
+        - TableReader, which is another usecase class that stores the user accounts info
+        (users can register by choosing a unique username, or log in by typing the correct username and password).
+        - WelcomePartController, where users can register or log in.
+    

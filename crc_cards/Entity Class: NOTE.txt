@@ -1,0 +1,10 @@
+Entity Class: NOTE
+
+    - Responsibility
+        - store notes that have been uploaded by the users
+        - stores notes of different courses
+
+    - Collaborators
+        - There should be more subclasses(usecase classes) of this entity class Note.
+            - courses
+        - It should collaborate with another entity class User.
