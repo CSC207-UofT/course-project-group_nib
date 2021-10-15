@@ -1,16 +1,13 @@
 package notes;
 
-import com.sun.jdi.StringReference;
-import legacy.User;
-
-public abstract class NoteManagement implements Ratable, Codable, Commentable, Referable {
-    private double user_rate;
-    private boolean editable;
-    private boolean commentable;
-    private boolean referable;
-    private String changes;
-    private String comment;
-    private String reference;
+public abstract class NoteManagement implements INotes {
+    public double user_rate;
+    public boolean editable;
+    public boolean commentable;
+    public boolean referable;
+    public String changes;
+    public String comment;
+    public String reference;
 
 //    public NoteManagement(){
 //        super();
@@ -33,12 +30,22 @@ public abstract class NoteManagement implements Ratable, Codable, Commentable, R
     }
 
 
-    public abstract boolean canEdit(boolean editable);
+    public boolean canEdit(boolean editable) {
+        this.editable = editable;
+        return editable;
+    }
 
 
-    public abstract String getChanges(String changes) ;
+    public String getChanges(String changes) {
+        this.changes = changes;
+        return this.changes;
 
-    public abstract String getLink(String reference) ;
+    }
+
+    public String getLink(String reference) {
+        this.reference = reference;
+        return reference;
+    }
 
     @Override
     public void canComment(boolean commentable) {
@@ -55,6 +62,16 @@ public abstract class NoteManagement implements Ratable, Codable, Commentable, R
         this.referable = referable;
     }
 
-
-
+    @Override
+    public String toString() {
+        return "NoteManagement{" +
+                "user_rate=" + user_rate +
+                ", editable=" + editable +
+                ", commentable=" + commentable +
+                ", referable=" + referable +
+                ", changes='" + changes + '\'' +
+                ", comment='" + comment + '\'' +
+                ", reference='" + reference + '\'' +
+                '}';
+    }
 }

@@ -1,5 +1,5 @@
-package notes;
-
-public interface Codable {
-
-}
+//package notes;
+//
+//public interface Codable {
+//
+//}

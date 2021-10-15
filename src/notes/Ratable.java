@@ -1,5 +1,5 @@
-package notes;
-
-public interface Ratable {
-    void getUserRate(double UserRate);
-}
+//package notes;
+//
+//public interface Ratable {
+//    void getUserRate(double UserRate);
+//}
