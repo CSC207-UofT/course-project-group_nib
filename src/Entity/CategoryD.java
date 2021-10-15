@@ -24,17 +24,22 @@ public class CategoryD extends NoteManagement {
 
     }
 
-    @Override
-    public void canEdit(boolean editable) {
+    public boolean canEdit(boolean editable) {
         this.editable = editable;
+        return editable;
     }
 
-    @Override
-    public void getChanges(String changes) {
+
+    public String getChanges(String changes) {
         this.changes = changes;
+        return this.changes;
 
     }
 
+    public String getLink(String reference) {
+        this.reference = reference;
+        return reference;
+    }
     @Override
     public void canComment(boolean commentable) {
         this.commentable = commentable;

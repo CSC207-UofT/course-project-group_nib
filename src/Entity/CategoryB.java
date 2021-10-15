@@ -10,6 +10,7 @@ public class CategoryB extends NoteManagement {
     private boolean referable;
     private String changes;
     private String comment;
+    private String reference;
 
     public CategoryB(double user_rate, boolean editable, boolean commentable, boolean referable, String changes, String comment){
         super( user_rate,  editable,  commentable,  referable,  changes,  comment);
@@ -23,15 +24,21 @@ public class CategoryB extends NoteManagement {
 
     }
 
-    @Override
-    public void canEdit(boolean editable) {
+    public boolean canEdit(boolean editable) {
         this.editable = editable;
+        return editable;
     }
 
-    @Override
-    public void getChanges(String changes) {
-        this.changes = changes;
 
+    public String getChanges(String changes) {
+        this.changes = changes;
+        return this.changes;
+
+    }
+
+    public String getLink(String reference) {
+        this.reference = reference;
+        return reference;
     }
 
     @Override
