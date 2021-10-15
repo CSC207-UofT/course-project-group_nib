@@ -1,4 +1,4 @@
-package notes;
+package Entity;
 
 public interface INotes {
 

@@ -1,7 +1,5 @@
 package Entity;
 
-import notes.NoteManagement;
-
 public class CategoryC extends NoteManagement {
     /*Society and Its Institutions*/
 

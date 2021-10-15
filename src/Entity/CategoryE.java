@@ -1,7 +1,5 @@
 package Entity;
 
-import notes.NoteManagement;
-
 public class CategoryE extends NoteManagement {
     /* The Physical and Mathematical Universes  */
 

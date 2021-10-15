@@ -1,7 +1,5 @@
 package Entity;
 
-import notes.NoteManagement;
-
 public class CategoryB extends NoteManagement {
     /* Thought, Belief, and Behaviour*/
 

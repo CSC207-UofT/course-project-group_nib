@@ -1,7 +1,5 @@
 package Entity;
 
-import notes.NoteManagement;
-
 public class CategoryD extends NoteManagement {
     /*Living Things and Their Environment */
 

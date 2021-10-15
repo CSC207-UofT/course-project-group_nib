@@ -1,7 +1,5 @@
 package Entity;
 
-import notes.NoteManagement;
-
 public class CategoryA extends NoteManagement {
     /* Creative and Cultural Representations */
 //    private double user_rate;

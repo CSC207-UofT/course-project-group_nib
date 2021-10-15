@@ -1,4 +1,6 @@
-package notes;
+package Entity;
+
+import Entity.INotes;
 
 public abstract class NoteManagement implements INotes {
     public double user_rate;
