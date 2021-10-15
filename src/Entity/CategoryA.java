@@ -1,6 +1,6 @@
 package Entity;
 
-public class CategoryA extends NoteManagement {
+public class CategoryA extends Notes {
     /* Creative and Cultural Representations */
 //    private double user_rate;
 //    private boolean editable;

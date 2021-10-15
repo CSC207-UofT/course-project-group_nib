@@ -1,6 +1,6 @@
 package Entity;
 
-public class CategoryB extends NoteManagement {
+public class CategoryB extends Notes {
     /* Thought, Belief, and Behaviour*/
 
 

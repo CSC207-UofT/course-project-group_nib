@@ -2,7 +2,7 @@ package Entity;
 
 import Entity.INotes;
 
-public abstract class NoteManagement implements INotes {
+public abstract class Notes implements INotes {
     public double user_rate;
     public boolean editable;
     public boolean commentable;
@@ -15,7 +15,7 @@ public abstract class NoteManagement implements INotes {
 //        super();
 //    }
 
-    public NoteManagement(double user_rate, boolean editable, boolean commentable, boolean referable, String changes, String comment) {
+    public Notes(double user_rate, boolean editable, boolean commentable, boolean referable, String changes, String comment) {
         super();
         this.user_rate = user_rate;
         this.editable = editable;
@@ -76,4 +76,5 @@ public abstract class NoteManagement implements INotes {
                 ", reference='" + reference + '\'' +
                 '}';
     }
+
 }

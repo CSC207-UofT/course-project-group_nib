@@ -1,6 +1,6 @@
 package Entity;
 
-public class CategoryD extends NoteManagement {
+public class CategoryD extends Notes {
     /*Living Things and Their Environment */
 
 
