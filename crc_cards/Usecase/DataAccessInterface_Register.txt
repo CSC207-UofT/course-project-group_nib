@@ -1,0 +1,10 @@
+Data Access Interface: Register
+
+    - Responsibility
+        - allow users to register their accounts.
+        - allow users to set password.
+
+    - Collaborators
+        - User, since Register is a User interface.
+        - TableReader, UserInfo, UserInfoTable, since after Register, user info will be stored.
+

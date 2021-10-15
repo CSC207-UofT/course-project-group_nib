@@ -1,4 +1,4 @@
-Usecase Class: UserInfo
+Data Access Class: UserInfo
 
     - Responsibility
         - check if users can successfully register or log in their accounts.
@@ -7,6 +7,7 @@ Usecase Class: UserInfo
         - TableReader, where stores the user accounts info.
             - UserInfo will check if log-in users typed the correct username and password.
             - User will add registering users' info into TableReader if their usernames are unique.
-        - User. UserInfo is the usecase class of the entity class User, which will check if .Register can complete.
+        - User. UserInfo helps to store User info.
+        - UserInfoTable. UserInfo helps to store info into UserInfoTable.
         - WelcomePartController, where users can register or log in. Userinfo must be called for complete these commands.
         - package data. Both of UserInfo and TableReader should be in the same package, as they store the user data.

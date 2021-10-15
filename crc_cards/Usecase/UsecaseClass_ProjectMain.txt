@@ -1,0 +1,11 @@
+Usecase Class: ProjectMain
+
+    - Responsibility
+        - Collaborates with input user data.
+        - Check if users can access to MainPageController.
+
+    - Collaborators
+        - WelcomePartController, since ProjectMain calls WelcomePartController to check if user can successfully
+        register or login.
+        - MainPageController, since ProjectMain will proceed to MainPageController.
+

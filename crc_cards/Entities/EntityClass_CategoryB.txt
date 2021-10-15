@@ -1,0 +1,9 @@
+Entity Class: CategoryB
+
+    - Responsibility
+        - Child class of NoteManagement, inherits its interfaces.
+        - Stands for course notes of Thought, Belief, and Behaviour.
+
+    - Collaborators
+        - NoteManagement, which is its Parent Class.
+

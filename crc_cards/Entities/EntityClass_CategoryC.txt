@@ -1,0 +1,9 @@
+Entity Class: CategoryC
+
+    - Responsibility
+        - Child class of NoteManagement, inherits its interfaces.
+        - Stands for course notes of Society and Its Institutions.
+
+    - Collaborators
+        - NoteManagement, which is its Parent Class.
+

@@ -1,0 +1,9 @@
+Entity Class: CategoryD
+
+    - Responsibility
+        - Child class of NoteManagement, inherits its interfaces.
+        - Stands for course notes of Living Things and Their Environment.
+
+    - Collaborators
+        - NoteManagement, which is its Parent Class.
+

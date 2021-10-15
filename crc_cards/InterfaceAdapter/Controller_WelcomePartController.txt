@@ -1,0 +1,12 @@
+Controller: WelcomePartController
+
+    - Responsibility
+        - Allow users to register or login here.
+        - Check if they can successfully register or log in.
+
+    - Collaborators
+        - Userinfo, as it will check if register or login success.
+        - TableReader, as Userinfo will call TableReader to access info in UserInfoTable.
+        - MainPageController, which can only be accessed after WelcomePartController run.
+        - ProjectMain, which needs WelcomePartController's help to proceed to MainPageController.
+

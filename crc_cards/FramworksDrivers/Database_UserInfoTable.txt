@@ -1,0 +1,8 @@
+Database: UserInfoTable
+
+    - Responsibility
+        - Store user information (username and password).
+
+    - Collaborators
+        - TableReader, UserInfo, Register, as they will help to store info into UserInfoTable or check UserInfoTable.
+        - User, as the UserInfoTable stores User info.

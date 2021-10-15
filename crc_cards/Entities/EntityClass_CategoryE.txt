@@ -1,0 +1,9 @@
+Entity Class: CategoryE
+
+    - Responsibility
+        - Child class of NoteManagement, inherits its interfaces.
+        - Stands for course notes of The Physical and Mathematical Universes.
+
+    - Collaborators
+        - NoteManagement, which is its Parent Class.
+

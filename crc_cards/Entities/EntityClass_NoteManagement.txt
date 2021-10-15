@@ -1,0 +1,10 @@
+Entity Class: NoteManagement
+
+    - Responsibility
+        - Stores notes info such as "editable" "commentable" "referable" "changes" "comment" "reference"
+        - Updates the note info when needed.
+
+    - Collaborators
+        - Child Classes CategoryA, CategoryB, CategoryC, CategoryD, CategoryE, which stand for different branches of courses.
+        - Interface INotes, which edits the note info.
+
