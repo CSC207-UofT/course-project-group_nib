@@ -1,6 +1,4 @@
-package legacy;
-
-import legacy.Register;
+package UseCase;
 
 import java.util.HashMap;
 import java.util.Map;

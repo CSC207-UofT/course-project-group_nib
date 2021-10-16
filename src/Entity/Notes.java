@@ -2,6 +2,8 @@ package Entity;
 
 import Entity.INotes;
 
+import java.util.ArrayList;
+
 public abstract class Notes implements INotes {
     public double user_rate;
     public boolean editable;
@@ -10,6 +12,8 @@ public abstract class Notes implements INotes {
     public String changes;
     public String comment;
     public String reference;
+    public ArrayList<String> all_notes = new ArrayList<>();
+
 
 //    public NoteManagement(){
 //        super();
@@ -29,6 +33,10 @@ public abstract class Notes implements INotes {
     public void getUserRate(double user_rate) {
         this.user_rate = user_rate;
 
+    }
+    public ArrayList<String> addNote(String notes){
+        all_notes.add(notes);
+        return all_notes;
     }
 
 
