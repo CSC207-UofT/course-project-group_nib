@@ -2,7 +2,7 @@ package Entity;
 
 import java.util.ArrayList;
 
-public abstract class Notes implements INotes {
+public abstract class Notes {
     public double user_rate;
     public boolean editable;
     public boolean commentable;
@@ -27,7 +27,7 @@ public abstract class Notes implements INotes {
         this.comment = comment;
         this.reference = "Original";
     }
-    @Override
+
     public void setUserRate(double user_rate) {
         this.user_rate = user_rate;
 
@@ -74,12 +74,13 @@ public abstract class Notes implements INotes {
         return reference;
     }
 
-    @Override
+
+
     public void canComment(boolean commentable) {
         this.commentable = commentable;
     }
 
-    @Override
+
     public void addComment(String comment) {
         this.comment = comment;
     }
@@ -88,7 +89,7 @@ public abstract class Notes implements INotes {
         return comment;
     }
 
-    @Override
+
     public void canRefer(boolean referable) {
         this.referable = referable;
     }
