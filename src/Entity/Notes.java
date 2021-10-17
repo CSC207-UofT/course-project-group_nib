@@ -1,7 +1,5 @@
 package Entity;
 
-import Entity.INotes;
-
 import java.util.ArrayList;
 
 public abstract class Notes implements INotes {
@@ -12,7 +10,7 @@ public abstract class Notes implements INotes {
     public String changes;
     public String comment;
     public String reference;
-    public ArrayList<String> all_notes = new ArrayList<>();
+    public ArrayList<String> note_list = new ArrayList<>();
 
 
 //    public NoteManagement(){
@@ -30,13 +28,25 @@ public abstract class Notes implements INotes {
         this.reference = "Original";
     }
     @Override
-    public void getUserRate(double user_rate) {
+    public void setUserRate(double user_rate) {
         this.user_rate = user_rate;
 
     }
-    public ArrayList<String> addNote(String notes){
-        all_notes.add(notes);
-        return all_notes;
+
+    public double getUser_rate() {
+        return user_rate;
+    }
+
+    public void setNote_list(ArrayList<String> note_list) {
+        this.note_list = note_list;
+    }
+
+    public ArrayList<String> getNote_list() {
+        return note_list;
+    }
+
+    public void setAll_note(String notes){
+        note_list.add(notes);
     }
 
 
@@ -46,14 +56,21 @@ public abstract class Notes implements INotes {
     }
 
 
-    public String getChanges(String changes) {
+    public void setChanges(String changes) {
         this.changes = changes;
+    }
+
+    public String getChanges(String changes) {
         return this.changes;
 
     }
 
-    public String getLink(String reference) {
+    public void setReference(String reference) {
         this.reference = reference;
+    }
+
+    public String getReference(String reference) {
+
         return reference;
     }
 
@@ -65,6 +82,10 @@ public abstract class Notes implements INotes {
     @Override
     public void addComment(String comment) {
         this.comment = comment;
+    }
+
+    public String getComment() {
+        return comment;
     }
 
     @Override

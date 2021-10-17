@@ -20,6 +20,8 @@ public class CategoryA extends Notes {
     public String toString() {
         return super.toString();
     }
+
+
 }
 
 
