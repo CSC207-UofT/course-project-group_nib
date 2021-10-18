@@ -1,5 +1,5 @@
 package Notes;
-import Entity.CategoryA;
+
 import Entity.Notes;
 import UseCase.User;
 
