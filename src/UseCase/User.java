@@ -6,12 +6,13 @@ import java.util.Map;
 public class User implements Register {
     /* The user who use the Niubi System. It should override the setPassword method from legacy.Register interface.
      */
+    String username;
     String password;
     Object user_notes;
 
-    public User() {
-        Map<Object, Object> user_notes = new HashMap<Object, Object>();
-        this.password = null;
+    public User(String username, String password) {
+        this.username = username;
+        this.password = password;
     }
 
     @Override

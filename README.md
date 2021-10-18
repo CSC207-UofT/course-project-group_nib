@@ -17,6 +17,6 @@ Users can either create a new note, modify an existing note, comment on other no
 
 Each user can login to their account by username and password. If the user doesn’t have the password yet, he should register and set a new one. The user can leave comments and rate the notes. If a user uploaded a note, its name will be shown as the author of the note, and indicate the type of the note, such as pdf, jpeg, typing or handwritten. 
 
-When notes are uploaded, users who browse the notes can leave comments and ratings for the author of the notes. Users can gain stars on their profile when they are rated with high credibility. The notes with authors that have higher credibility can be shown prioritized compared to other notes in a course. Once each note is uploaded, it will be uploaded to a database that collects and compiles the notes. The notes can be sorted by date, name of course, originality, author(user)’s credibility. 
+When notes are uploaded, users who browse the notes can leave comments and ratings for the author of the notes. Users can gain stars on their profile when they are rated with high credibility. The notes with authors that have higher credibility can be shown prioritized compared to other notes in a course. Once each note is uploaded, it will be uploaded to a database that collects and compiles the notes. The notes can be sorted by name of course, originality, author(user)’s credibility. 
 
 
