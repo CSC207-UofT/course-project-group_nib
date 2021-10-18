@@ -1,4 +1,4 @@
-package display;
+package Interface;
 import data.UserInfo;
 
 import java.util.Scanner;
