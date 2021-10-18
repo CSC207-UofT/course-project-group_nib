@@ -1,4 +1,4 @@
-Entity Class: NoteManagement
+Entity Class: Note
 
     - Responsibility
         - Stores notes info such as "editable" "commentable" "referable" "changes" "comment" "reference"

@@ -1,8 +1,8 @@
 package Entity;
 
-import Entity.INotes;
+import java.util.ArrayList;
 
-public abstract class Notes implements INotes {
+public abstract class Notes {
     public double user_rate;
     public boolean editable;
     public boolean commentable;
@@ -10,6 +10,8 @@ public abstract class Notes implements INotes {
     public String changes;
     public String comment;
     public String reference;
+    public ArrayList<String> note_list = new ArrayList<>();
+
 
 //    public NoteManagement(){
 //        super();
@@ -25,10 +27,26 @@ public abstract class Notes implements INotes {
         this.comment = comment;
         this.reference = "Original";
     }
-    @Override
-    public void getUserRate(double user_rate) {
+
+    public void setUserRate(double user_rate) {
         this.user_rate = user_rate;
 
+    }
+
+    public double getUser_rate() {
+        return user_rate;
+    }
+
+    public void setNote_list(ArrayList<String> note_list) {
+        this.note_list = note_list;
+    }
+
+    public ArrayList<String> getNote_list() {
+        return note_list;
+    }
+
+    public void setAll_note(String notes){
+        note_list.add(notes);
     }
 
 
@@ -38,28 +56,40 @@ public abstract class Notes implements INotes {
     }
 
 
-    public String getChanges(String changes) {
+    public void setChanges(String changes) {
         this.changes = changes;
+    }
+
+    public String getChanges(String changes) {
         return this.changes;
 
     }
 
-    public String getLink(String reference) {
+    public void setReference(String reference) {
         this.reference = reference;
+    }
+
+    public String getReference(String reference) {
+
         return reference;
     }
 
-    @Override
+
+
     public void canComment(boolean commentable) {
         this.commentable = commentable;
     }
 
-    @Override
+
     public void addComment(String comment) {
         this.comment = comment;
     }
 
-    @Override
+    public String getComment() {
+        return comment;
+    }
+
+
     public void canRefer(boolean referable) {
         this.referable = referable;
     }

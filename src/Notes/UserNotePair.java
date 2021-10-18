@@ -1,7 +1,7 @@
 package Notes;
 import Entity.CategoryA;
 import Entity.Notes;
-import users.User;
+import UseCase.User;
 
 import java.util.ArrayList;
 
