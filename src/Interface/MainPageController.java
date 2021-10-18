@@ -59,7 +59,6 @@ public class MainPageController {
     }
 
 
-
     public boolean Finished(){
         return all_finished;
     }
