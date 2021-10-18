@@ -1,6 +1,6 @@
 package Entity;
 
-public class CategoryC extends NoteManagement {
+public class CategoryC extends Notes {
     /*Society and Its Institutions*/
 
     public CategoryC(double user_rate, boolean editable, boolean commentable, boolean referable, String changes, String comment){

@@ -1,4 +1,4 @@
-package display;
+package Interface;
 import data.UserInfo;
 
 import java.util.Scanner;
@@ -13,26 +13,23 @@ public class MainPageController {
         all_finished = false;
     }
 
-    public void Login_or_Register(){
+    public void Select(){
         String str = Menu();
         switch (str) {
-            case "1" -> {
+            case "1":
                 CreateNewNote();
                 all_finished = true;
-            }
-            case "2" -> {
+            case "2":
                 ModifyExistingNote();
                 all_finished = true;
-            }
-            case "3" -> {
+            case "3":
                 CommentOnANote();
                 all_finished = true;
-            }
-            case "4" -> {
+            case "4":
                 RateANote();
                 all_finished = true;
-            }
-            default -> System.out.println("Invalid.");
+            default:
+                System.out.println("Invalid.");
         }
     }
 
@@ -62,13 +59,13 @@ public class MainPageController {
     }
 
 
-
     public boolean Finished(){
         return all_finished;
     }
 
     public static void main(String[] args) {
         MainPageController controller = new MainPageController();
+        controller.Select();
     }
 
 }

@@ -1,7 +1,8 @@
-package display;
+package Interface;
 
 import data.UserInfo;
 import java.util.Scanner;
+
 
 public class WelcomePartController {
     private final Scanner s;
