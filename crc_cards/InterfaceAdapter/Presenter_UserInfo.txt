@@ -1,4 +1,4 @@
-Data Access Class: UserInfo
+Presenter: UserInfo
 
     - Responsibility
         - check if users can successfully register or log in their accounts.

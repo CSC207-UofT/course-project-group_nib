@@ -1,4 +1,4 @@
-Data Access Class: TableReader
+Presenter: TableReader
 
     - Responsibility
         - Store user account info.
