@@ -1,0 +1,135 @@
+package Notes;
+
+import Entity.Notes;
+import UseCase.User;
+
+import java.util.ArrayList;
+
+public class UserNotePair {
+    /* We use Builder Pattern to construct this complex object called UserNotePair, so that each user can be paired
+    * with their actions on notes.*/
+    //required parameters
+    private User user;
+    //optional parameters
+    private ArrayList<Notes> created;
+    private ArrayList<Notes> edited;
+    private ArrayList<Notes> commented;
+    private ArrayList<Notes> rated;
+
+    private UserNotePair(Builder builder){
+        this.user = builder.user;
+        this.created = builder.created;
+        this.edited = builder.edited;
+        this.commented = builder.commented;
+        this.rated = builder.rated;
+    }
+
+    @Override
+    public String toString(){
+        return "User: " + this.user + "\n"
+                + "Created Notes: " + this.created + "\n"
+                + "Edited Notes: " + this.edited + "\n"
+                + "Commented Notes: " + this.commented + "\n"
+                + "Rated Notes: " + this.rated + "\n";
+    }
+
+    public static class Builder{
+        //required parameters
+        private User user;
+        //optional parameters
+        private ArrayList<Notes> created;
+        private ArrayList<Notes> edited;
+        private ArrayList<Notes> commented;
+        private ArrayList<Notes> rated;
+
+
+        public Builder(User user){
+            //required parameters
+        }
+
+        public Builder getCreated(ArrayList<Notes> created){
+            //optional parameters
+            return this;
+        }
+
+        public Builder getEdited(ArrayList<Notes> edited){
+            return this;
+        }
+
+        public Builder getCommented(ArrayList<Notes> commented){
+            return this;
+        }
+
+        public Builder getRated(ArrayList<Notes> rated){
+            return this;
+        }
+
+        public Builder setEditable(boolean isEditable){
+            return this;
+        }
+
+        public UserNotePair build(){
+            return new UserNotePair(this);
+        }
+    }
+
+
+    }
+
+public abstract class Files{
+    abstract void upload();
+    abstract void delete();
+    abstract void file_format();
+
+public final void file(){
+    #uploading the file
+    upload();
+
+    #delete the file already uploaded
+    delete();
+
+    #organize different file formats
+    file_format();
+    }
+
+public class pdf extends Files{
+    @Override
+    void upload(){
+        system.out.println("Make sure you upload the correct note pdf file.");
+        }
+    @Override
+    void delete(){
+        system.out.println("Do you really want to delete this pdf?");
+        }
+    @Override
+    void file_format(){
+        system.out.println("Your pdf has been uploaded!");
+        }
+    }
+
+public class docx extends Files{
+     @Override
+     void upload(){
+        system.out.println("Make sure you upload the correct note docx file.");
+        }
+     @Override
+     void delete(){
+        system.out.println("Do you really want to delete this word docx?");
+        }
+     @Override
+     void file_format(){
+        system.out.println("Your word docx has been uploaded!");
+        }
+     }
+
+public class TemplateMethod {
+   public static void main(String[] args) {
+
+      Files file = new pdf();
+      file.upload();
+      System.out.println();
+      file = new docx();
+      file.upload();
+   }
+}
+}
