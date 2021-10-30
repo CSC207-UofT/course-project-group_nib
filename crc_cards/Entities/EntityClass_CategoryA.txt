@@ -1,7 +1,7 @@
 Entity Class: CategoryA
 
     - Responsibility
-        - Child class of Notes, inherits its interfaces.
+        - Child class of UseCase.UserNotePair, inherits its interfaces.
         - Stands for course notes of Creative and Cultural Representations.
 
     - Collaborators

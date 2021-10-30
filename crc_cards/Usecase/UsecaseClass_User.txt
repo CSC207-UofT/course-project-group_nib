@@ -1,4 +1,4 @@
-Use Case: User
+Use Case: Entity.Entity.User
 
     - Responsibility
         - allow users to register their accounts
@@ -7,7 +7,7 @@ Use Case: User
 
     - Collaborators
         - legacy.Register, which is an interface that allows users to register.
-        - data.userinfo, which checks if the user info is valid and can register or log in
+        - Data.userinfo, which checks if the user info is valid and can register or log in
         successfully.
         - TableReader, which helps stores the user accounts info
         (users can register by choosing a unique username, or log in by typing the correct username and password).

@@ -1,5 +1,5 @@
-import display.MainPageController;
-import display.WelcomePartController;
+import Controller.MainPageController;
+import Controller.WelcomePartController;
 
 import java.util.HashMap;
 import java.util.Map;

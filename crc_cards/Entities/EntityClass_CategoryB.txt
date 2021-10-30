@@ -1,7 +1,7 @@
 Entity Class: CategoryB
 
     - Responsibility
-        - Child class of Notes, inherits its interfaces.
+        - Child class of UseCase.UserNotePair, inherits its interfaces.
         - Stands for course notes of Thought, Belief, and Behaviour.
 
     - Collaborators

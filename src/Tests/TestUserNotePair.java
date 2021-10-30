@@ -1,9 +1,9 @@
-package tests;
+package Tests;
 
-import Entity.CategoryA;
-import Entity.Notes;
-import UseCase.User;
-import Notes.UserNotePair;
+import UseCase.CourseManager.CategoryA;
+import Entity.Note.Notes;
+import Entity.User.User;
+import UseCase.UserNotePair.UserNotePair;
 
 import java.util.ArrayList;
 
@@ -14,7 +14,7 @@ public class TestUserNotePair {
         CategoryA note = new CategoryA(1, true, true, true, "Nice",
                 "Great");
         n.add(note);
-        UserNotePair b = new Notes.UserNotePair.Builder(u).getCreated(n).build();
+        UserNotePair b = new UserNotePair.Builder(u).getCreated(n).build();
         System.out.println(b);
     }
 }

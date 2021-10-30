@@ -1,8 +1,10 @@
-package Entity;
+package Entity.Note;
 
 import java.util.ArrayList;
 
 public abstract class Notes {
+    public String title;
+    public StringBuilder content;
     public double user_rate;
     public boolean editable;
     public boolean commentable;
@@ -10,6 +12,7 @@ public abstract class Notes {
     public String changes;
     public String comment;
     public String reference;
+    public String updated_date;
     public ArrayList<String> note_list = new ArrayList<>();
 
 
@@ -17,8 +20,9 @@ public abstract class Notes {
 //        super();
 //    }
 
-    public Notes(double user_rate, boolean editable, boolean commentable, boolean referable, String changes, String comment) {
-        super();
+    public Notes(double user_rate, boolean editable, boolean commentable, boolean referable,
+                 String changes, String comment) {
+//        super();
         this.user_rate = user_rate;
         this.editable = editable;
         this.commentable = commentable;
@@ -27,6 +31,9 @@ public abstract class Notes {
         this.comment = comment;
         this.reference = "Original";
     }
+    public void getTitle(String title){this.title = title;}
+
+    public void getContent(StringBuilder content){this.content = content;}
 
     public void setUserRate(double user_rate) {
         this.user_rate = user_rate;
@@ -93,6 +100,8 @@ public abstract class Notes {
     public void canRefer(boolean referable) {
         this.referable = referable;
     }
+
+    public void getDate(String updated_date) {this.updated_date = updated_date;}
 
     @Override
     public String toString() {

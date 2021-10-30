@@ -1,7 +1,9 @@
-package data;
+package Data;
+
+import Data.TableReader;
 
 public class UserInfo {
-    private TableReader user_info;
+    private final TableReader user_info;
     public UserInfo(){
         user_info = new TableReader();
     }

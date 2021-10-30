@@ -1,6 +1,6 @@
-package Interface;
+package Controller;
 
-import data.UserInfo;
+import Data.UserInfo;
 import java.util.Scanner;
 
 
@@ -27,7 +27,7 @@ public class WelcomePartController {
             Register();
             all_finished = true;
         }else{
-        System.out.println("We will exit the program. Thank you!");}
+            System.out.println("We will exit the program. Thank you!");}
     }
 
     public String Welcome(){
@@ -36,6 +36,7 @@ public class WelcomePartController {
     }
 
     public void Login(){
+        MainPageController controller = new MainPageController();
         boolean login = false;
         while (!login) {
             System.out.println("Please enter your username.");
@@ -54,10 +55,11 @@ public class WelcomePartController {
             }else {
                 System.out.println("You are in! We are redirecting you to the user home page.");
             }
-        }
+        }controller.Select();
     }
 
     public void Register(){
+        MainPageController controller = new MainPageController();
         boolean registered = false;
         while (!registered){
             System.out.println("Please enter your username.");
@@ -71,6 +73,7 @@ public class WelcomePartController {
             }else {
                 System.out.println("Registered! We are redirecting you to the user home page.");
             }
+            controller.Select();
         }
 
     }
@@ -84,5 +87,3 @@ public class WelcomePartController {
         controller.Login_or_Register();
     }
 }
-
-

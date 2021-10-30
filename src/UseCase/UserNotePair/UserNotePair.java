@@ -1,12 +1,12 @@
-package Notes;
+package UseCase.UserNotePair;
 
-import Entity.Notes;
-import UseCase.User;
+import Entity.Note.Notes;
+import Entity.User.User;
 
 import java.util.ArrayList;
 
 public class UserNotePair {
-    /* We use Builder Pattern to construct this complex object called UserNotePair, so that each user can be paired
+    /* We use Builder Pattern to construct this complex object called UseCase.UserNotePair, so that each user can be paired
     * with their actions on notes.*/
     //required parameters
     private User user;

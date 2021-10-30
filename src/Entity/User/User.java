@@ -1,9 +1,6 @@
-package UseCase;
+package Entity.User;
 
-import java.util.HashMap;
-import java.util.Map;
-
-public class User implements Register {
+public class User {
     /* The user who use the Niubi System. It should override the setPassword method from legacy.Register interface.
      */
     String username;
@@ -15,10 +12,6 @@ public class User implements Register {
         this.password = password;
     }
 
-    @Override
-    public void setPassword(String p) {
-        this.password = p;
-    }
 }
 
 

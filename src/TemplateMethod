@@ -1,22 +1,22 @@
-package Notes;
+package UseCase.UserNotePair;
 
-import Entity.Notes;
-import UseCase.User;
+import Entity.UseCase.UserNotePair;
+import Entity.User.Entity.Entity.User;
 
 import java.util.ArrayList;
 
-public class UserNotePair {
-    /* We use Builder Pattern to construct this complex object called UserNotePair, so that each user can be paired
+public class UseCase.UserNotePair {
+    /* We use Builder Pattern to construct this complex object called UseCase.UserNotePair, so that each user can be paired
     * with their actions on notes.*/
     //required parameters
-    private User user;
+    private Entity.Entity.User user;
     //optional parameters
-    private ArrayList<Notes> created;
-    private ArrayList<Notes> edited;
-    private ArrayList<Notes> commented;
-    private ArrayList<Notes> rated;
+    private ArrayList<UseCase.UserNotePair> created;
+    private ArrayList<UseCase.UserNotePair> edited;
+    private ArrayList<UseCase.UserNotePair> commented;
+    private ArrayList<UseCase.UserNotePair> rated;
 
-    private UserNotePair(Builder builder){
+    private UseCase.UserNotePair(Builder builder){
         this.user = builder.user;
         this.created = builder.created;
         this.edited = builder.edited;
@@ -26,41 +26,41 @@ public class UserNotePair {
 
     @Override
     public String toString(){
-        return "User: " + this.user + "\n"
-                + "Created Notes: " + this.created + "\n"
-                + "Edited Notes: " + this.edited + "\n"
-                + "Commented Notes: " + this.commented + "\n"
-                + "Rated Notes: " + this.rated + "\n";
+        return "Entity.Entity.User: " + this.user + "\n"
+                + "Created UseCase.UserNotePair: " + this.created + "\n"
+                + "Edited UseCase.UserNotePair: " + this.edited + "\n"
+                + "Commented UseCase.UserNotePair: " + this.commented + "\n"
+                + "Rated UseCase.UserNotePair: " + this.rated + "\n";
     }
 
     public static class Builder{
         //required parameters
-        private User user;
+        private Entity.Entity.User user;
         //optional parameters
-        private ArrayList<Notes> created;
-        private ArrayList<Notes> edited;
-        private ArrayList<Notes> commented;
-        private ArrayList<Notes> rated;
+        private ArrayList<UseCase.UserNotePair> created;
+        private ArrayList<UseCase.UserNotePair> edited;
+        private ArrayList<UseCase.UserNotePair> commented;
+        private ArrayList<UseCase.UserNotePair> rated;
 
 
-        public Builder(User user){
+        public Builder(Entity.Entity.User user){
             //required parameters
         }
 
-        public Builder getCreated(ArrayList<Notes> created){
+        public Builder getCreated(ArrayList<UseCase.UserNotePair> created){
             //optional parameters
             return this;
         }
 
-        public Builder getEdited(ArrayList<Notes> edited){
+        public Builder getEdited(ArrayList<UseCase.UserNotePair> edited){
             return this;
         }
 
-        public Builder getCommented(ArrayList<Notes> commented){
+        public Builder getCommented(ArrayList<UseCase.UserNotePair> commented){
             return this;
         }
 
-        public Builder getRated(ArrayList<Notes> rated){
+        public Builder getRated(ArrayList<UseCase.UserNotePair> rated){
             return this;
         }
 
@@ -68,8 +68,8 @@ public class UserNotePair {
             return this;
         }
 
-        public UserNotePair build(){
-            return new UserNotePair(this);
+        public UseCase.UserNotePair build(){
+            return new UseCase.UserNotePair(this);
         }
     }
 

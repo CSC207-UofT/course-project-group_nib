@@ -1,4 +1,6 @@
-package Entity;
+package UseCase.CourseManager;
+
+import Entity.Note.Notes;
 
 public class CategoryD extends Notes {
     /*Phisics & Math */
