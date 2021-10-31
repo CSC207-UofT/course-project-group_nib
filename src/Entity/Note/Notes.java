@@ -2,7 +2,8 @@ package Entity.Note;
 
 import java.util.ArrayList;
 
-public abstract class Notes {
+public class Notes {
+    public String category;
     public String title;
     public StringBuilder content;
     public double user_rate;
@@ -31,6 +32,11 @@ public abstract class Notes {
         this.comment = comment;
         this.reference = "Original";
     }
+
+    public Notes() {
+
+    }
+
     public void getTitle(String title){this.title = title;}
 
     public void getContent(StringBuilder content){this.content = content;}
@@ -110,6 +116,7 @@ public abstract class Notes {
                 ", editable=" + editable +
                 ", commentable=" + commentable +
                 ", referable=" + referable +
+                ", content='" + content + '\'' +
                 ", changes='" + changes + '\'' +
                 ", comment='" + comment + '\'' +
                 ", reference='" + reference + '\'' +
