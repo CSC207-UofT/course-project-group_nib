@@ -1,4 +1,4 @@
-package UseCase.CourseManager;
+package Entity.Note;
 
 import Entity.Note.Notes;
 

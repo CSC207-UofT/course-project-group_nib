@@ -1,7 +1,6 @@
 package Controller;
 import Data.UserInfo;
 import Entity.Note.Notes;
-import UseCase.NoteManager.Create.CreateNewNote;
 
 import java.util.Scanner;
 
@@ -43,7 +42,7 @@ public class MainPageController {
 
     public String Menu(){
         System.out.println("Which action would you like to take?");
-        System.out.println("Enter 1 to UseCase.NoteManager.Create new note");
+        System.out.println("Enter 1 to create a new note");
         System.out.println("Enter 2 to Modify an existing note");
         System.out.println("Enter 3 to Comment on a note");
         System.out.println("Enter 4 to Rate a note");

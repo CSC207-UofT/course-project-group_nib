@@ -1,4 +1,4 @@
-package UseCase.CourseManager;
+package Entity.Note;
 
 import Entity.Note.Notes;
 
@@ -11,7 +11,8 @@ public class ComputerNotes extends Notes {
     private String codeType;
     private Double codeVersion;
 
-    public ComputerNotes(double user_rate, boolean editable, boolean commentable, boolean referable, String changes, String comment, String codeType) {
+    public ComputerNotes(double user_rate, boolean editable, boolean commentable,
+                         boolean referable, String changes, String comment, String codeType) {
         super(user_rate, editable, commentable, referable, changes, comment);
         this.codeType = codeType;
     }

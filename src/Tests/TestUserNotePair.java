@@ -1,6 +1,6 @@
 package Tests;
 
-import UseCase.CourseManager.LiteratureNotes;
+import Entity.Note.LiteratureNotes;
 import Entity.Note.Notes;
 import Entity.User.User;
 import UseCase.UserNotePair.UserNotePair;
