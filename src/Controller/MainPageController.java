@@ -1,6 +1,7 @@
 package Controller;
 import Data.UserInfo;
 import Entity.Note.Notes;
+import UseCase.NoteCreation;
 
 import java.util.Scanner;
 
@@ -12,36 +13,29 @@ public class MainPageController {
     public MainPageController() {
         s = new Scanner(System.in);
         all_finished = false;
+        Select();
     }
 
     public void Select(){
-        String str = Menu();
-        switch (str) {
-            case "1":
-                CreateNote();
-                all_finished = true;
-                break;
-            case "2":
-                ModifyExistingNote();
-                all_finished = true;
-                break;
-            case "3":
-                CommentOnANote();
-                all_finished = true;
-                break;
-            case "4":
-                RateANote();
-                all_finished = true;
-            case "exit":
-                System.out.println("Thank you for using Niubi! See you later!");
-                break;
-            default:
-                System.out.println("Sorry, we don't understand your command.Please try again.");
+        String str;
+        while (!all_finished) {
+            str = Menu();
+            switch (str) {
+                case "1" -> CreateNote();
+                case "2" -> ModifyExistingNote();
+                case "3" -> CommentOnANote();
+                case "4" -> RateANote();
+                case "exit" -> {
+                    System.out.println("Thank you for using Niubi! See you later!");
+                    all_finished = true;
+                }
+                default -> System.out.println("Sorry, we don't understand your command.Please try again.");
+            }
         }
     }
 
     public String Menu(){
-        System.out.println("Which action would you like to take?");
+        System.out.println("Which action would you like to take next?");
         System.out.println("Enter 1 to create a new note");
         System.out.println("Enter 2 to Modify an existing note");
         System.out.println("Enter 3 to Comment on a note");
@@ -51,8 +45,7 @@ public class MainPageController {
     }
 /*TODO: Replace the println in the following methods with appropriate code body.*/
     public void CreateNote(){
-        CreateNewNote create = new CreateNewNote(s);
-        Notes note = new Notes();
+        NoteCreation create = new NoteCreation();
         System.out.println("Choose Category for your note.");
         note.category = create.category(s);
         System.out.println("Choose Title for your note.");

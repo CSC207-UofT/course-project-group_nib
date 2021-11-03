@@ -3,6 +3,7 @@ package Entity.Note;
 import java.util.ArrayList;
 
 public class Notes {
+//    TODO: change all the variables into private
     public String category;
     public String title;
     public StringBuilder content;
