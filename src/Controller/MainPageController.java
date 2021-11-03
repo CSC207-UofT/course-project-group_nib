@@ -1,6 +1,7 @@
 package Controller;
 import Data.UserInfo;
 import Entity.Note.Notes;
+import UseCase.NoteManager.Create.CreateNewNote;
 
 import java.util.Scanner;
 
