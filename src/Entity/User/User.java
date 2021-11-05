@@ -1,5 +1,7 @@
 package Entity.User;
 import Entity.Note.Notes;
+
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Dictionary;
 
@@ -8,15 +10,17 @@ public class User {
      */
     String username;
     String password;
-    Dictionary<String, List<Notes>> user_notes;
+    List<List<Notes>> user_notes;
+    //Constants for index in user_notes list:
+    //CREATE = 1
+    //EDIT = 2
+    //COMMENT = 3
+    //RATE = 4
 
     public User(String username, String password) {
         this.username = username;
         this.password = password;
-//        this.user_notes.put("Created Notes", null);
-//        this.user_notes.put("Edited Notes", null);
-//        this.user_notes.put("Commented Notes", null);
-//        this.user_notes.put("Rated Notes", null);
+        this.user_notes = new ArrayList<>();
     }
 
         public String getUsername () {
