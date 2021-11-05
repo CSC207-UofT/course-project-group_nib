@@ -55,74 +55,20 @@ public class MainPageController {
         CreateNewNote create = new CreateNewNote(s);
         Notes note = new Notes();
         System.out.println("Choose Category for your note.");
-        note.category = create.category(s);
+        note.category = s.nextLine();
         System.out.println("Choose Title for your note.");
-        note.title = create.title(s);
+        note.title = s.nextLine();
         System.out.println("Enter the date.");
-        note.updated_date = create.date(s);
+        note.updated_date = s.nextLine();
         System.out.println("Type in your content for the note.");
-        note.content = new StringBuilder(create.content(s));
-        System.out.println("Do you have any references for your note? Yes/No");
-        note.reference = create.reference(s);
-        boolean ref = true;
-        while (ref){
-        if (note.reference.equals("Yes")){
-            System.out.println("Add your references by typing in the URL or the title.");
-            note.reference = s.nextLine();
-            ref = false;
-        }else if (note.reference.equals("No")){
-            note.reference = "Original";
-            ref = false;
-        }else{
-            System.out.println("Please type in Yes or No.");
-        }
+        note.content = new StringBuilder(s.nextLine());
 
-    }
-        System.out.println("Is your note editable for other users? Yes/No");
-        String edit = create.editable(s);
-        boolean e = true;
-        while (e) {
-            if (edit.equals("Yes")) {
-                note.editable = true;
-                e = false;
-            } else if (edit.equals("No")) {
-                note.editable = false;
-                e = false;
-            } else {
-                System.out.println("Please type in Yes or No.");
-            }
-        }
+        create.reference(s, note);
+        create.editable(s, note);
+        create.referable(s, note);
+        create.commentable(s, note);
 
-        System.out.println("Is your note referable for other users? Yes/No");
-        String re = create.referable(s);
-        boolean r = true;
-        while (r) {
-            if (re.equals("Yes")) {
-                note.referable = true;
-                r = false;
-            } else if (re.equals("No")) {
-                note.referable = false;
-                r = false;
-            } else {
-                System.out.println("Please type in Yes or No.");
-            }
-        }
-
-        System.out.println("Is your note commentable? Yes/No");
-        String co = create.referable(s);
-        boolean c = true;
-        while (c) {
-            if (co.equals("Yes")) {
-                note.commentable = true;
-                c = false;
-            } else if (co.equals("No")) {
-                note.commentable = false;
-                c = false;
-            } else {
-                System.out.println("Please type in Yes or No.");
-            }
-        }
-        System.out.println(note);
+        System.out.println(note);/*TODO: Need to store this note in the user account who created it.*/
     }
 
     public void ModifyExistingNote(){
