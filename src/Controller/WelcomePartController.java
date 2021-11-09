@@ -1,12 +1,7 @@
 package Controller;
 
-import Data.CreateCsvFile;
 import Data.UserInfo;
-
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.Scanner;
-import Entity.User.User;
 
 
 public class WelcomePartController {
@@ -77,8 +72,6 @@ public class WelcomePartController {
                         "Please try another name.");
             }else {
                 System.out.println("Registered! We are redirecting you to the user home page.");
-                User u = new User(username, password);
-                CreateCsvFile.main(u);
             }
             controller.Select();
         }
@@ -88,13 +81,6 @@ public class WelcomePartController {
     public boolean Finished(){
         return all_finished;
     }
-
-
-
-
-
-
-
 
     public static void main(String[] args) {
         WelcomePartController controller = new WelcomePartController();
