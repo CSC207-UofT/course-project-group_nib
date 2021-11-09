@@ -1,4 +1,4 @@
-Entity Class: Note
+Entity Class: Entity.Note
 
     - Responsibility
         - Stores notes info such as "editable" "commentable" "referable" "changes" "comment" "reference"
@@ -6,5 +6,5 @@ Entity Class: Note
 
     - Collaborators
         - Child Classes CategoryA, CategoryB, CategoryC, CategoryD, CategoryE, which stand for different branches of courses.
-        - Interface INotes, which edits the note info.
+        - Controller INotes, which edits the note info.
 

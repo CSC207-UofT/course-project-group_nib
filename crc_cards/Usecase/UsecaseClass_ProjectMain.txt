@@ -1,7 +1,7 @@
 Usecase Class: ProjectMain
 
     - Responsibility
-        - Collaborates with input user data.
+        - Collaborates with input user Data.
         - Check if users can access to MainPageController.
 
     - Collaborators

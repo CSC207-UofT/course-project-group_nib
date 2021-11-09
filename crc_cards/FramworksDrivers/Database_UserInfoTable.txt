@@ -5,4 +5,4 @@ Database: UserInfoTable
 
     - Collaborators
         - TableReader, UserInfo, as they will help to store info into UserInfoTable or check UserInfoTable.
-        - User, as the UserInfoTable stores User info.
+        - Entity.Entity.User, as the UserInfoTable stores Entity.Entity.User info.

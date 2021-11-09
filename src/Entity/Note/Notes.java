@@ -1,8 +1,11 @@
-package Entity;
+package Entity.Note;
 
 import java.util.ArrayList;
 
-public abstract class Notes {
+public class Notes {
+    public String category;
+    public String title;
+    public StringBuilder content;
     public double user_rate;
     public boolean editable;
     public boolean commentable;
@@ -10,6 +13,7 @@ public abstract class Notes {
     public String changes;
     public String comment;
     public String reference;
+    public String updated_date;
     public ArrayList<String> note_list = new ArrayList<>();
 
 
@@ -17,9 +21,10 @@ public abstract class Notes {
 //        super();
 //    }
 
-    public Notes(double user_rate, boolean editable, boolean commentable, boolean referable, String changes, String comment) {
-        super();
-        this.user_rate = user_rate;
+    public Notes(double user_rate, boolean editable, boolean commentable, boolean referable,
+                 String changes, String comment) {
+//        super();
+        this.user_rate = 0;
         this.editable = editable;
         this.commentable = commentable;
         this.referable = referable;
@@ -27,6 +32,14 @@ public abstract class Notes {
         this.comment = comment;
         this.reference = "Original";
     }
+
+    public Notes() {
+
+    }
+
+    public void getTitle(String title){this.title = title;}
+
+    public void getContent(StringBuilder content){this.content = content;}
 
     public void setUserRate(double user_rate) {
         this.user_rate = user_rate;
@@ -94,16 +107,19 @@ public abstract class Notes {
         this.referable = referable;
     }
 
+    public void getDate(String updated_date) {this.updated_date = updated_date;}
+
     @Override
     public String toString() {
         return "NoteManagement{" +
-                "user_rate=" + user_rate +
-                ", editable=" + editable +
-                ", commentable=" + commentable +
-                ", referable=" + referable +
-                ", changes='" + changes + '\'' +
-                ", comment='" + comment + '\'' +
-                ", reference='" + reference + '\'' +
+                "Rate: " + user_rate +
+                "\n Editable?" + editable +
+                "\n Commentable?" + commentable +
+                "\n Referable?" + referable +
+                "\n Content: '" + content + '\'' +
+                "\n Changes: '" + changes + '\'' +
+                "\n Comment: '" + comment + '\'' +
+                "\n Reference: '" + reference + '\'' +
                 '}';
     }
 

@@ -6,8 +6,8 @@ Presenter: UserInfo
     - Collaborators
         - TableReader, where stores the user accounts info.
             - UserInfo will check if log-in users typed the correct username and password.
-            - User will add registering users' info into TableReader if their usernames are unique.
-        - User. UserInfo helps to store User info.
+            - Entity.Entity.User will add registering users' info into TableReader if their usernames are unique.
+        - Entity.Entity.User. UserInfo helps to store Entity.Entity.User info.
         - UserInfoTable. UserInfo helps to store info into UserInfoTable.
         - WelcomePartController, where users can register or log in. Userinfo must be called for complete these commands.
-        - package data. Both of UserInfo and TableReader should be in the same package, as they store the user data.
+        - package Data. Both of UserInfo and TableReader should be in the same package, as they store the user Data.

@@ -1,7 +1,12 @@
-package Interface;
+package Controller;
 
-import data.UserInfo;
+import Data.CreateCsvFile;
+import Data.UserInfo;
+
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
+import Entity.User.User;
 
 
 public class WelcomePartController {
@@ -27,7 +32,7 @@ public class WelcomePartController {
             Register();
             all_finished = true;
         }else{
-        System.out.println("We will exit the program. Thank you!");}
+            System.out.println("We will exit the program. Thank you!");}
     }
 
     public String Welcome(){
@@ -36,6 +41,7 @@ public class WelcomePartController {
     }
 
     public void Login(){
+        MainPageController controller = new MainPageController();
         boolean login = false;
         while (!login) {
             System.out.println("Please enter your username.");
@@ -54,10 +60,11 @@ public class WelcomePartController {
             }else {
                 System.out.println("You are in! We are redirecting you to the user home page.");
             }
-        }
+        }controller.Select();
     }
 
     public void Register(){
+        MainPageController controller = new MainPageController();
         boolean registered = false;
         while (!registered){
             System.out.println("Please enter your username.");
@@ -70,7 +77,10 @@ public class WelcomePartController {
                         "Please try another name.");
             }else {
                 System.out.println("Registered! We are redirecting you to the user home page.");
+                User u = new User(username, password);
+                CreateCsvFile.main(u);
             }
+            controller.Select();
         }
 
     }
@@ -79,10 +89,15 @@ public class WelcomePartController {
         return all_finished;
     }
 
+
+
+
+
+
+
+
     public static void main(String[] args) {
         WelcomePartController controller = new WelcomePartController();
         controller.Login_or_Register();
     }
 }
-
-

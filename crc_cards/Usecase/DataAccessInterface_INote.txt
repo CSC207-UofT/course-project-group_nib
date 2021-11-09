@@ -1,0 +1,15 @@
+Data Access Controller: INote
+
+    - Responsibility
+        - Allow users to interact with notes, such as to create new note, modify an existing note, comment on a note,
+        or rate a note.
+        - Interact between user interfaces and entity note classes.
+
+    - Collaborators
+        - Entity.Note source, or to say, note Data, which will be imported into the system by users and be sent to entities by
+        INote.
+        - Entity classes, as it will receive note Data sent by INote.
+
+
+
+
