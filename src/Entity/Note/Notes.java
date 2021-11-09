@@ -25,7 +25,7 @@ public class Notes {
     public Notes(double user_rate, boolean editable, boolean commentable, boolean referable,
                  String changes, String comment) {
 //        super();
-        this.user_rate = user_rate;
+        this.user_rate = 0;
         this.editable = editable;
         this.commentable = commentable;
         this.referable = referable;
@@ -113,14 +113,14 @@ public class Notes {
     @Override
     public String toString() {
         return "NoteManagement{" +
-                "user_rate=" + user_rate +
-                ", editable=" + editable +
-                ", commentable=" + commentable +
-                ", referable=" + referable +
-                ", content='" + content + '\'' +
-                ", changes='" + changes + '\'' +
-                ", comment='" + comment + '\'' +
-                ", reference='" + reference + '\'' +
+                "Rate: " + user_rate +
+                "\n Editable?" + editable +
+                "\n Commentable?" + commentable +
+                "\n Referable?" + referable +
+                "\n Content: '" + content + '\'' +
+                "\n Changes: '" + changes + '\'' +
+                "\n Comment: '" + comment + '\'' +
+                "\n Reference: '" + reference + '\'' +
                 '}';
     }
 
