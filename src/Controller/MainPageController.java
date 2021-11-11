@@ -1,4 +1,5 @@
 package Controller;
+
 import Data.UserInfo;
 import Entity.Note.Notes;
 import UseCase.NoteCreation;
@@ -16,25 +17,30 @@ public class MainPageController {
         Select();
     }
 
-    public void Select(){
+    public void Select() {
         String str;
         while (!all_finished) {
             str = Menu();
             switch (str) {
-                case "1" -> CreateNote();
-                case "2" -> ModifyExistingNote();
-                case "3" -> CommentOnANote();
-                case "4" -> RateANote();
-                case "exit" -> {
+                case "1":
+                    CreateNote();
+                case "2":
+                    ModifyExistingNote();
+                case "3":
+                    CommentOnANote();
+                case "4":
+                    RateANote();
+                case "exit": {
                     System.out.println("Thank you for using Niubi! See you later!");
                     all_finished = true;
                 }
-                default -> System.out.println("Sorry, we don't understand your command.Please try again.");
+                default:
+                    System.out.println("Sorry, we don't understand your command.Please try again.");
             }
         }
     }
 
-    public String Menu(){
+    public String Menu() {
         System.out.println("Which action would you like to take next?");
         System.out.println("Enter 1 to create a new note");
         System.out.println("Enter 2 to Modify an existing note");
@@ -43,42 +49,48 @@ public class MainPageController {
         System.out.println("Enter 'exit' to exit the program.");
         return s.nextLine();
     }
-/*TODO: Replace the println in the following methods with appropriate code body.*/
-    public void CreateNote(){
+
+    /*TODO: Replace the println in the following methods with appropriate code body.*/
+    public void CreateNote() {
         NoteCreation create = new NoteCreation();
         System.out.println("Choose Category for your note.");
-        note.category = create.category(s);
-        System.out.println("Choose Title for your note.");
-        note.title = create.title(s);
-        System.out.println("Enter the date.");
-        note.updated_date = create.date(s);
-        System.out.println("Type in your content for the note.");
-        note.content = new StringBuilder(create.content(s));
-        System.out.println("Do you have any references for your note? Yes/No");
-        note.reference = create.reference(s);
-        boolean ref = true;
-        while (ref){
-        if (note.reference.equals("Yes")){
-            System.out.println("Add your references by typing in the URL or the title.");
-            note.reference = s.nextLine();
-            ref = false;
-        }else if (note.reference.equals("No")){
-            note.reference = "Original";
-            ref = false;
-        }else{
-            System.out.println("Please type in Yes or No.");
-        }
+        create.category(s.nextLine());
 
-    }
+        System.out.println("Choose Title for your note.");
+        create.title(s.nextLine());
+
+        System.out.println("Enter the date.");
+        create.date(s.nextLine());
+
+        System.out.println("Type in your content for the note.");
+        create.content(s.nextLine());
+
+        System.out.println("Do you have any references for your note? Yes/No");
+
+        boolean ref = true;
+        while (ref) {
+            String referencesFlag = this.s.nextLine();
+            if (referencesFlag.equals("Yes")) {
+                System.out.println("Add your references by typing in the URL or the title.");
+                create.references(s.nextLine());
+                ref = false;
+            } else if (referencesFlag.equals("No")) {
+                create.references("Original");
+                ref = false;
+            } else {
+                System.out.println("Please type in Yes or No.");
+            }
+        }
         System.out.println("Is your note editable for other users? Yes/No");
-        String edit = create.editable(s);
+
         boolean e = true;
         while (e) {
-            if (edit.equals("Yes")) {
-                note.editable = true;
+            String editableFlag = s.nextLine();
+            if (editableFlag.equals("Yes")) {
+                create.editable(true);
                 e = false;
-            } else if (edit.equals("No")) {
-                note.editable = false;
+            } else if (editableFlag.equals("No")) {
+                create.editable(false);
                 e = false;
             } else {
                 System.out.println("Please type in Yes or No.");
@@ -86,14 +98,15 @@ public class MainPageController {
         }
 
         System.out.println("Is your note referable for other users? Yes/No");
-        String re = create.referable(s);
+
         boolean r = true;
         while (r) {
-            if (re.equals("Yes")) {
-                note.referable = true;
+            String referableFlag = s.nextLine();
+            if (referableFlag.equals("Yes")) {
+                create.referable(true);
                 r = false;
-            } else if (re.equals("No")) {
-                note.referable = false;
+            } else if (referableFlag.equals("No")) {
+                create.referable(false);
                 r = false;
             } else {
                 System.out.println("Please type in Yes or No.");
@@ -101,39 +114,42 @@ public class MainPageController {
         }
 
         System.out.println("Is your note commentable? Yes/No");
-        String co = create.referable(s);
+
         boolean c = true;
         while (c) {
-            if (co.equals("Yes")) {
-                note.commentable = true;
+            String commentableFlag = s.nextLine();
+            if (commentableFlag.equals("Yes")) {
+                create.commentable(true);
                 c = false;
-            } else if (co.equals("No")) {
-                note.commentable = false;
+            } else if (commentableFlag.equals("No")) {
+                create.commentable(false);
                 c = false;
             } else {
                 System.out.println("Please type in Yes or No.");
             }
         }
-        System.out.println(note);
+//        System.out.println(note);
+        Notes notes = create.getNotes();
+        System.out.println(notes);
     }
 
-    public void ModifyExistingNote(){
+    public void ModifyExistingNote() {
         System.out.println("Modify Note!!");
 
     }
 
-    public void CommentOnANote(){
+    public void CommentOnANote() {
         System.out.println("Comment Note!!");
 
     }
 
-    public void RateANote(){
+    public void RateANote() {
         System.out.println("Rate Note!!");
 
     }
 
 
-    public boolean Finished(){
+    public boolean Finished() {
         return all_finished;
     }
 
