@@ -1,6 +1,6 @@
 package Controller;
 
-import Data.UserInfo;
+import Data.UserInfoAccess;
 import Entity.Note.Notes;
 import UseCase.NoteCreation;
 
@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class MainPageController {
     private final Scanner s;
     private boolean all_finished;
-    UserInfo user;
+    UserInfoAccess user;
 
     public MainPageController() {
         s = new Scanner(System.in);

@@ -8,5 +8,5 @@ Controller: MainPageController
         - WelcomePartController, since users can only access to MainPageController after successfully register and login
         in the WelcomePartController.
         - UserInfo, since users can only register or login after pass the checking process in UserInfo.
-        - ProjectMain, which collaborates with WelcomePartController to proceed to MainPageController.
+        - Main.ProjectMain, which collaborates with WelcomePartController to proceed to MainPageController.
 

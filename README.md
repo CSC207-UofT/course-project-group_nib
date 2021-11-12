@@ -1,4 +1,4 @@
-## Group project for ProjectMain!
+## Group project for Main.ProjectMain!
 
 This project is an online resource-sharing system. It is designed to create an open-source environment for students to share their notes and understandings about courses and subjects in order to help each other.
 
