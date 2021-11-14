@@ -33,6 +33,7 @@ public class MainPageController {
                 case "exit": {
                     System.out.println("Thank you for using Niubi! See you later!");
                     all_finished = true;
+                    break;
                 }
                 default:
                     System.out.println("Sorry, we don't understand your command.Please try again.");
