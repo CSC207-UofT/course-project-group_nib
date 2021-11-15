@@ -134,5 +134,5 @@ In this case, we could also do a better group work since everyone had a clearer 
 - Yuanyuan Che: Assisted on clean architecture and SOLID principle, added Major Design Decisions Made, Packaging Strategy, and Progress Report to this doc. Planning to continue making efforts on the clean architecture.
 - Qianning Lian: Worked on design pattern, made supplement on Use of GitHub Features in this doc.
 - Bingxian Chen: Wrote this design document, developed front end features and user experience design.
-
+- Ke Gong: Worked on MainPageInterface, NoteCreateForm, MainPageController, NoteCreation, and Entity.
 
