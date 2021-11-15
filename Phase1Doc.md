@@ -65,9 +65,22 @@ by steps, each of steps will allow subclass to override. Be mentioned that the m
 of the superclass do not override. In order to implement every subclass, we need to
 declare all separated algorithm steps “abstract”. Therefore, the advantages about the
 template method are we can extend individual step in each subclass, while the structure
-in the superclass as the same all the time. Based on our project, a note-uploading system, the most important thing is to upload files into the system. However, different readers may prefer different file formats. For example, pdf files, word docx files, .txt files or csv files. All files have similar code for data processing and analysis, the differences are the format and some basic typesetting. By using the template method design pattern, we will not write similar code for three times. What we need to do is to create a main abstract class, which is
-implemented by every subclass. 
+in the superclass as the same all the time. 
 
+Based on our project, a note-uploading system, the most important thing is to upload files into the system. However, different readers may prefer different file formats. For example, pdf files, word docx files, .txt files or csv files. All files have similar code for data processing and analysis, the differences are the format and some basic typesetting. By using the template method design pattern, we will not write similar code for three times. What we need to do is to create a main abstract class, which is
+implemented by every subclass. 
+For example:
+public abstract class Files{
+    abstract void upload();
+    abstract void delete();
+    abstract void file_format();
+    }
+In order to upload a specific file, we could extent the class Files to different subclass. 
+In each subclass, we will allow a specific format of the files.
+We will pull the duplicate code into a superclass, while we change code for all 
+subclasses for each file format. Thus, all file formats will share same code in base 
+class. Once they need to be specified one by one, they will have individual subclass to 
+consider.
 
 ***
 ### Use of GitHub Features
