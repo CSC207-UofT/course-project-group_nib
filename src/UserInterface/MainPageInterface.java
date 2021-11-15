@@ -16,6 +16,7 @@ public class MainPageInterface {
         s = new Scanner(System.in);
         is_select = false;
         pageController = new MainPageController(username);
+        SelectFunction();
     }
 
     public void SelectFunction() {
