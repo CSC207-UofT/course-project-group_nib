@@ -85,6 +85,7 @@ consider.
 ***
 ### Use of GitHub Features
 - Pull the most up to date files from main repository to individual repo
+  Pull request have helped us during the coding session. It create the new brach for each group member who wants to renew, rectify and rewrite the code. Pull request can compare the brach code to the main code to see if there are any name conflicts. Also, other group members can take a look of what you have changed, which increase the accuracy of teamwork. Pull request is helpful for us as a group of 8 people.
 - Push the files to the main repo and leave meaningful comments
 - Issues: We create new issues identifying new features, and then leave the TODOs in some files to give check points for future modification.
 
