@@ -42,11 +42,11 @@ Notes cannot depend on lower classes(i.e. controllers etc.). Whenever notes need
 ### Clean Architecture 
 
 - Entities: Notes (notes inherit from an abstract class Notes.java. Each note owns its instance values and methods to fulfill the user's requirements.)
-- Use Cases: Rate, Comment, Create, Edit
-- Controllers: WelcomePartController and MainPageController. WelcomePartController controls users’ registration and login. It calls corresponding use cases to create a new user object or check if the input information exists. MainPageController controls the creation and edition of the notes by users by calling relevant Use Case classes as CreateNotes and EditNotes.
-- UI & DB: UserInfoTable.csv, Android or Software
+- Use Cases: Rate, Comment, Create, Edit Notes, Create Users and Authenticate Users.
+- Controllers: WelcomePartController and MainPageController. WelcomePartController controls users’ registration and login. It calls corresponding use cases to create a new user object or check if the input information exists. MainPageController controls the creation and edition of the notes by users by calling relevant Use Case classes as CreateNotes and EditNotes. Returning information will be stored in presenters and send back to the User Interface.
+- UI & DB: UserInfoTable.csv, Currently CommandLineInterface carries the responsibility of UI. It sends requests to the controllers and retrieve information from presenters. It can be easily replaced by future UI as long as the format of sending and receiving requests is followed.
 
-![Diagram](ClearArchitectureDIagram.png)
+![Diagram](CleanArchitectureDIagram.png)
 
 ***
 ### Major Decisions 
