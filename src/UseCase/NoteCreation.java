@@ -7,50 +7,23 @@ import java.util.Scanner;
 
 public class NoteCreation {
 
-    private Notes notes;
-
     public NoteCreation() {
-
     }
 
-    public Notes getNotes() {
-        return notes;
-    }
+    public Notes createNote(String category, String title, String date, String content, String references, boolean editable, boolean referable, boolean commentable) {
 
-    public void setNotes(Notes notes) {
-        this.notes = notes;
-    }
+        // Create objects based on the note type
+        Notes note = new NotesFactory().getNote(category);
 
-    public void category(String nextLine) {
-        notes = new NotesFactory().getNote(nextLine);
-        notes.setCategory(nextLine);
-    }
+        note.setCategory(category);
+        note.setTitle(title);
+        note.setCreated_date(date);
+        note.setContent(new StringBuilder(content));
+        note.setReference(references);
+        note.setEditable(editable);
+        note.setReferable(referable);
+        note.setCommentable(commentable);
 
-    public void title(String nextLine) {
-        notes.setTitle(nextLine);
-    }
-
-    public void date(String s) {
-        notes.setCreated_date(s);
-    }
-
-    public void content(String nextLine) {
-        notes.setContent(new StringBuilder(nextLine));
-    }
-
-    public void references(String nextLine) {
-        notes.setReference(nextLine);
-    }
-
-    public void editable(boolean b) {
-        notes.setEditable(b);
-    }
-
-    public void referable(boolean b) {
-        notes.setReferable(b);
-    }
-
-    public void commentable(boolean b) {
-        notes.setCommentable(b);
+        return note;
     }
 }
