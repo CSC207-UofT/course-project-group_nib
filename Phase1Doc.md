@@ -46,6 +46,9 @@ Notes cannot depend on lower classes(i.e. controllers etc.). Whenever notes need
 - Controllers: WelcomePartController and MainPageController. WelcomePartController controls users’ registration and login. It calls corresponding use cases to create a new user object or check if the input information exists. MainPageController controls the creation and edition of the notes by users by calling relevant Use Case classes as CreateNotes and EditNotes.
 - UI & DB: UserInfoTable.csv, Android or Software
 
+![Diagram](ClearArchitectureDIagram.png)
+
+
 
 
 ***
