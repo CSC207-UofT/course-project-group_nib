@@ -69,6 +69,15 @@ implemented by every subclass.
 - Issues: We create new issues identifying new features, and then leave the TODOs in some files to give check points for future modification.
 
 ***
+### Functionality  
+
+The user can register or login to their account by username and password. The user can leave comments and rate the notes. If a user uploaded a note, its name will be shown as the author of the note, and indicate the type of the note, such as pdf, jpeg, typing or handwritten.
+
+The user can either create a new note, modify an existing note, comment on other notes, or rate notes. There are various Categories as courses in the system where users can upload their notes corresponding to each course. Each note is classified by courses. The note is labeled with the date updated, and indicates whether it can be edited by the user. If a note is the original form from the user who uploads it, a tag called “Original” will be labeled as well. If the note is not original, it should have references listing the referenced articles.
+
+
+
+***
 ### Testing
 - Most of the Use Case methods are tested, excluding the abstract UserManipulation. Since our Use Case methods involve all the actions required, most of the components are tested. We tested whether a user who is totally new to our system can register successfully, and whether a user who already has an account can login to our system successfully. We tested if a new note can be created, (to be continued…) The UserNotePair is considered unnecessary, so we can simply ignore that test.
 
