@@ -10,8 +10,12 @@ public class LiteratureNotes extends Notes {
 
     private ArrayList<String> reference_page = new ArrayList<>();
 
-    public LiteratureNotes(double user_rate, boolean editable, boolean commentable, boolean referable, String changes, String comment){
-        super( user_rate,  editable,  commentable,  referable,  changes,  comment);
+    public LiteratureNotes() {
+    }
+
+    public LiteratureNotes(String category, String title, StringBuilder content, double user_rate, boolean editable, boolean commentable, boolean referable, String changes, String comment, String reference, String created_date, String updated_date, ArrayList<String> note_list, ArrayList<String> reference_page) {
+        super(category, title, content, user_rate, editable, commentable, referable, changes, comment, reference, created_date, updated_date, note_list);
+        this.reference_page = reference_page;
     }
 
     public void addReferencePage(String reference){
