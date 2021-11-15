@@ -42,12 +42,16 @@ Notes cannot depend on lower classes(i.e. controllers etc.). Whenever notes need
 ### Clean Architecture 
 
 - Entities: Notes (notes inherit from an abstract class Notes.java. Each note owns its instance values and methods to fulfill the user's requirements.)
-- Use Cases: Rate, Comment, Create, Edit
-- Controllers: WelcomePartController and MainPageController. WelcomePartController controls users’ registration and login. It calls corresponding use cases to create a new user object or check if the input information exists. MainPageController controls the creation and edition of the notes by users by calling relevant Use Case classes as CreateNotes and EditNotes.
-- UI & DB: UserInfoTable.csv, Android or Software
+- Use Cases: Rate, Comment, Create, Edit Notes, Create Users and Authenticate Users.
+- Controllers: WelcomePartController and MainPageController. WelcomePartController controls users’ registration and login. It calls corresponding use cases to create a new user object or check if the input information exists. MainPageController controls the creation and edition of the notes by users by calling relevant Use Case classes as CreateNotes and EditNotes. Returning information will be stored in presenters and send back to the User Interface.
+- UI & DB: UserInfoTable.csv, Currently CommandLineInterface carries the responsibility of UI. It sends requests to the controllers and retrieve information from presenters. It can be easily replaced by future UI as long as the format of sending and receiving requests is followed.
 
-![Diagram](ClearArchitectureDIagram.png)
+![Diagram](CleanArchitectureDIagram.png)
 
+***
+### Major Decisions 
+
+Storing and loading states: When a user logs in their account, they load their data from historical sessions to retrieve the state they left at when they last logged in. The user can also store new data depending on the actions they choose to take while they are logged in. Similarily, when a user uploads a note, it gets stored to our dataase. Within our database, there are many interfaces that wil interact through the controllers.
 
 
 
@@ -61,13 +65,27 @@ by steps, each of steps will allow subclass to override. Be mentioned that the m
 of the superclass do not override. In order to implement every subclass, we need to
 declare all separated algorithm steps “abstract”. Therefore, the advantages about the
 template method are we can extend individual step in each subclass, while the structure
-in the superclass as the same all the time. Based on our project, a note-uploading system, the most important thing is to upload files into the system. However, different readers may prefer different file formats. For example, pdf files, word docx files, .txt files or csv files. All files have similar code for data processing and analysis, the differences are the format and some basic typesetting. By using the template method design pattern, we will not write similar code for three times. What we need to do is to create a main abstract class, which is
-implemented by every subclass. 
+in the superclass as the same all the time. 
 
+Based on our project, a note-uploading system, the most important thing is to upload files into the system. However, different readers may prefer different file formats. For example, pdf files, word docx files, .txt files or csv files. All files have similar code for data processing and analysis, the differences are the format and some basic typesetting. By using the template method design pattern, we will not write similar code for three times. What we need to do is to create a main abstract class, which is
+implemented by every subclass. 
+For example:
+public abstract class Files{
+    abstract void upload();
+    abstract void delete();
+    abstract void file_format();
+    }
+In order to upload a specific file, we could extent the class Files to different subclass. 
+In each subclass, we will allow a specific format of the files.
+We will pull the duplicate code into a superclass, while we change code for all 
+subclasses for each file format. Thus, all file formats will share same code in base 
+class. Once they need to be specified one by one, they will have individual subclass to 
+consider.
 
 ***
 ### Use of GitHub Features
 - Pull the most up to date files from main repository to individual repo
+  Pull request have helped us during the coding session. It create the new brach for each group member who wants to renew, rectify and rewrite the code. Pull request can compare the brach code to the main code to see if there are any name conflicts. Also, other group members can take a look of what you have changed, which increase the accuracy of teamwork. Pull request is helpful for us as a group of 8 people.
 - Push the files to the main repo and leave meaningful comments
 - Issues: We create new issues identifying new features, and then leave the TODOs in some files to give check points for future modification.
 
@@ -82,7 +100,8 @@ The user can either create a new note, modify an existing note, comment on other
 
 ***
 ### Testing
-- Most of the Use Case methods are tested, excluding the abstract UserManipulation. Since our Use Case methods involve all the actions required, most of the components are tested. We tested whether a user who is totally new to our system can register successfully, and whether a user who already has an account can login to our system successfully. We tested if a new note can be created, (to be continued…) The UserNotePair is considered unnecessary, so we can simply ignore that test.
+- Most of the Use Case methods are tested, excluding the abstract UserManipulation， the controllers and the classes that we haven't implemented yet. We tested whether a user who is totally new to our system can register successfully, and whether a user who already has an account can login to our system successfully. The UserNotePair is considered unnecessary, so we can simply ignore that test.
+
 
 ***
 ### Major Design Decisions Made

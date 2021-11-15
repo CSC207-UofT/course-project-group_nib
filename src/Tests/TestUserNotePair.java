@@ -18,3 +18,5 @@ public class TestUserNotePair {
         System.out.println(b);
     }
 }
+
+/*The UserNotePair is currently not used in our design, but in order for a backup, we haven't deleted it as a back up.*/
