@@ -35,6 +35,7 @@ public class CommandLineInterface {
         }
 
         System.out.println("Success! We are redirecting you to your home page.");
+        username = presenter.returnUser();
     }
 
     public void getUserDecision(){
@@ -58,6 +59,9 @@ public class CommandLineInterface {
             System.out.println("Invalid input. The system is quitting.");
             System.exit(0);
         }
+    }
+    public String getUsername(){
+        return username;
     }
 
 
