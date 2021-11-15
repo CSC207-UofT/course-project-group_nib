@@ -48,6 +48,10 @@ Notes cannot depend on lower classes(i.e. controllers etc.). Whenever notes need
 
 ![Diagram](ClearArchitectureDIagram.png)
 
+***
+### Major Decisions 
+
+Storing and loading states: When a user logs in their account, they load their data from historical sessions to retrieve the state they left at when they last logged in. The user can also store new data depending on the actions they choose to take while they are logged in. Similarily, when a user uploads a note, it gets stored to our dataase. Within our database, there are many interfaces that wil interact through the controllers.
 
 
 
