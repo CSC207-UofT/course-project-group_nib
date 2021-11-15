@@ -84,7 +84,34 @@ The user can either create a new note, modify an existing note, comment on other
 ### Testing
 - Most of the Use Case methods are tested, excluding the abstract UserManipulation. Since our Use Case methods involve all the actions required, most of the components are tested. We tested whether a user who is totally new to our system can register successfully, and whether a user who already has an account can login to our system successfully. We tested if a new note can be created, (to be continued…) The UserNotePair is considered unnecessary, so we can simply ignore that test.
 
+***
+### Major Design Decisions Made
+- Redesigned most of the codes, separating UI and controller.
+- Added a new package UseCase.UserInfo, renaming and redesigning all classes related to Controller 1.
+- Created a commandline in the form of UI, which can complete all commands of UserAuthenticate and the first part of ProjectMain.
+- Added new design pattern Data Access Object, which allows inner object reaches outer codes by implementing DataAccessInterface to Database.
+- Two interfaces, UserInfoOutput and DataAccessInterface, were designed to adhere clean architecture and Dependency inversion principle. In this case, inner objects can call interfaces instead of directly depending on outer codes.
 
+***
+### Packaging Strategy
+We chose to package by layer, as our folders are named: Entity, UseCase, Controller, data, UserInterface, Main and tests.
+Since we were struggling with the clean architecture, packaging by layers can help us to have a clearer view on our layers and help us to adhere both the clean architecture and SOLID.
+In this case, we could also do a better group work since everyone had a clearer view on the structure of this project.
 
+***
+### Progress Report
+###### open questions your group is struggling with
+- Some codes still need debugging.
+- Features are not completed, some features still need to be implemented.
 
+###### what has worked well so far with your design
+- We suppose this project adheres the Clean Architecture and SOLID principles.
+- Most codes runs without errors.
 
+###### a summary of what each group member has been working on and plans to work on next
+- Ruiyu Wang: Worked on the logic and structure of codes, Welcome Page code cleanup, and functionality. Planning to do the cleanup of the next page, and improve UI and Database.
+- Shengyue Zhang: Completed all existing testing codes. Planning to add more unit tests when all features are all set.
+- Yuxuan Gu: Debugged in MainPageController, and renamed variables. Planning to do the parts which are not taken.
+- Yuanyuan Che: Assisted on clean architecture and SOLID principle, added Major Design Decisions Made, Packaging Strategy, and Progress Report to this doc. Planning to continue making efforts on the clean architecture.
+- Qianning Lian: Worked on design pattern, made supplement on Use of GitHub Features in this doc.
+- Bingxian Chen: Wrote this design document, developed front end features and user experience design.
