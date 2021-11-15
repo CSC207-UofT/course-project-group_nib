@@ -100,7 +100,8 @@ The user can either create a new note, modify an existing note, comment on other
 
 ***
 ### Testing
-- Most of the Use Case methods are tested, excluding the abstract UserManipulation. Since our Use Case methods involve all the actions required, most of the components are tested. We tested whether a user who is totally new to our system can register successfully, and whether a user who already has an account can login to our system successfully. We tested if a new note can be created, (to be continued…) The UserNotePair is considered unnecessary, so we can simply ignore that test.
+- Most of the Use Case methods are tested, excluding the abstract UserManipulation， the controllers and the classes that we haven't implemented yet. We tested whether a user who is totally new to our system can register successfully, and whether a user who already has an account can login to our system successfully. The UserNotePair is considered unnecessary, so we can simply ignore that test.
+
 
 
 
