@@ -16,7 +16,7 @@ public class MainPageController {
 
     public Notes createNote(NoteCreateForm form) {
         NoteCreation noteCreation = new NoteCreation();
-        Notes note = noteCreation.createNote(
+        Notes note = noteCreation.createNote( //Isn't this violating the clean architecture? Controller is directly accessing entity, which is not allowed.
                 form.getCategory(),
                 form.getTitle(),
                 form.getDate(),
