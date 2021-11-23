@@ -3,7 +3,7 @@ package Java.Controller;
 import Java.Data.UserInfoAccess;
 import Entity.Note.Notes;
 import Java.UseCase.NoteCreation;
-import UserInterface.InterfaceEntity.NoteCreateForm;
+import Java.UserInterface.InterfaceEntity.NoteCreateForm;
 
 import java.util.Scanner;
 
