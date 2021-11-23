@@ -25,7 +25,7 @@ class TableReaderTest {
     }
 
     @org.junit.jupiter.api.Test
-    void testAddNewUser() {
+    void testAddNewUser() { //Need to be fixed.
         TableReader info = new TableReader("src/Java/Data/TestOnly.csv");
         //When the username already exists in the csv file.
         assertFalse(info.AddNewUser("zhan666", "zhan999", info));
