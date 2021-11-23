@@ -1,4 +1,4 @@
-package UseCase.UserInfo;
+package Java.UseCase.UserInfo;
 
 public interface DataAccessInterface {
     public boolean login(String username, String password);

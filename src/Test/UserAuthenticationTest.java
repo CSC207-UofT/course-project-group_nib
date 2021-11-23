@@ -1,7 +1,7 @@
-package Tests;
+package Test;
 
-import UseCase.UserInfo.UserAuthentication;
-import UseCase.UserInfo.UserInfoOutput;
+import Java.UseCase.UserInfo.UserAuthentication;
+import Java.UseCase.UserInfo.UserInfoOutput;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

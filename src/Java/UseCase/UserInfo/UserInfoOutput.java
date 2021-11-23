@@ -1,4 +1,4 @@
-package UseCase.UserInfo;
+package Java.UseCase.UserInfo;
 
 import Entity.User.User;
 

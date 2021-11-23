@@ -1,6 +1,6 @@
-package Tests;
+package Test;
 
-import Data.UserInfoAccess;
+import Java.Data.UserInfoAccess;
 import org.junit.jupiter.api.Test;
 
 import java.io.BufferedReader;

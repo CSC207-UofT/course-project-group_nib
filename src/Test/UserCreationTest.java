@@ -1,7 +1,7 @@
-package Tests;
+package Test;
 
-import UseCase.UserInfo.UserCreation;
-import UseCase.UserInfo.UserInfoOutput;
+import Java.UseCase.UserInfo.UserCreation;
+import Java.UseCase.UserInfo.UserInfoOutput;
 import org.junit.jupiter.api.Test;
 
 import java.io.BufferedReader;

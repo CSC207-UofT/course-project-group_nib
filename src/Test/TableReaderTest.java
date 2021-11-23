@@ -1,6 +1,6 @@
-package Tests;
+package Test;
 
-import Data.TableReader;
+import Java.Data.TableReader;
 
 import java.io.*;
 import java.util.ArrayList;

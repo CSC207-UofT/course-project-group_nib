@@ -1,8 +1,8 @@
-package UserInterface;
+package Java.UserInterface;
 
-import Controller.MainPageController;
+import Java.Controller.MainPageController;
 import Entity.Note.Notes;
-import UseCase.NoteCreation;
+import Java.UseCase.NoteCreation;
 import UserInterface.InterfaceEntity.NoteCreateForm;
 
 import java.util.Scanner;

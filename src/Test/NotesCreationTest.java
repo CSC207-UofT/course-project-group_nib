@@ -1,7 +1,7 @@
-package Tests;
+package Test;
 
 import Entity.Note.Notes;
-import UseCase.NoteCreation;
+import Java.UseCase.NoteCreation;
 import org.junit.jupiter.api.Test;
 
 

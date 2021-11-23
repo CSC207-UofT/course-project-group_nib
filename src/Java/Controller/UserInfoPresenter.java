@@ -1,6 +1,6 @@
-package Controller;
+package Java.Controller;
 
-import UseCase.UserInfo.UserInfoOutput;
+import Java.UseCase.UserInfo.UserInfoOutput;
 
 import java.util.Objects;
 

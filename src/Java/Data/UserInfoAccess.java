@@ -1,7 +1,7 @@
-package Data;
+package Java.Data;
 
-import Data.TableReader;
-import UseCase.UserInfo.DataAccessInterface;
+import Java.Data.TableReader;
+import Java.UseCase.UserInfo.DataAccessInterface;
 
 public class UserInfoAccess implements DataAccessInterface {
     private final TableReader user_info;
