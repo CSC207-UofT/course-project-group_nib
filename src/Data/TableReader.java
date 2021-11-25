@@ -13,15 +13,14 @@ public class TableReader {
     Map<String ,String> user_info_map;
 
     public TableReader(){
-        user_info_map = new HashMap<String,String>();
+        user_info_map = new HashMap<>();
 
         try {
-            BufferedReader reader = new BufferedReader(new FileReader("src/data/UserInfoTable.csv")); // filename here
+            BufferedReader reader = new BufferedReader(new FileReader("src/Data/UserInfoTable.csv")); // filename here
             reader.readLine(); //Ignore line 1
             String line = null;
             while((line=reader.readLine())!=null){
                 String[] item = line.split(","); //split the items by comma
-
                 user_info_map.put(item[0], item[1]);
             }
         } catch (Exception e) {
