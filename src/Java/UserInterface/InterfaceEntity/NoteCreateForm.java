@@ -1,4 +1,4 @@
-package UserInterface.InterfaceEntity;
+package Java.UserInterface.InterfaceEntity;
 
 public class NoteCreateForm {
     private String category;

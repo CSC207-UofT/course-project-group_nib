@@ -1,6 +1,6 @@
-package UseCase.UserInfo;
+package Java.UseCase.UserInfo;
 
-import Controller.UserInfoPresenter;
+import Java.Controller.UserInfoPresenter;
 
 public abstract class UserInfoManipulation {
     private UserInfoOutput presenter;

@@ -13,7 +13,7 @@ public class TableReader{
     Map<String ,String> user_info_map;
 
     public TableReader(){
-        user_info_map = new HashMap<String,String>();
+        user_info_map = new HashMap<>();
 
         try {
             BufferedReader reader = new BufferedReader(new FileReader("src/Java/data/UserInfoTable.csv")); // filename here
@@ -36,7 +36,7 @@ public class TableReader{
         try {
             BufferedReader reader = new BufferedReader(new FileReader(filename)); // filename here
             reader.readLine(); //Ignore line 1
-            String line = null;
+            String line;
             while((line=reader.readLine())!=null){
                 String[] item = line.split(","); //split the items by comma
 

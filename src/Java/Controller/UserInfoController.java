@@ -1,8 +1,8 @@
-package Controller;
+package Java.Controller;
 
-import UseCase.UserInfo.UserAuthentication;
-import UseCase.UserInfo.UserCreation;
-import UseCase.UserInfo.UserInfoManipulation;
+import Java.UseCase.UserInfo.UserAuthentication;
+import Java.UseCase.UserInfo.UserCreation;
+import Java.UseCase.UserInfo.UserInfoManipulation;
 
 public class UserInfoController{
     private final boolean is_login;

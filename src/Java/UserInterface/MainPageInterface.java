@@ -1,16 +1,15 @@
-package UserInterface;
+package Java.UserInterface;
 
-import Controller.MainPageController;
+import Java.Controller.MainPageController;
 import Entity.Note.Notes;
-import UseCase.NoteCreation;
-import UserInterface.InterfaceEntity.NoteCreateForm;
+import Java.UserInterface.InterfaceEntity.NoteCreateForm;
 
 import java.util.Scanner;
 
 public class MainPageInterface {
     private final Scanner s;
     private boolean is_select;
-    private MainPageController pageController;
+    private final MainPageController pageController;
 
     public MainPageInterface(String username) {
         s = new Scanner(System.in);
@@ -24,25 +23,15 @@ public class MainPageInterface {
         while (!is_select) {
             str = Menu();
             switch (str) {
-                case "1":
-                    CreateNote();
-                    break;
-                case "2":
-                    ModifyExistingNote();
-                    break;
-                case "3":
-                    CommentOnANote();
-                    break;
-                case "4":
-                    RateANote();
-                    break;
-                case "exit": {
+                case "1" -> CreateNote();
+                case "2" -> ModifyExistingNote();
+                case "3" -> CommentOnANote();
+                case "4" -> RateANote();
+                case "exit" -> {
                     System.out.println("Thank you for using Niubi! See you later!");
                     is_select = true;
-                    break;
                 }
-                default:
-                    System.out.println("Sorry, we don't understand your command.Please try again.");
+                default -> System.out.println("Sorry, we don't understand your command.Please try again.");
             }
         }
     }
@@ -115,11 +104,9 @@ public class MainPageInterface {
 
         System.out.println("Is your note referable for other users? Yes/No");
         boolean r = true;
-        boolean referable = false;
         while (r) {
             String referableFlag = s.nextLine();
             if (referableFlag.equals("Yes")) {
-                referable = true;
                 r = false;
             } else if (referableFlag.equals("No")) {
                 r = false;

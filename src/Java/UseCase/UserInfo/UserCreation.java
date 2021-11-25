@@ -1,6 +1,6 @@
-package UseCase.UserInfo;
+package Java.UseCase.UserInfo;
 
-import Data.UserInfoAccess;
+import Java.Data.UserInfoAccess;
 import Entity.User.User;
 
 public class UserCreation extends UserInfoManipulation {

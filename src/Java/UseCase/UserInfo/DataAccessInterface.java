@@ -1,6 +1,6 @@
-package UseCase.UserInfo;
+package Java.UseCase.UserInfo;
 
 public interface DataAccessInterface {
-    public boolean login(String username, String password);
-    public boolean register(String username, String password);
+    boolean login(String username, String password);
+    boolean register(String username, String password);
 }

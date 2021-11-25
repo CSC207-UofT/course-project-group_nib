@@ -1,8 +1,8 @@
-package Main;
+package Java.Main;
 
-import Controller.MainPageController;
-import UserInterface.CommandLineInterface;
-import UserInterface.MainPageInterface;
+import Java.Controller.MainPageController;
+import Java.UserInterface.CommandLineInterface;
+import Java.UserInterface.MainPageInterface;
 
 //import java.util.HashMap;
 //import java.util.Map;

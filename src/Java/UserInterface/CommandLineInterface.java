@@ -1,7 +1,7 @@
-package UserInterface;
+package Java.UserInterface;
 
-import Controller.UserInfoController;
-import Controller.UserInfoPresenter;
+import Java.Controller.UserInfoController;
+import Java.Controller.UserInfoPresenter;
 
 import java.util.Scanner;
 

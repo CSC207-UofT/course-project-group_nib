@@ -1,22 +1,20 @@
-package Controller;
+package Java.Controller;
 
-import Data.UserInfoAccess;
+import Java.Data.UserInfoAccess;
 import Entity.Note.Notes;
-import UseCase.NoteCreation;
-import UserInterface.InterfaceEntity.NoteCreateForm;
+import Java.UseCase.NoteCreation;
+import Java.UserInterface.InterfaceEntity.NoteCreateForm;
 
 import java.util.Scanner;
 
 public class MainPageController {
-    private final String username;
 
     public MainPageController(String username) {
-        this.username = username;
     }
 
     public Notes createNote(NoteCreateForm form) {
         NoteCreation noteCreation = new NoteCreation();
-        Notes note = noteCreation.createNote(
+        return noteCreation.createNote(
                 form.getCategory(),
                 form.getTitle(),
                 form.getDate(),
@@ -26,6 +24,5 @@ public class MainPageController {
                 form.isReferable(),
                 form.isCommentable()
         );
-        return note;
     }
 }
