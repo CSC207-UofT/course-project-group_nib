@@ -16,7 +16,7 @@ public class TableReader{
         user_info_map = new HashMap<>();
 
         try {
-            BufferedReader reader = new BufferedReader(new FileReader("src/Java/data/UserInfoTable.csv")); // filename here
+            BufferedReader reader = new BufferedReader(new FileReader("src/Java/Data/UserInfoTable.csv")); // filename here
             reader.readLine(); //Ignore line 1
             String line;
             while((line=reader.readLine())!=null){
@@ -81,7 +81,7 @@ public class TableReader{
 
     public void UpdateTable(String user, String password){
         try {
-            File csv = new File("src/Java/data/UserInfoTable.csv");
+            File csv = new File("src/Java/Data/UserInfoTable.csv");
 
             BufferedWriter bw = new BufferedWriter(new FileWriter(csv, true));
             bw.newLine();
