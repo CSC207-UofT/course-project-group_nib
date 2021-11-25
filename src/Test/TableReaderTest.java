@@ -50,7 +50,7 @@ class TableReaderTest {
     @org.junit.jupiter.api.Test
     void testUpdateTable(){
         TableReader info = new TableReader("src/Java/Data/TestOnly.csv");
-        info.UpdateTable("zhan666", "zhan999", "src/Java/Data/TestOnly.csv");
+        info.UpdateTable("testUpdate", "testUpdate", "src/Java/Data/TestOnly.csv");
     }
 
     //A helper function below.

@@ -70,8 +70,8 @@ public class TableReader{
     public boolean AddNewUser(String user, String password, TableReader tr){
         boolean duplicated = tr.user_info_map.containsKey(user);
         if (!duplicated) {
-            user_info_map.put(user, password);
-            UpdateTable(user, password);
+            tr.user_info_map.put(user, password);
+            UpdateTable(user, password,"src/Java/Data/TestOnly.csv");
             return true;
         }else{
             return false;
