@@ -1,4 +1,4 @@
-package Entity.Note;
+package Java.Entity.Note;
 
 import java.util.ArrayList;
 import java.util.Date;

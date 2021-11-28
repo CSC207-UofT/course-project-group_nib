@@ -1,7 +1,7 @@
 package Java.UserInterface;
 
 import Java.Controller.MainPageController;
-import Entity.Note.Notes;
+import Java.Entity.Note.Notes;
 import Java.UserInterface.InterfaceEntity.NoteCreateForm;
 
 import java.util.Scanner;

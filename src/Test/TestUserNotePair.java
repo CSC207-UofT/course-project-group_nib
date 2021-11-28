@@ -1,9 +1,9 @@
-package Tests;
+package Test;
 
-import Entity.Note.LiteratureNotes;
-import Entity.Note.Notes;
+import Java.Entity.Note.LiteratureNotes;
+import Java.Entity.Note.Notes;
 import Entity.User.User;
-import UseCase.UserNotePair.UserNotePair;
+import Java.UseCase.UserNotePair.UserNotePair;
 
 import java.util.ArrayList;
 

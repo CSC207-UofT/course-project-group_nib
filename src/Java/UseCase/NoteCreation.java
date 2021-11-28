@@ -1,7 +1,7 @@
 package Java.UseCase;
 
-import Entity.Note.ComputerNotes;
-import Entity.Note.Notes;
+import Java.Entity.Note.ComputerNotes;
+import Java.Entity.Note.Notes;
 
 import java.util.Scanner;
 

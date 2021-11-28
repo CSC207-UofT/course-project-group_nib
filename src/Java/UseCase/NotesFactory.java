@@ -1,9 +1,9 @@
 package Java.UseCase;
 
-import Entity.Note.ComputerNotes;
-import Entity.Note.LiteratureNotes;
-import Entity.Note.Notes;
-import Entity.Note.ScienceNotes;
+import Java.Entity.Note.ComputerNotes;
+import Java.Entity.Note.LiteratureNotes;
+import Java.Entity.Note.Notes;
+import Java.Entity.Note.ScienceNotes;
 
 class NotesFactory {
     public Notes getNote(String notesType) {
@@ -14,6 +14,8 @@ class NotesFactory {
         } else if (notesType.equalsIgnoreCase("Science")) {
             return new ScienceNotes();
         }
-        return new Notes();
+//        return new Notes();
+        return null;
     }
+
 }
