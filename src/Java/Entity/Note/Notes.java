@@ -1,4 +1,4 @@
-package Entity.Note;
+package Java.Entity.Note;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -146,20 +146,18 @@ public class Notes {
 
     @Override
     public String toString() {
-        return "Notes{" +
-                "category='" + category + '\'' +
-                ", title='" + title + '\'' +
-                ", content=" + content +
-                ", user_rate=" + user_rate +
-                ", editable=" + editable +
-                ", commentable=" + commentable +
-                ", referable=" + referable +
-                ", changes='" + changes + '\'' +
-                ", comment='" + comment + '\'' +
-                ", reference='" + reference + '\'' +
-                ", created_date='" + created_date + '\'' +
-                ", updated_date='" + updated_date + '\'' +
-                ", note_list=" + note_list +
-                '}';
+        return "Category: " + category + '\n' +
+                "Title: " + title + '\n' +
+                "Content: " + content + '\n' +
+                "Rate: " + user_rate + '\n' +
+                "Editable: " + editable + '\n' +
+                "Commentable: " + commentable + '\n'+
+                "Referable: " + referable + '\n' +
+                "Changes: " + changes + '\n' +
+                "Comment: " + comment + '\n' +
+                "Reference: " + reference + '\n' +
+                "Created date: " + created_date + '\n' +
+                "Updated date: " + updated_date + '\n' +
+                "Note list: " + note_list + '\n';
     }
 }

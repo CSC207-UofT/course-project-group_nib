@@ -1,6 +1,6 @@
-package Entity.Note;
+package Java.Entity.Note;
 
-import Entity.Note.Notes;
+import Java.Entity.Note.Notes;
 
 import java.util.ArrayList;
 

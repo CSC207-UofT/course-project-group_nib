@@ -1,7 +1,7 @@
 package Java.UserInterface;
 
 import Java.Controller.MainPageController;
-import Entity.Note.Notes;
+import Java.Entity.Note.Notes;
 import Java.UserInterface.InterfaceEntity.NoteCreateForm;
 
 import java.util.Scanner;
@@ -23,15 +23,20 @@ public class MainPageInterface {
         while (!is_select) {
             str = Menu();
             switch (str) {
-                case "1" -> CreateNote();
-                case "2" -> ModifyExistingNote();
-                case "3" -> CommentOnANote();
-                case "4" -> RateANote();
-                case "exit" -> {
+                case "1" : CreateNote();
+                break;
+                case "2" : ModifyExistingNote();
+                    break;
+                case "3" : CommentOnANote();
+                    break;
+                case "4" : RateANote();
+                    break;
+                case "exit" : {
                     System.out.println("Thank you for using Niubi! See you later!");
                     is_select = true;
                 }
-                default -> System.out.println("Sorry, we don't understand your command.Please try again.");
+                break;
+                default : System.out.println("Sorry, we don't understand your command.Please try again.");
             }
         }
     }

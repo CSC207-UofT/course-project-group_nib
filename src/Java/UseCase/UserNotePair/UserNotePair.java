@@ -1,6 +1,6 @@
-package UseCase.UserNotePair;
+package Java.UseCase.UserNotePair;
 
-import Entity.Note.Notes;
+import Java.Entity.Note.Notes;
 import Entity.User.User;
 
 import java.util.ArrayList;

@@ -1,22 +1,21 @@
 package Java.UseCase;
 
-import Entity.Note.ComputerNotes;
-import Entity.Note.LiteratureNotes;
-import Entity.Note.Notes;
-import Entity.Note.ScienceNotes;
+import Java.Entity.Note.ComputerNotes;
+import Java.Entity.Note.LiteratureNotes;
+import Java.Entity.Note.Notes;
+import Java.Entity.Note.ScienceNotes;
 
 class NotesFactory {
-    public Notes getNote(String notesType){
-        if(notesType == null){
-            return null;
-        }
-        if(notesType.equalsIgnoreCase("Computer")){
+    public Notes getNote(String notesType) {
+        if (notesType.equalsIgnoreCase("Computer")) {
             return new ComputerNotes();
-        } else if(notesType.equalsIgnoreCase("Literature")){
+        } else if (notesType.equalsIgnoreCase("Literature")) {
             return new LiteratureNotes();
-        } else if(notesType.equalsIgnoreCase("Science")){
+        } else if (notesType.equalsIgnoreCase("Science")) {
             return new ScienceNotes();
         }
+//        return new Notes();
         return null;
     }
+
 }
