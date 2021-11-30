@@ -1,7 +1,7 @@
 package Test;
 
 import Java.Entity.Note.Notes;
-import Java.UseCase.NoteCreation;
+import Java.UseCase.NoteInfo.NoteCreation;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

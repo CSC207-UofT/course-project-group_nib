@@ -1,6 +1,5 @@
 package Java.Main;
 
-import Java.Controller.MainPageController;
 import Java.UserInterface.CommandLineInterface;
 import Java.UserInterface.MainPageInterface;
 

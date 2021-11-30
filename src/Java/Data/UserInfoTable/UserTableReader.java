@@ -1,4 +1,4 @@
-package Java.Data;
+package Java.Data.UserInfoTable;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -9,10 +9,10 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class TableReader{
+public class UserTableReader {
     Map<String ,String> user_info_map;
 
-    public TableReader(){
+    public UserTableReader(){
         user_info_map = new HashMap<>();
 
         try {
@@ -30,7 +30,7 @@ public class TableReader{
     }
 
     //Polymorphism on Constructor for testing methods without affecting the UerInfoTable.csv
-    public TableReader(String filename){
+    public UserTableReader(String filename){
         user_info_map = new HashMap<>();
 
         try {
@@ -67,7 +67,7 @@ public class TableReader{
     }
 
     //Overloading this method with a specified testing TableReader for testing.
-    public boolean AddNewUser(String user, String password, TableReader tr){
+    public boolean AddNewUser(String user, String password, UserTableReader tr){
         boolean duplicated = tr.user_info_map.containsKey(user);
         if (!duplicated) {
             tr.user_info_map.put(user, password);
@@ -111,7 +111,7 @@ public class TableReader{
 
     public static void main(String[] args) {
         // Simple testing
-        TableReader info = new TableReader();
+        UserTableReader info = new UserTableReader();
 //        System.out.println(info.UserMatch("Admin", "adminadmin"));
         info.AddNewUser("a", "12345678");
 //        System.out.println(info.UserMatch("a", "12345678"));

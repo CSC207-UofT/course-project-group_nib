@@ -1,17 +1,16 @@
 package Java.UseCase.UserInfo;
 
-import Java.Data.UserInfoAccess;
 import Entity.User.User;
 
 public class UserAuthentication extends UserInfoManipulation{
-    public UserAuthentication(String username, String password) {
-        super(username, password);
+    public UserAuthentication(UserInfoOutput presenter, DataAccessInterface api, String username, String password) {
+        super(presenter, api, username, password);
     }
 
     public UserInfoOutput manipulate(){
         String username = getUsername();
         String password = getPassword();
-        DataAccessInterface api = new UserInfoAccess();
+        DataAccessInterface api  = getApi();
 
         boolean success = api.login(username, password);
         UserInfoOutput presenter = getPresenter();

@@ -1,4 +1,4 @@
-package Java.UseCase;
+package Java.UseCase.NoteInfo;
 
 import Java.Entity.Note.ComputerNotes;
 import Java.Entity.Note.LiteratureNotes;

@@ -1,12 +1,11 @@
-package Java.Data;
+package Java.Data.UserInfoTable;
 
-import Java.Data.TableReader;
 import Java.UseCase.UserInfo.DataAccessInterface;
 
 public class UserInfoAccess implements DataAccessInterface {
-    private final TableReader user_info;
+    private final UserTableReader user_info;
     public UserInfoAccess(){
-        user_info = new TableReader();
+        user_info = new UserTableReader();
     }
 
     public boolean login(String username, String password){

@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class Notes {
-    //    TODO: change all the variables into private
     private String category;
     private String title;
     private StringBuilder content;
