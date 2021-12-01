@@ -1,22 +1,30 @@
 package Java.Entity.Note;
 
 import Java.Entity.Note.Notes;
+import org.junit.runner.Computer;
 
 import java.util.ArrayList;
 
 public class ComputerNotes extends Notes {
-    /* computer science  */
+    /* Computer science category
+    * @param codeType: TODO: Fill in the definition of code Type
+    * @param codeVersion: TODO: Fill in the definition of code version*/
 
     private String codeType;
-    private Double codeVersion;
+    private double codeVersion;
 
-    public ComputerNotes() {
-    }
-
-    public ComputerNotes(String category, String title, StringBuilder content, double user_rate, boolean editable, boolean commentable, boolean referable, String changes, String comment, String reference, String created_date, String updated_date, ArrayList<String> note_list, String codeType) {
-        super(category, title, content, user_rate, editable, commentable, referable, changes, comment, reference, created_date, updated_date, note_list);
+    public ComputerNotes(String category, String author, String title, String content, String codeType) {
+        super(category, author, title, content);
         this.codeType = codeType;
+        this.codeVersion = 0.0;
     }
+
+    public ComputerNotes(){
+        super();
+    }
+
+    //category, title, content, user_rate, comment, reference
+    //String category, String title, String content, double user_rate, String[] comment, String[] reference,
 
     public void setCodeType(String codeType){
         this.codeType = codeType;
@@ -36,7 +44,8 @@ public class ComputerNotes extends Notes {
 
     @Override
     public String toString() {
-        return super.toString();
+        return super.toString() + "Code Type: " + codeType + '\n' +
+                "Code Version: " + codeVersion + '\n';
     }
 }
 

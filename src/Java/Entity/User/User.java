@@ -1,4 +1,4 @@
-package Entity.User;
+package Java.Entity.User;
 
 public class User {
     /* The user who use the Niubi System. It should override the setPassword method from legacy.Register interface.

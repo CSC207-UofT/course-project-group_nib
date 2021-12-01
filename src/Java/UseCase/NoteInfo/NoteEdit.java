@@ -1,8 +1,8 @@
 package Java.UseCase.NoteInfo;
 
 public class NoteEdit extends NoteInfoManipulation{
-    public NoteEdit(){
-        super();
+    public NoteEdit(NoteInfoDataAccess api){
+        super(api);
     }
 
     @Override
