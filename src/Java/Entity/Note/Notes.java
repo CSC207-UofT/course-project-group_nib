@@ -10,6 +10,8 @@ public class Notes {
     * @param title: Title of the note
     * @param content: Content of the note
     * @param user_rate: Rate of the note
+    * @param comment: comment of the rate
+    * @param reference: reference of teh rate
     * */
     private String category;
     private String author;
