@@ -1,6 +1,6 @@
 package Java.UseCase.UserInfo;
 
-import Entity.User.User;
+import Java.Entity.User.User;
 
 public class UserAuthentication extends UserInfoManipulation{
     public UserAuthentication(UserInfoOutput presenter, DataAccessInterface api, String username, String password) {

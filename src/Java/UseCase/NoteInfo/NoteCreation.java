@@ -25,7 +25,7 @@ public class NoteCreation extends NoteInfoManipulation {
         String[] comment = note.getComment();
         String[] reference = note.getReference();
         double rate = note.getUser_rate();
-        api.create(title, author, category, content, comment, reference, rate);
+//        api.create(title, author, category, content, comment, reference, rate);
         return false;
     }
 

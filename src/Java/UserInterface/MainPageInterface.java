@@ -58,6 +58,7 @@ public class MainPageInterface {
         ArrayList<String> note_info = new ArrayList<>();
 
         //add front-end verification before next phase
+        note_info.add(username);
 
         System.out.println("Choose Category for your note.");
         String category = s.nextLine();
