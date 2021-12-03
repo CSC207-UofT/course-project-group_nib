@@ -5,26 +5,21 @@ import Java.Entity.Note.Notes;
 import java.util.ArrayList;
 
 public class NoteCreation extends NoteInfoManipulation {
-    private Notes note;
-    private String username;
-    private ArrayList<String> note_info;
-    // private NoteInfoDataAccess api;
 
     public NoteCreation(NoteInfoDataAccess api, ArrayList<String> note_info, String username) {
-        super(api);
-        this.note_info = note_info;
-        this.username = username;
-
+        super(api, note_info, username);
     }
 
 
     @Override
     public boolean ChangeNote() {
-        // TODO: Create a new note
-        this.note = new Notes();
+        //TODO: Create a new note.
+        Notes note = new Notes();
 
-        note.setCategory(note_info.get(1));
+        ArrayList<String> note_info = getNoteInfo();
+
         note.setAuthor(note_info.get(0));
+        note.setCategory(note_info.get(1));
         note.setTitle(note_info.get(2));
         note.setDate(note_info.get(3));
         note.setContent(note_info.get(4));
@@ -47,9 +42,8 @@ public class NoteCreation extends NoteInfoManipulation {
         s[4] = content;
         s[5] = reference;
 
-        boolean isSuccess = api.create(s);
-
-        return isSuccess;
+        NoteInfoDataAccess api = getApi();
+        return api.create(s); /*Return whether the new created note has been uploaded successfully.*/
     }
 
 

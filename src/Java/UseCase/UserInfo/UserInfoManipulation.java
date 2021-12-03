@@ -1,7 +1,5 @@
 package Java.UseCase.UserInfo;
 
-import Java.Controller.UserInfoPresenter;
-
 public abstract class UserInfoManipulation {
     private final UserInfoOutput presenter;
     private final String username;

@@ -3,8 +3,8 @@ package Java.UseCase.NoteInfo;
 import java.util.ArrayList;
 
 public interface NoteInfoDataAccess {
-    public boolean create(String[] info_list);
-    public void delete(String title);
-    public void edit(String[] info_list, String title);
-    public ArrayList<String[]> search(String title);
+    boolean create(String[] info_list);
+    void delete(String title);
+    void edit(String[] info_list, String title);
+    ArrayList<String[]> search(String title);
 }

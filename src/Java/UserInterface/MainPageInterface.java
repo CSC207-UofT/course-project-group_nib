@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 public class MainPageInterface {
     private final Scanner s;
-    private String username;
+    private final String username;
     private boolean is_select;
     private final NoteInfoPresenter presenter;
 
@@ -136,10 +136,8 @@ public class MainPageInterface {
         ArrayList<String> note_info = new ArrayList<>();
         // TODO: implement this method
 
-
         NoteInfoController nic = new NoteInfoController(username,2, note_info, presenter);
         nic.decode();
-        System.out.println("Edit Note!!");
     }
 
     public void DeleteNote() {
@@ -149,7 +147,6 @@ public class MainPageInterface {
 
         NoteInfoController nic = new NoteInfoController(username,3, note_info, presenter);
         nic.decode();
-        System.out.println("Delete Note!!");
 
     }
 

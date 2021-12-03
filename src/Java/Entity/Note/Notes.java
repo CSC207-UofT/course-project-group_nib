@@ -11,7 +11,7 @@ public class Notes {
      * @param content: Content of the note
      * @param user_rate: Rate of the note
      * @param comment: comment of the rate
-     * @param reference: reference of teh rate
+     * @param reference: reference of the rate
      * */
     private String category;
     private String author;

@@ -60,6 +60,7 @@ public class CommandLineInterface {
             System.exit(0);
         }
     }
+
     public String getUsername(){
         return username;
     }
