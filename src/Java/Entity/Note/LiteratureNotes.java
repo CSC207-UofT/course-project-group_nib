@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class LiteratureNotes extends Notes {
     /* Literature category
-     * @param reference_page: TODO: Fill in the definition for this parameter.*/
+     * @param reference_page: source of reference in the note*/
 
     private ArrayList<String> reference_page = new ArrayList<>();
 
