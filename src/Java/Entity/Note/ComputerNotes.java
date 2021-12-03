@@ -7,8 +7,8 @@ import java.util.ArrayList;
 
 public class ComputerNotes extends Notes {
     /* Computer science category
-     * @param codeType: TODO: Fill in the definition of code Type
-     * @param codeVersion: TODO: Fill in the definition of code version*/
+     * @param codeType: code type of the note
+     * @param codeVersion: code version of the note*/
 
     private String codeType;
     private double codeVersion;
