@@ -3,7 +3,6 @@ package Java.UserInterface;
 import Java.Controller.NoteInfoController;
 import Java.Controller.NoteInfoPresenter;
 import Java.Entity.Note.Notes;
-import Java.UserInterface.InterfaceEntity.NoteCreateForm;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -136,7 +135,7 @@ public class MainPageInterface {
     public void EditNote() {
         ArrayList<String> note_info = new ArrayList<>();
         // TODO: implement this method
-        
+
 
         NoteInfoController nic = new NoteInfoController(username,2, note_info, presenter);
         nic.decode();

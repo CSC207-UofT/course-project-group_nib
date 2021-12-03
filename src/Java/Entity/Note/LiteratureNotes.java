@@ -7,12 +7,12 @@ import java.util.ArrayList;
 
 public class LiteratureNotes extends Notes {
     /* Literature category
-    * @param reference_page: detail information of reference of the note like url or some academic paper.*/
+     * @param reference_page: TODO: Fill in the definition for this parameter.*/
 
     private ArrayList<String> reference_page = new ArrayList<>();
 
-    public LiteratureNotes(String category, String author, String title, String content, ArrayList<String> reference_page) {
-        super(category, author, title, content);
+    public LiteratureNotes(String category, String author, String title, String date, String content, ArrayList<String> reference_page) {
+        super(category, author, title, content, date);
         this.reference_page = reference_page;
     }
 

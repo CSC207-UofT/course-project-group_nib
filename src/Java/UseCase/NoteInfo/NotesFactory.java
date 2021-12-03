@@ -6,6 +6,7 @@ import Java.Entity.Note.Notes;
 import Java.Entity.Note.ScienceNotes;
 
 class NotesFactory { //TODO: Consider if we still need this class.
+    //TODO: Depends on whether to implement 3 types of notes
     public Notes getNote(Notes note) {
         if (note.getCategory() != null) {
             return note;

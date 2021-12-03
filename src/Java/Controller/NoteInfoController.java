@@ -3,8 +3,6 @@ package Java.Controller;
 import Java.Data.NoteInfoTable.NoteInfoAccess;
 import Java.Entity.Note.Notes;
 import Java.UseCase.NoteInfo.NoteCreation;
-import Java.UseCase.NoteInfo.NoteInfoManipulation;
-import Java.UserInterface.InterfaceEntity.NoteCreateForm;
 
 import java.util.ArrayList;
 
@@ -25,13 +23,16 @@ public class NoteInfoController {
     }
 
 
-    public void decode(){
-        switch (operation){
-            case 1: CreateNote();
+    public void decode() {
+        switch (operation) {
+            case 1:
+                CreateNote();
                 break;
-            case 2: EditNote();
+            case 2:
+                EditNote();
                 break;
-            case 3: DeleteNote();
+            case 3:
+                DeleteNote();
                 break;
         }
     }
@@ -39,15 +40,17 @@ public class NoteInfoController {
 
     public boolean CreateNote() {
         //TODO: complete this method
+        NoteCreation usercase = new NoteCreation(api, note_info, username);
+//        Notes note = usercase.note;
         return false;
     }
 
-    public boolean EditNote(){
+    public boolean EditNote() {
         //TODO: complete this method
         return false;
     }
 
-    public boolean DeleteNote(){
+    public boolean DeleteNote() {
         //TODO: complete this method
         return false;
     }

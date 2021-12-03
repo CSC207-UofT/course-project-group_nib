@@ -6,12 +6,11 @@ import java.util.ArrayList;
 
 public class ScienceNotes extends Notes {
     /*Physics & Math category
-    * @param relatedDefinition: detai category of the note?
-    * */
+     * @param relatedDefinition: TODO: Fill in the definition for this parameter.*/
     private String relatedDefinition;
 
-    public ScienceNotes(String category, String author, String title, String content, String relatedDefinition) {
-        super(category, author, title, content);
+    public ScienceNotes(String category, String author, String title, String content, String date, String relatedDefinition) {
+        super(category, author, title, content, date);
         this.relatedDefinition = relatedDefinition;
     }
 

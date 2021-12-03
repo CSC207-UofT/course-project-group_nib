@@ -15,11 +15,14 @@ public class NoteInfoAccess implements NoteInfoDataAccess {
 
 
     @Override
-    public void create(String[] info_list) {
-        if (title_not_duplicated(info_list[2])){
+    public boolean create(String[] info_list) {
+        boolean flag = title_not_duplicated(info_list[2]);
+
+        if (flag){
             nil.add(info_list);
             ntr.updateNoteInfoList(nil);
         }
+        return flag;
     }
 
     @Override

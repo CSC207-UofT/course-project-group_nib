@@ -6,25 +6,26 @@ import java.util.Date;
 
 public class Notes {
     /*@param category: Category of the note
-    * @param author: Author of the note, usually the username who logged in first and created it.
-    * @param title: Title of the note
-    * @param content: Content of the note
-    * @param user_rate: Rate of the note
-    * @param comment: comment of the rate
-    * @param reference: reference of teh rate
-    * */
+     * @param author: Author of the note, usually the username who logged in first and created it.
+     * @param title: Title of the note
+     * @param content: Content of the note
+     * @param user_rate: Rate of the note
+     * @param comment: comment of the rate
+     * @param reference: reference of teh rate
+     * */
     private String category;
     private String author;
     private String title;
     private String content;
     private double user_rate;
+    private String date;
 
     private String[] comment;
-    private String[] reference;
+    private String reference;
 
 
 
-    public Notes(String category, String author, String title, String content) {
+    public Notes(String category, String author, String title, String content, String date) {
         this.category = category;
         this.title = title;
         this.author = author;
@@ -32,12 +33,15 @@ public class Notes {
         this.user_rate = 0.0;
         this.comment = null;
         this.reference = null;
+        this.date = date;
     }
 
     public Notes() {
 
     }
+    public String getDate() {return date;}
 
+    public void setDate(String date) {this.date = date;}
 
     public String getCategory() {
         return category;
@@ -83,11 +87,11 @@ public class Notes {
         this.comment = comment;
     }
 
-    public String[] getReference() {
+    public String getReference() {
         return reference;
     }
 
-    public void setReference(String[] reference) {
+    public void setReference(String reference) {
         this.reference = reference;
     }
 
@@ -98,6 +102,6 @@ public class Notes {
                 "Content: " + content + '\n' +
                 "Rate: " + user_rate + '\n' +
                 "Comment: " + Arrays.toString(comment) + '\n' +
-                "Reference: " + Arrays.toString(reference) + '\n';
+                "Reference: " + reference + '\n';
     }
 }
