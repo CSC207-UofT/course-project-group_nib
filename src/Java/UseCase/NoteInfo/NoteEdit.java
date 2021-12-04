@@ -19,7 +19,7 @@ public class NoteEdit extends NoteInfoManipulation{
         /*Check*/
         // TODO: Edit the note
         ArrayList<String> note_info = getNoteInfo();
-        note_info.set(4, content);
+        note_info.set(4, content); //Set the content of the note to the new one.
 
         NoteInfoDataAccess api = getApi();
         String[] note_i = note_info.toArray(new String[0]);

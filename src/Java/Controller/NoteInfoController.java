@@ -54,6 +54,7 @@ public class NoteInfoController {
         return usercase.ChangeNote();
     }
 
+
     public boolean DeleteNote(ArrayList<String>note_info, String username) {
         //TODO: complete this method
         NoteInfoManipulation usercase = new NoteDeletion(api, note_info, username);

@@ -18,6 +18,10 @@ public abstract class NoteInfoManipulation {
         return false;
     }
 
+    public boolean ChangeNote(String str){
+        return false;
+    }
+
     public ArrayList<String> getNoteInfo(){
         return note_info;
     }
