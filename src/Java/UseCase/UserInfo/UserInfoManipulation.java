@@ -1,16 +1,16 @@
 package Java.UseCase.UserInfo;
 
-import Java.Controller.UserInfoPresenter;
-
 public abstract class UserInfoManipulation {
-    private UserInfoOutput presenter;
+    private final UserInfoOutput presenter;
     private final String username;
     private final String password;
+    private final DataAccessInterface api;
 
-    public UserInfoManipulation(String username, String password){
+    public UserInfoManipulation(UserInfoOutput presenter, DataAccessInterface api, String username, String password){
         this.username = username;
         this.password = password;
-        presenter = new UserInfoPresenter();
+        this.presenter = presenter;
+        this.api = api;
     }
 
     public UserInfoOutput manipulate(){
@@ -27,6 +27,10 @@ public abstract class UserInfoManipulation {
 
     public UserInfoOutput getPresenter(){
         return presenter;
+    }
+
+    public DataAccessInterface getApi(){
+        return api;
     }
 
 }

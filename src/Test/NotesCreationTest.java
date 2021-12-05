@@ -1,77 +1,50 @@
 package Test;
 
-import Java.Entity.Note.Notes;
-import Java.UseCase.NoteCreation;
+import Java.UseCase.NoteInfo.NoteCreation;
+import Java.UseCase.NoteInfo.NoteInfoDataAccess;
 import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 public class NotesCreationTest {
+    private NoteInfoDataAccess api;
+
 
 
     @Test
     void testSuccessfulCreation() {
+        ArrayList<String> note_info_1 = new ArrayList<>(){};
+        note_info_1.add("User1");
+        note_info_1.add("science");
+        note_info_1.add("test");
+        note_info_1.add("2021-11-15");
+        note_info_1.add("Hello World");
+        note_info_1.add("XXX");
 
-        // If the input type is not science, computer, literature, a null pointer exception will occur
-        NoteCreation noteCreation = new NoteCreation();
-        Notes note = noteCreation.createNote(
-                "science",
-                "test",
-                "2021-11-15",
-                "hello world",
-                "XXX",
-                true,
-                true,
-                true);
-        String expected_1 =  "Category: science\n" +
-                "Title: test\n" +
-                "Content: hello world\n" +
-                "Rate: 0.0\n" +
-                "Editable: true\n" +
-                "Commentable: true\n" +
-                "Referable: true\n" +
-                "Changes: null\n" +
-                "Comment: null\n" +
-                "Reference: XXX\n" +
-                "Created date: 2021-11-15\n" +
-                "Updated date: null\n" +
-                "Note list: []\n";
-        String result_1 = note.toString();
+        NoteCreation noteCreation = new NoteCreation(api, note_info_1, "TestUser");
+        assertEquals(noteCreation.ChangeNote(), false);
 
-        assertEquals(expected_1, result_1);
 
     }
 
-
-
-
     @Test
     void testFailedCreation() {
-
-        // If the input type is not science, computer, literature, a null pointer exception will occur
-        NoteCreation noteCreation = new NoteCreation();
         try {
-            Notes note = noteCreation.createNote(
-                    "errTest",
-                    "test",
-                    "2021-11-15",
-                    "hello world",
-                    "XXX",
-                    true,
-                    true,
-                    true);
-        } catch (NullPointerException e) {
-            System.out.println(e.toString());
-            System.out.println("Exception occur");
-
+            ArrayList<String> note_info_2 = new ArrayList<>() {
+            };
+            note_info_2.add("User1");
+            note_info_2.add("InvalidInput");
+            note_info_2.add("test");
+            note_info_2.add("2021-11-15");
+            note_info_2.add("Hello World");
+            note_info_2.add("XXX");
+            NoteCreation noteCreation = new NoteCreation(api, note_info_2, "TestUser");
+        }catch(NullPointerException e){
+            System.out.println(e.getMessage());
         }
-//    @org.junit.jupiter.api.Test
-//    void testCreateNote(){
-//        NoteCreation noteCreation = new NoteCreation(){
-//
-//        }
-//    }
     }
 
 

@@ -1,6 +1,6 @@
 package Java.UseCase.UserInfo;
 
-import Entity.User.User;
+import Java.Entity.User.User;
 
 public interface UserInfoOutput {
     void setState(boolean registered);

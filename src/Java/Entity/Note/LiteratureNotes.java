@@ -6,16 +6,18 @@ import java.util.ArrayList;
 
 
 public class LiteratureNotes extends Notes {
-    /*Literature*/
+    /* Literature category
+     * @param reference_page: source of reference in the note*/
 
     private ArrayList<String> reference_page = new ArrayList<>();
 
-    public LiteratureNotes() {
+    public LiteratureNotes(String category, String author, String title, String date, String content, ArrayList<String> reference_page) {
+        super(category, author, title, content, date);
+        this.reference_page = reference_page;
     }
 
-    public LiteratureNotes(String category, String title, StringBuilder content, double user_rate, boolean editable, boolean commentable, boolean referable, String changes, String comment, String reference, String created_date, String updated_date, ArrayList<String> note_list, ArrayList<String> reference_page) {
-        super(category, title, content, user_rate, editable, commentable, referable, changes, comment, reference, created_date, updated_date, note_list);
-        this.reference_page = reference_page;
+    public LiteratureNotes(){
+        super();
     }
 
     public void addReferencePage(String reference){
