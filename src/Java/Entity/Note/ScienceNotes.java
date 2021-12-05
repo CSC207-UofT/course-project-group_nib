@@ -5,15 +5,17 @@ import Java.Entity.Note.Notes;
 import java.util.ArrayList;
 
 public class ScienceNotes extends Notes {
-    /*Physics & Math */
+    /*Physics & Math category
+     * @param relatedDefinition: Related definition for the science note.*/
     private String relatedDefinition;
 
-    public ScienceNotes() {
+    public ScienceNotes(String category, String author, String title, String content, String date, String relatedDefinition) {
+        super(category, author, title, content, date);
+        this.relatedDefinition = relatedDefinition;
     }
 
-    public ScienceNotes(String category, String title, StringBuilder content, double user_rate, boolean editable, boolean commentable, boolean referable, String changes, String comment, String reference, String created_date, String updated_date, ArrayList<String> note_list, String relatedDefinition) {
-        super(category, title, content, user_rate, editable, commentable, referable, changes, comment, reference, created_date, updated_date, note_list);
-        this.relatedDefinition = relatedDefinition;
+    public ScienceNotes() {
+        super();
     }
 
     public void setRelatedDefinition(String relatedDefinition) {

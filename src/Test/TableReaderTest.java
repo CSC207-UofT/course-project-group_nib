@@ -1,6 +1,6 @@
 package Test;
 
-import Java.Data.TableReader;
+import Java.Data.UserInfoTable.UserTableReader;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -13,7 +13,7 @@ class TableReaderTest {
 
     @org.junit.jupiter.api.Test
     void testUserMatch() {
-        TableReader info = new TableReader("src/Java/Data/TestOnly.csv");
+        UserTableReader info = new UserTableReader("src/Java/Data/TestOnly.csv");
         //When the username and password matches.
         assertTrue(info.UserMatch("admin", "admin123"));
 
@@ -26,7 +26,7 @@ class TableReaderTest {
 
     @org.junit.jupiter.api.Test
     void testAddNewUser() { //TODO: This one shows NullPointerException after running the code.
-        TableReader info = new TableReader("src/Java/Data/TestOnly.csv");
+        UserTableReader info = new UserTableReader("src/Java/Data/TestOnly.csv");
         //When the username already exists in the csv file.
         assertFalse(info.AddNewUser("zhan666", "zhan999", info));
 
@@ -49,7 +49,7 @@ class TableReaderTest {
     }
     @org.junit.jupiter.api.Test
     void testUpdateTable(){
-        TableReader info = new TableReader("src/Java/Data/TestOnly.csv");
+        UserTableReader info = new UserTableReader("src/Java/Data/TestOnly.csv");
         info.UpdateTable("testUpdate", "testUpdate", "src/Java/Data/TestOnly.csv");
     }
 

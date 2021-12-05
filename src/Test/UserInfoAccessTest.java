@@ -1,6 +1,6 @@
 package Test;
 
-import Java.Data.UserInfoAccess;
+import Java.Data.UserInfoTable.UserInfoAccess;
 import org.junit.jupiter.api.Test;
 
 import java.io.BufferedReader;
