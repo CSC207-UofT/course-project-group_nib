@@ -14,7 +14,6 @@ public abstract class NoteInfoManipulation {
     }
 
     public boolean ChangeNote(){
-        /*TODO: Check whether the action has been done successfully.*/
         return false;
     }
 
@@ -32,6 +31,10 @@ public abstract class NoteInfoManipulation {
 
     public NoteInfoDataAccess getApi(){
         return api;
+    }
+
+    public ArrayList<String[]> SearchNotes(String str){
+        return null;
     }
 
 }

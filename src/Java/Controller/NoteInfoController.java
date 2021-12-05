@@ -2,19 +2,16 @@ package Java.Controller;
 
 import Java.Data.NoteInfoTable.NoteInfoAccess;
 import Java.Entity.Note.Notes;
-import Java.UseCase.NoteInfo.NoteCreation;
-import Java.UseCase.NoteInfo.NoteDeletion;
-import Java.UseCase.NoteInfo.NoteEdit;
-import Java.UseCase.NoteInfo.NoteInfoManipulation;
+import Java.UseCase.NoteInfo.*;
 
 import java.util.ArrayList;
 
 public class NoteInfoController {
-    private String username;
-    private int operation;
-    private ArrayList<String> note_info;
-    private NoteInfoPresenter presenter;
-    private NoteInfoAccess api;
+    private final String username;
+    private final int operation;
+    private final ArrayList<String> note_info;
+    private final NoteInfoPresenter presenter;
+    private final NoteInfoAccess api;
 
     public NoteInfoController(String username, int operation, ArrayList<String> note_info,
                               NoteInfoPresenter presenter) {
@@ -38,26 +35,38 @@ public class NoteInfoController {
             case 3:
                 DeleteNote(this.note_info, this.username);
                 break;
+            case 4:
+                SearchNote(this.note_info, this.username);
+                break;
         }
     }
 
 
-    public boolean CreateNote(ArrayList<String>note_info, String username) {
-        //TODO: complete this method
-        NoteInfoManipulation usercase = new NoteCreation(api, note_info, username);
-        return usercase.ChangeNote();
+    public void CreateNote(ArrayList<String>note_info, String username) {
+        NoteInfoManipulation usecase = new NoteCreation(api, note_info, username);
+        presenter.setState(usecase.ChangeNote());
     }
 
-    public boolean EditNote(ArrayList<String>note_info, String username) {
-        //TODO: complete this method
-        NoteInfoManipulation usercase = new NoteEdit(api, note_info, username);
-        return usercase.ChangeNote();
+    public void EditNote(ArrayList<String>note_info, String username) {
+        NoteInfoManipulation usecase = new NoteEdit(api, note_info, username);
+        presenter.setState(usecase.ChangeNote());
+    }
+
+    public void SearchNote(ArrayList<String>note_info, String username){
+        ArrayList<Notes> transferred_notes = new ArrayList<>();
+        NoteInfoManipulation usecase = new NoteSearch(api, note_info, username);
+        ArrayList<String[]> all_notes =  usecase.SearchNotes(note_info.get(0));
+        for (String[] item : all_notes){
+            NoteTransformation transformation = new NoteTransformation(item);
+            transferred_notes.add(transformation.Transform());
+        }
+        presenter.setState(transferred_notes.size()>0);
+        presenter.addInfo(transferred_notes);
     }
 
 
-    public boolean DeleteNote(ArrayList<String>note_info, String username) {
-        //TODO: complete this method
-        NoteInfoManipulation usercase = new NoteDeletion(api, note_info, username);
-        return usercase.ChangeNote();
+    public void DeleteNote(ArrayList<String>note_info, String username) {
+        NoteInfoManipulation usecase = new NoteDeletion(api, note_info, username);
+        presenter.setState(usecase.ChangeNote());
     }
 }

@@ -10,10 +10,8 @@ public class NoteCreation extends NoteInfoManipulation {
         super(api, note_info, username);
     }
 
-
     @Override
     public boolean ChangeNote() {
-        //TODO: Create a new note.
         Notes note = new Notes();
 
         ArrayList<String> note_info = getNoteInfo();
@@ -31,7 +29,6 @@ public class NoteCreation extends NoteInfoManipulation {
         String content = note.getContent();
         String[] comment = note.getComment();
         String reference = note.getReference();
-        double rate = note.getUser_rate();
         String date = note.toString();
 
         String[] s = new String[6];
@@ -45,27 +42,4 @@ public class NoteCreation extends NoteInfoManipulation {
         NoteInfoDataAccess api = getApi();
         return api.create(s); /*Return whether the new created note has been uploaded successfully.*/
     }
-
-
-
-
-
-
-
-    //    public Notes createNote(String category, String title, String date, String content, String references, boolean editable, boolean referable, boolean commentable) {
-//
-//        // Create objects based on the note type
-//        Notes note = new NotesFactory().getNote(category);
-//
-//        note.setCategory(category);
-//        note.setTitle(title);
-//        note.setCreated_date(date);
-//        note.setContent(new StringBuilder(content));
-//        note.setReference(references);
-//        note.setEditable(editable);
-//        note.setReferable(referable);
-//        note.setCommentable(commentable);
-//
-//        return note;
-//    }
 }

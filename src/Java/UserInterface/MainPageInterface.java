@@ -95,53 +95,18 @@ public class MainPageInterface {
         }
         note_info.add(references);
 
-//        System.out.println("Is your note editable for other users? Yes/No");
-//        boolean e = true;
-//        boolean editable = false;
-//        while (e) {
-//            String editableFlag = s.nextLine();
-//            if (editableFlag.equals("Yes")) {
-//                editable = true;
-//                e = false;
-//            } else if (editableFlag.equals("No")) {
-//                e = false;
-//            } else {
-//                System.out.println("Please type in Yes or No.");
-//            }
-//        }
-//        note_ability.add(editable);
-
-//        System.out.println("Is your note referable for other users? Yes/No");
-//        boolean referable = true;
-//        while (referable) {
-//            String referableFlag = s.nextLine();
-//            if (referableFlag.equals("Yes")) {
-//                referable = true;
-//            } else if (referableFlag.equals("No")) {
-//                referable = false;
-//            } else {
-//                System.out.println("Please type in Yes or No.");
-//            }
-//        }
-//        note_ability.add(referable);
-//        form.setReferable(false);
-        /*
-        Deleted "Is this note commentable?" We decide that notes are always commentable.
-        */
-
         // TODO: complete the decode method
         NoteInfoController nic = new NoteInfoController(username,1, note_info, presenter);
         nic.decode();
     }
 
     public void EditNote() {
-        // TODO: implement this method
         ArrayList<String> note_info = new ArrayList<>();
         NoteInfoDataAccess access = new NoteInfoAccess();
         System.out.println("Type in the title of the note that you would like to edit.");
        /*Still need to check whether the note actually exists in the database.*/
         String title = s.nextLine();
-        ArrayList<String[]> list_of_search = access.search(title);
+        ArrayList<String[]> list_of_search = access.search(title, username);
         if (list_of_search.size() != 0){
         System.out.println("We found the following notes that fit your title.");
         System.out.println(toString(list_of_search));
@@ -159,11 +124,27 @@ public class MainPageInterface {
         nic.decode();
     }
 
+    public void SearchNote(){
+        //TODO: implement this
+    }
+
     public void DeleteNote() {
         ArrayList<String> note_info = new ArrayList<>();
+        NoteInfoDataAccess access = new NoteInfoAccess();
+        //String username =  username;
         // TODO: implement this method
+        System.out.println("Which note would you like to delete?");
+        String note_title = s.nextLine();
+        ArrayList<String[]> info = access.search(note_title,username);
+        if(info.size() > 0){
+            System.out.println("here is the list of note");
+            System.out.println(toString(info));
+            System.out.println("which note would you like to delete,type an int to choose one");
+            int choice = s.nextInt();
+            Collections.addAll(note_info, info.get(choice));
 
-
+        }
+        else{System.out.println("Sorry you do not have access to the note or we can not find such note");}
         NoteInfoController nic = new NoteInfoController(username,3, note_info, presenter);
         nic.decode();
 

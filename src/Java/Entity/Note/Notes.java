@@ -9,7 +9,6 @@ public class Notes {
      * @param author: Author of the note, usually the username who logged in first and created it.
      * @param title: Title of the note
      * @param content: Content of the note
-     * @param user_rate: Rate of the note
      * @param comment: comment of the rate
      * @param reference: reference of the rate
      * */
@@ -17,9 +16,7 @@ public class Notes {
     private String author;
     private String title;
     private String content;
-    private double user_rate;
     private String date;
-
     private String[] comment;
     private String reference;
 
@@ -30,7 +27,6 @@ public class Notes {
         this.title = title;
         this.author = author;
         this.content = content;
-        this.user_rate = 0.0;
         this.comment = null;
         this.reference = null;
         this.date = date;
@@ -71,14 +67,6 @@ public class Notes {
         this.content = content;
     }
 
-    public double getUser_rate() {
-        return user_rate;
-    }
-
-    public void setUser_rate(double user_rate) {
-        this.user_rate = user_rate;
-    }
-
     public String[] getComment() {
         return comment;
     }
@@ -100,7 +88,6 @@ public class Notes {
         return "Category: " + category + '\n' +
                 "Title: " + title + '\n' +
                 "Content: " + content + '\n' +
-                "Rate: " + user_rate + '\n' +
                 "Comment: " + Arrays.toString(comment) + '\n' +
                 "Reference: " + reference + '\n';
     }

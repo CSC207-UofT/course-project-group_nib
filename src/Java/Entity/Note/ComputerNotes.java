@@ -23,9 +23,6 @@ public class ComputerNotes extends Notes {
         super();
     }
 
-    //category, title, content, user_rate, comment, reference
-    //String category, String title, String content, double user_rate, String[] comment, String[] reference,
-
     public void setCodeType(String codeType){
         this.codeType = codeType;
     }
