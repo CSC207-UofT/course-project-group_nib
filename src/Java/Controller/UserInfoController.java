@@ -1,5 +1,6 @@
 package Java.Controller;
 
+import Java.Data.UserInfoTable.UserInfoAccess;
 import Java.UseCase.UserInfo.UserAuthentication;
 import Java.UseCase.UserInfo.UserCreation;
 import Java.UseCase.UserInfo.UserInfoManipulation;
@@ -8,10 +9,15 @@ public class UserInfoController{
     private final boolean is_login;
     private final String username;
     private final String password;
+    private final UserInfoPresenter presenter;
+    private final UserInfoAccess api;
+
     public UserInfoController(boolean is_login, String username, String password) {
         this.username = username;
         this.password = password;
         this.is_login = is_login;
+        presenter = new UserInfoPresenter();
+        api = new UserInfoAccess();
     }
 
     public UserInfoPresenter decode(){
@@ -23,13 +29,25 @@ public class UserInfoController{
     }
 
     public UserInfoPresenter registerUser(String username, String password) {
-        UserInfoManipulation register = new UserCreation(username, password);
-        return (UserInfoPresenter) register.manipulate();
+        UserInfoManipulation register = new UserCreation(presenter, api, username, password);
+        register.manipulate();
+        return presenter;
     }
 
     public UserInfoPresenter loginUser(String username, String password) {
-        UserInfoManipulation login = new UserAuthentication(username, password);
-        return (UserInfoPresenter) login.manipulate();
+        UserInfoManipulation login = new UserAuthentication(presenter, api, username, password);
+        login.manipulate();
+        return presenter;
 
     }
+
+//    -------------------A simple test here-----------------------
+//    public UserInfoPresenter getPresenter(){
+//        return this.presenter;
+//    }
+//    public static void main(String[] args) {
+//        UserInfoController uic = new UserInfoController(false, "admini", "12345");
+//        System.out.println(uic.decode().returnUser());
+//        System.out.println(uic.getPresenter().returnUser());
+//    }
 }

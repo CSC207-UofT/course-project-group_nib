@@ -10,8 +10,7 @@ public class NoteCreation {
     public NoteCreation() {
     }
 
-    public Notes createNote(String category, String title, String date, String content,
-                            String references, boolean editable, boolean referable, boolean commentable) {
+    public Notes createNote(String category, String title, String date, String content, String references, boolean editable, boolean referable, boolean commentable) {
 
         // Create objects based on the note type
         Notes note = new NotesFactory().getNote(category);
