@@ -21,43 +21,61 @@ public class CreatNotes {public static void main(String[] args) {
     private static void placeComponents(JPanel panel) {
 
         panel.setLayout(null);
-        JLabel titleLabel = new JLabel("Title:");
+        JLabel titleLabel = new JLabel("Username:");
         titleLabel.setBounds(20,40,80,25);
         panel.add(titleLabel);
 
         panel.setLayout(null);
-        JLabel authorLabel = new JLabel("Author:");
-        authorLabel.setBounds(20,140,80,25);
+        JLabel authorLabel = new JLabel("Category:");
+        authorLabel.setBounds(20,80,80,25);
         panel.add(authorLabel);
 
         panel.setLayout(null);
-        JLabel categoryLabel = new JLabel("Category:");
-        categoryLabel.setBounds(20,240,80,25);
-        panel.add(categoryLabel);
+        JLabel TitleLabel = new JLabel("Title:");
+        TitleLabel.setBounds(20,120,80,25);
+        panel.add(TitleLabel);
+
+        panel.setLayout(null);
+        JLabel dateLabel = new JLabel("Date:");
+        dateLabel.setBounds(20,160,80,25);
+        panel.add(dateLabel);
 
         panel.setLayout(null);
         JLabel ContentLabel = new JLabel("Content:");
-        ContentLabel.setBounds(20,340,80,25);
+        ContentLabel.setBounds(20,200,80,25);
         panel.add(ContentLabel);
 
+        panel.setLayout(null);
+        JLabel refLabel = new JLabel("Reference:");
+        refLabel.setBounds(20,650,80,25);
+        panel.add(refLabel);
+
+
+        JTextField UsernameText = new JTextField(30);
+        UsernameText.setBounds(100,40,200,30);
+        panel.add(UsernameText);
+
+        JTextField CategoryText = new JTextField(30);
+        CategoryText.setBounds(100,80,200,30);
+        panel.add(CategoryText);
 
         JTextField titleText = new JTextField(30);
-        titleText.setBounds(100,40,200,30);
+        titleText.setBounds(100,120,200,30);
         panel.add(titleText);
 
-        JTextField authorText = new JTextField(30);
-        authorText.setBounds(100,140,200,30);
-        panel.add(authorText);
-
-        JTextField categoryText = new JTextField(30);
-        categoryText.setBounds(100,240,200,30);
-        panel.add(categoryText);
+        JTextField DateText = new JTextField(30);
+        DateText.setBounds(100,160,200,30);
+        panel.add(DateText);
 
         JTextField contentText = new JTextField(30);
-        contentText.setBounds(100,340,500,400);
+        contentText.setBounds(100,200,400,400);
         panel.add(contentText);
 
-        JButton createButton = new JButton("Creat");
+        JTextField ReferenceText = new JTextField(30);
+        ReferenceText.setBounds(100,650,200,30);
+        panel.add(ReferenceText);
+
+        JButton createButton = new JButton("Creat Notes");
         createButton.setBounds(800, 300, 100, 40);
         panel.add(createButton);
     }
