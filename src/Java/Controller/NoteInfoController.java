@@ -17,7 +17,7 @@ public class NoteInfoController {
     private String new_content;
 
     /**
-     * initialize username, operation, note_info anf presenter
+     * Initialize username, operation, note_info anf presenter
      * @param username username as String type
      * @param operation the operation that user chose
      * @param note_info information of note

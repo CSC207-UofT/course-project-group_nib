@@ -6,8 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class NoteInfoAccessTest {
 
@@ -42,16 +41,33 @@ public class NoteInfoAccessTest {
 
     @Test
     public void test_edit(){
-        //TODO: Implement
+        ArrayList<String[]> list = helper.helper_provideNoteInfoList();
+        NoteTableReader read = new NoteTableReader("src/Java/Data/NoteInfoTable/TestNoteInfoTable.csv");
+        String[] info_list = new String[6];
+        info_list[0] = "admin";
+        info_list[1] = "ComputerNotes";
+        info_list[2] = "test note 2";
+        info_list[3] = "2021-12-04";
+        info_list[4] = "Test note edit!";
+        info_list[5] = "https://wikipedia.com";
+        NoteInfoAccess nia = new NoteInfoAccess(read, list);
+        assertTrue(nia.edit(list, info_list, "test note 2", read));
     }
 
     @Test
     public void test_delete(){
-        //TODO: Implement
+        ArrayList<String[]> list = helper.helper_provideNoteInfoList();
+        NoteTableReader read = new NoteTableReader("src/Java/Data/NoteInfoTable/TestNoteInfoTable.csv");
+        NoteInfoAccess nia = new NoteInfoAccess(read, list);
+        assertTrue(nia.delete(list, "test note 2", read));
     }
 
     @Test
     public void test_search(){
-        //TODO: Implement
+        ArrayList<String[]> list = helper.helper_provideNoteInfoList();
+        NoteTableReader read = new NoteTableReader("src/Java/Data/NoteInfoTable/TestNoteInfoTable.csv");
+        NoteInfoAccess nia = new NoteInfoAccess(read, list);
+        assertEquals(0, nia.search(list, "test note 1", "antioxidant").size());
+        assertTrue(nia.search(list, "test note 1", "admin").size() > 0);
     }
 }

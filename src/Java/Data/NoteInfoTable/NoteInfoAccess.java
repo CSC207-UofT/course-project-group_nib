@@ -141,7 +141,7 @@ public class NoteInfoAccess implements NoteInfoDataAccess {
     public boolean create(ArrayList<String[]> list, String[] note, NoteTableReader read) {
         /*Add the new info_list to the Note Info Table database.*/
 
-        boolean flag = title_not_duplicated(note[2]);
+        boolean flag = title_not_duplicated(list, note[2]);
 
         if (flag){
             list.add(note);
@@ -158,7 +158,7 @@ public class NoteInfoAccess implements NoteInfoDataAccess {
      * @param title the title of note
      * @param read NoteTableReader
      */
-    public void delete(ArrayList<String[]> list, String title, NoteTableReader read) {
+    public boolean delete(ArrayList<String[]> list, String title, NoteTableReader read) {
         /*Remove the note from csv file.*/
         int count = 0;
         for (String[] item : list){
@@ -168,7 +168,7 @@ public class NoteInfoAccess implements NoteInfoDataAccess {
             count ++;
         }
         list.remove(count);
-        read.updateNoteInfoList(list, "src/Java/Data/NoteInfoTable/TestNoteInfoTable.csv");
+        return read.updateNoteInfoList(list, "src/Java/Data/NoteInfoTable/TestNoteInfoTable.csv");
     }
 
     /**
