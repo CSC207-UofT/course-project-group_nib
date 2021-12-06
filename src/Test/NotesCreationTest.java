@@ -26,7 +26,7 @@ public class NotesCreationTest {
         NoteTableReader ntr = new NoteTableReader("src/Java/Data/NoteInfoTable/TestNoteInfoTable.csv");
         NoteInfoDataAccess api = new NoteInfoAccess(ntr, note_info_list);
         NoteCreation noteCreation = new NoteCreation(api, note_info_1, "TestUser");
-        assertFalse(noteCreation.ChangeNote());
+        assertFalse(noteCreation.CreateNotes());
     }
 
 

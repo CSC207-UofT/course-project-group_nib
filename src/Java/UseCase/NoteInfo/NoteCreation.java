@@ -23,7 +23,7 @@ public class NoteCreation extends NoteInfoManipulation {
      * @return return boolean value, true if changed successfully, false otherwise
      */
     @Override
-    public boolean ChangeNote() {
+    public boolean CreateNotes() {
         Notes note = new Notes();
 
         ArrayList<String> note_info = getNoteInfo();
@@ -39,7 +39,6 @@ public class NoteCreation extends NoteInfoManipulation {
         String author = note.getAuthor();
         String category = note.getCategory();
         String content = note.getContent();
-//        String[] comment = note.getComment();
         String reference = note.getReference();
         String date = note.getDate();
 
