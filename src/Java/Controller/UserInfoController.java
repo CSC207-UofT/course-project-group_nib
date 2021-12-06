@@ -40,14 +40,4 @@ public class UserInfoController{
         return presenter;
 
     }
-
-//    -------------------A simple test here-----------------------
-//    public UserInfoPresenter getPresenter(){
-//        return this.presenter;
-//    }
-//    public static void main(String[] args) {
-//        UserInfoController uic = new UserInfoController(false, "admini", "12345");
-//        System.out.println(uic.decode().returnUser());
-//        System.out.println(uic.getPresenter().returnUser());
-//    }
 }

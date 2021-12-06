@@ -3,9 +3,6 @@ package Java.Main;
 import Java.UserInterface.CommandLineInterface;
 import Java.UserInterface.MainPageInterface;
 
-//import java.util.HashMap;
-//import java.util.Map;
-//import java.util.Scanner;
 public class ProjectMain {
 
     public static void main(String[] args) {

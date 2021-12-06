@@ -31,8 +31,11 @@ public class NoteInfoAccessTest {
         note_2[4] = "Test content 222!";
         note_2[5] = "https://wikipedia.com";
         NoteTableReader ntr = new NoteTableReader("src/Java/Data/NoteInfoTable/TestNoteInfoTable.csv");
-        NoteInfoAccess nia = new NoteInfoAccess("src/Java/Data/NoteInfoTable/TestNoteInfoTable.csv", note_info_list);
+        NoteInfoAccess nia = new NoteInfoAccess(ntr, note_info_list);
         assertTrue(nia.create(note_info_list, note_2, ntr)); //Success note creation
+        ArrayList<String[]> list = helper.helper_provideNoteInfoList();
+        for (String[] item : list){
+        assertTrue(nia.create(note_info_list, item, ntr));}
         assertFalse(nia.create(note_info_list, note_1, ntr)); //Failed note creation
 
     }
