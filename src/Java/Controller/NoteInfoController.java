@@ -5,7 +5,9 @@ import Java.Entity.Note.Notes;
 import Java.UseCase.NoteInfo.*;
 
 import java.util.ArrayList;
-
+/**
+ * controlling note data from user input to use case
+ */
 public class NoteInfoController {
     private final String username;
     private final int operation;
@@ -14,6 +16,13 @@ public class NoteInfoController {
     private final NoteInfoAccess api;
     private String new_content;
 
+    /**
+     * initialize username, operation, note_info anf presenter
+     * @param username username as String type
+     * @param operation the operation that user chose
+     * @param note_info information of note
+     * @param presenter the present state
+     */
     public NoteInfoController(String username, int operation, ArrayList<String> note_info,
                               NoteInfoPresenter presenter) {
         this.username = username;
@@ -25,7 +34,9 @@ public class NoteInfoController {
         decode();
     }
 
-
+    /**
+     * match operation to their related function
+     */
     public void decode() {
         switch (operation) {
             case 1 : CreateNote(this.note_info, this.username);
@@ -39,21 +50,37 @@ public class NoteInfoController {
         }
     }
 
-
+    /**
+     * create an instance of NoteInfoManipulation to create a note
+     * @param note_info information of a note
+     * @param username name of user
+     */
     public void CreateNote(ArrayList<String>note_info, String username) {
         NoteInfoManipulation use_case = new NoteCreation(api, note_info, username);
         presenter.setState(use_case.ChangeNote());
     }
 
+
     public void setNew_content(String nc){
         new_content = nc;
     }
 
+
+    /**
+     * create an instance of NoteInfoManipulation to edit a note
+     * @param note_info information of a note
+     * @param username name of user
+     */
     public void EditNote(ArrayList<String>note_info, String username) {
         NoteInfoManipulation use_case = new NoteEdit(api, note_info, username);
         presenter.setState(use_case.ChangeNote(new_content));
     }
 
+    /**
+     * create an instance of NoteInfoManipulation to edit a note
+     * @param note_info information of a note
+     * @param username name of user
+     */
     public void SearchNote(ArrayList<String>note_info, String username){
         ArrayList<Notes> transferred_notes = new ArrayList<>();
         NoteInfoManipulation use_case = new NoteSearch(api, note_info, username);
@@ -69,7 +96,11 @@ public class NoteInfoController {
         //We need to transform each Notes object in transferred_notes to ArrayList<String>
     }
 
-
+    /**
+     * create an instance of NoteInfoManipulation to edit a note
+     * @param note_info information of a note
+     * @param username name of user
+     */
     public void DeleteNote(ArrayList<String>note_info, String username) {
         NoteInfoManipulation use_case = new NoteDeletion(api, note_info, username);
         presenter.setState(use_case.ChangeNote());

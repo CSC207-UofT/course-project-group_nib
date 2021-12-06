@@ -7,10 +7,15 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-
+/**
+ * access the database
+ */
 public class NoteTableReader {
     private ArrayList<String[]> note_info_list;
 
+    /**
+     * read the csv file and split the item by comma
+     */
     public NoteTableReader(){
         note_info_list = new ArrayList<>();
 
@@ -29,6 +34,11 @@ public class NoteTableReader {
     }
 
     //Polymorphism on constructor for testing only.
+
+    /**
+     * read the csv file with given filename and split the item by comma
+     * @param filename the name of file as String type
+     */
     public NoteTableReader(String filename){
         note_info_list = new ArrayList<>();
 
@@ -46,10 +56,19 @@ public class NoteTableReader {
         }
     }
 
+    /**
+     * get the note_info_list with items of the note information
+     * @return an ArrayList of String[] contains items of the note information
+     */
     public ArrayList<String[]> getNoteInfoList() {
         return note_info_list;
     }
 
+    /**
+     * update the note_info_list
+     * @param NoteInfoList a ArrayList of String[] of note information
+     * @return return a boolean value true for successfully updated
+     */
     public boolean updateNoteInfoList(ArrayList<String[]> NoteInfoList){
         note_info_list = NoteInfoList;
         UpdateTable();
@@ -57,6 +76,9 @@ public class NoteTableReader {
     }
 
 
+    /**
+     * update the database
+     */
     public void UpdateTable(){
         try {
             File csv = new File("src/Java/Data/NoteInfoTable/NoteInfoTable.csv");
@@ -81,12 +103,23 @@ public class NoteTableReader {
     }
     
     /*Overloading methods for testing.*/
+
+    /**
+     * Overloading methods for testing
+     * @param NoteInfoList a ArrayList of String[] of note information
+     * @param filename the path of csv file
+     * @return a boolean value true represents update successfully
+     */
     public boolean updateNoteInfoList(ArrayList<String[]> NoteInfoList, String filename){
         note_info_list = NoteInfoList;
         UpdateTable(filename);
         return true;
     }
 
+    /**
+     * update the database
+     * @param filename the pass of csv file
+     */
     public void UpdateTable(String filename){
         try {
             File csv = new File(filename);
@@ -109,8 +142,11 @@ public class NoteTableReader {
         }
         System.out.println("The TestNoteInfoTable.csv has been updated.");
     }
-    
 
+
+    /**
+     * main method
+     */
     public static void main(String[] args){
         NoteTableReader ntr = new NoteTableReader();
         ArrayList<String[]> nil = ntr.getNoteInfoList();

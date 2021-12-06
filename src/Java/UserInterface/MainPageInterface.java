@@ -5,12 +5,19 @@ import Java.Controller.NoteInfoPresenter;
 
 import java.util.*;
 
+/**
+ * the command line User Interface for operate note
+ */
 public class MainPageInterface {
     private final Scanner s;
     private final String username;
     private boolean is_select;
     private final NoteInfoPresenter presenter;
 
+    /**
+     * initialize username, is_select, presenter and create a scanner s
+     * @param username username as String type
+     */
     public MainPageInterface(String username) {
         s = new Scanner(System.in);
         is_select = false;
@@ -19,6 +26,9 @@ public class MainPageInterface {
         SelectFunction();
     }
 
+    /**
+     * command line for selecting operations
+     */
     public void SelectFunction() {
         String str;
         while (!is_select) {
@@ -42,6 +52,10 @@ public class MainPageInterface {
         }
     }
 
+    /**
+     * the menu of operating note
+     * @return return user's input
+     */
     public String Menu() {
         System.out.println("Which action would you like to take next?");
         System.out.println("Enter 1 to create a new note");
@@ -53,6 +67,9 @@ public class MainPageInterface {
     }
 
 
+    /**
+     * command line for setting information to note
+     */
     public void CreateNote() {
         ArrayList<String> note_info = new ArrayList<>();
 
@@ -95,6 +112,9 @@ public class MainPageInterface {
         nic.decode();
     }
 
+    /**
+     * command line for edit note
+     */
     public void EditNote() {
         ArrayList<String> note_info = new ArrayList<>();
         System.out.println("Type in the title of the note that you would like to edit.");
@@ -124,6 +144,9 @@ public class MainPageInterface {
         }
     }
 
+    /**
+     * command line for search note
+     */
     public void SearchNote() {
         ArrayList<String> note_info = new ArrayList<>();
         System.out.println("Please type in the title of the note that your are looking for.");
@@ -152,6 +175,9 @@ public class MainPageInterface {
         }else{System.out.println("Sorry! We can't find anything that matches. Please try again later.");}
     }
 
+    /**
+     * command line for delete note
+     */
     public void DeleteNote() {
         ArrayList<String> note_info = new ArrayList<>();
         System.out.println("Please type in the title of the note that you would like to delete.");
@@ -175,6 +201,12 @@ public class MainPageInterface {
     }
 
     /*A helper function below*/
+
+    /**
+     * helper function
+     * @param array ArrayList of String[]
+     * @return return a String of note information
+     */
     public String ALtoString(ArrayList<String[]> array){
         StringBuilder s = new StringBuilder();
         int i = 0;
@@ -192,8 +224,13 @@ public class MainPageInterface {
         return s.toString();
     }
 
+    /**
+     * Convert the object array list to an array list of string array
+     * @param obj object array list
+     * @return return an array list of string array
+     */
     public ArrayList<String[]> toAL_StringArray(ArrayList<ArrayList<String[]>> obj){
-        /*Convert the object array list to an array list of string array.*/
+
             ArrayList<String[]> all = new ArrayList<>();
             for (ArrayList<String[]> item : obj){
                 all.addAll(item);

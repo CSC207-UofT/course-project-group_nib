@@ -8,10 +8,15 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-
+/**
+ * access the database
+ */
 public class UserTableReader {
     Map<String ,String> user_info_map;
 
+    /**
+     * read the csv file and split the item by comma
+     */
     public UserTableReader(){
         user_info_map = new HashMap<>();
 
@@ -30,6 +35,11 @@ public class UserTableReader {
     }
 
     //Polymorphism on Constructor for testing methods without affecting the UerInfoTable.csv
+
+    /**
+     * read the csv file with given filename and split the item by comma
+     * @param filename the name of file as String type
+     */
     public UserTableReader(String filename){
         user_info_map = new HashMap<>();
 
@@ -47,6 +57,12 @@ public class UserTableReader {
         }
     }
 
+    /**
+     * compare the user's password and the password inputted
+     * @param user user as String type
+     * @param password password as String type
+     * @return return a boolean value, true if password match, false if not match
+     */
     public boolean UserMatch(String user, String password){
         if(user_info_map.containsKey(user)) {
             return user_info_map.get(user).equals(password);
@@ -55,6 +71,12 @@ public class UserTableReader {
         }
     }
 
+    /**
+     * add a new user
+     * @param user user as String type
+     * @param password password as String type
+     * @return return a boolean value, true if user added, false if not added
+     */
     public boolean AddNewUser(String user, String password){
         boolean duplicated = user_info_map.containsKey(user);
         if (!duplicated) {
@@ -67,6 +89,10 @@ public class UserTableReader {
     }
 
     //Overloading this method with a specified testing TableReader for testing.
+
+    /**
+     * Overloading this method with a specified testing TableReader for testing.
+     */
     public boolean AddNewUser(String user, String password, UserTableReader tr){
         boolean duplicated = tr.user_info_map.containsKey(user);
         if (!duplicated) {
@@ -78,7 +104,11 @@ public class UserTableReader {
         }
     }
 
-
+    /**
+     * update the database
+     * @param user user as String type
+     * @param password password as String type
+     */
     public void UpdateTable(String user, String password){
         try {
             File csv = new File("src/Java/Data/UserInfoTable/UserInfoTable.csv");
@@ -93,6 +123,9 @@ public class UserTableReader {
         }
     }
 //Overloading UpdateTable method just for testing.
+    /**
+     * Overloading UpdateTable method just for testing.
+     */
     public void UpdateTable(String user, String password, String filename){
         try {
             File csv = new File(filename);
@@ -108,7 +141,9 @@ public class UserTableReader {
         System.out.println("The TestOnly.csv has been updated.");
     }
 
-
+    /**
+     * main method
+     */
     public static void main(String[] args) {
         // Simple testing
         UserTableReader info = new UserTableReader();

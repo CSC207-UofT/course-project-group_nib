@@ -3,13 +3,25 @@ package Java.UseCase.NoteInfo;
 import Java.Entity.Note.Notes;
 
 import java.util.ArrayList;
-
+/**
+ * create a note
+ */
 public class NoteCreation extends NoteInfoManipulation {
 
+    /**
+     * calling super constructor
+     * @param api application programing interface
+     * @param note_info an ArrayList of String contains information in each note
+     * @param username username of the manipulator
+     */
     public NoteCreation(NoteInfoDataAccess api, ArrayList<String> note_info, String username) {
         super(api, note_info, username);
     }
 
+    /**
+     * Create new note by using note_info ArrayList, return whether note have been successfully uploaded
+     * @return return boolean value, true if changed successfully, false otherwise
+     */
     @Override
     public boolean ChangeNote() {
         Notes note = new Notes();

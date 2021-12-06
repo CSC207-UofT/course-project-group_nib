@@ -5,17 +5,26 @@ import Java.Controller.UserInfoPresenter;
 
 import java.util.Scanner;
 
+/**
+ * the command line User Interface for user login and register
+ */
 public class CommandLineInterface {
     private boolean is_login;
     private final Scanner s;
     private String username;
     private String password;
 
+    /**
+     * initialize is_login and scanner s
+     */
     public CommandLineInterface(){
         is_login = false;
         s = new Scanner(System.in);
     }
 
+    /**
+     * command line for user authentication
+     */
     public void userAuthentication(){
         System.out.println("Welcome to Group_NiB's resource sharing system!");
 
@@ -38,6 +47,9 @@ public class CommandLineInterface {
         username = presenter.returnUser();
     }
 
+    /**
+     * command line for login or register
+     */
     public void getUserDecision(){
         System.out.println("Please type 'login' or 'register' to manage your account, " +
                 "or any other keys to exit");
@@ -61,6 +73,10 @@ public class CommandLineInterface {
         }
     }
 
+    /**
+     * getter method to get username
+     * @return return the username as String type
+     */
     public String getUsername(){
         return username;
     }

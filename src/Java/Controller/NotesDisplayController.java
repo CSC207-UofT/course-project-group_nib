@@ -7,16 +7,26 @@ import Java.UseCase.NoteInfo.NoteTransformation;
 
 import java.util.ArrayList;
 
+/**
+ * displaying the presenter (current state)
+ */
 public class NotesDisplayController {
     private final NoteInfoPresenter presenter;
     private final NoteInfoAccess api;
 
+    /**
+     * initialize presenter
+     * @param presenter contains the states and information
+     */
     public NotesDisplayController(NoteInfoPresenter presenter) {
         this.presenter = presenter;
         api = new NoteInfoAccess();
 
     }
 
+    /**
+     * get all notes and set presenter
+     */
     public void getAllNotes(){
         ArrayList<Notes> transferred_notes = new ArrayList<>();
         NoteCollection collection = new NoteCollection(api);
