@@ -5,7 +5,7 @@ import Java.UseCase.NoteInfo.NoteInfoOutput;
 import java.util.ArrayList;
 
 public class NoteInfoPresenter implements NoteInfoOutput {
-    private ArrayList<Object> all_info;
+    private final ArrayList<ArrayList<String[]>> all_info;
     private boolean action_state;
 
     public NoteInfoPresenter(){
@@ -17,8 +17,7 @@ public class NoteInfoPresenter implements NoteInfoOutput {
         this.action_state = state;
     }
 
-    public void addInfo(Object any){
-        all_info.add(any);
+    public void addInfo(ArrayList<String[]> any){all_info.add(any);
     }
 
     @Override
@@ -27,7 +26,7 @@ public class NoteInfoPresenter implements NoteInfoOutput {
     }
 
     @Override
-    public ArrayList<Object> getAllInfo() {
+    public ArrayList<ArrayList<String[]>> getAllInfo() {
         return all_info;
     }
 }

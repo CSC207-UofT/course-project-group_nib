@@ -3,8 +3,8 @@ package Java.UseCase.NoteInfo;
 import Java.Entity.Note.Notes;
 
 public class NoteTransformation {
-    private String[] note_info;
-    private Notes note;
+    private final String[] note_info;
+    private final Notes note;
 
     public NoteTransformation(String[] note_information){
         note_info = note_information;

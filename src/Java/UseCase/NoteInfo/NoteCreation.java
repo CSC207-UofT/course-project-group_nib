@@ -27,9 +27,9 @@ public class NoteCreation extends NoteInfoManipulation {
         String author = note.getAuthor();
         String category = note.getCategory();
         String content = note.getContent();
-        String[] comment = note.getComment();
+//        String[] comment = note.getComment();
         String reference = note.getReference();
-        String date = note.toString();
+        String date = note.getDate();
 
         String[] s = new String[6];
         s[0] = author;

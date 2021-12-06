@@ -3,7 +3,7 @@ package Java.UseCase.NoteInfo;
 import java.util.ArrayList;
 
 public class NoteCollection {
-    private NoteInfoDataAccess api;
+    private final NoteInfoDataAccess api;
     public NoteCollection(NoteInfoDataAccess api){
         this.api = api;
     }

@@ -14,8 +14,8 @@ public class NoteInfoAccess implements NoteInfoDataAccess {
     }
 
     /*Polymorphism on constructor just for testing.*/
-    public NoteInfoAccess(String filename, ArrayList<String[]> list){
-        ntr = new NoteTableReader(filename);
+    public NoteInfoAccess(NoteTableReader n, ArrayList<String[]> list){
+        ntr = n;
         nil = list;
     }
 
@@ -35,7 +35,7 @@ public class NoteInfoAccess implements NoteInfoDataAccess {
 
 
     @Override
-    public void delete(String title) {
+    public boolean delete(String title) {
         /*Remove the note from csv file.*/
         int count = 0;
         for (String[] item : nil){
@@ -45,7 +45,7 @@ public class NoteInfoAccess implements NoteInfoDataAccess {
             count ++;
         }
         nil.remove(count);
-        ntr.updateNoteInfoList(nil);
+        return ntr.updateNoteInfoList(nil);
     }
 
     @Override
@@ -97,7 +97,7 @@ public class NoteInfoAccess implements NoteInfoDataAccess {
 
         if (flag){
             list.add(note);
-            read.updateNoteInfoList(list);
+            read.updateNoteInfoList(list, "src/Java/Data/NoteInfoTable/TestNoteInfoTable.csv");
             return true;
         }
         return false;
@@ -115,7 +115,7 @@ public class NoteInfoAccess implements NoteInfoDataAccess {
             count ++;
         }
         list.remove(count);
-        read.updateNoteInfoList(list);
+        read.updateNoteInfoList(list, "src/Java/Data/NoteInfoTable/TestNoteInfoTable.csv");
     }
 
 
