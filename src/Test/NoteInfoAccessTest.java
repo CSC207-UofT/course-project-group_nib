@@ -12,6 +12,7 @@ public class NoteInfoAccessTest {
 
     @Test
     public void test_create(){
+        /*Test whether the new note can be successfully created and updated to the test information file.*/
         ArrayList<String[]> note_info_list = new ArrayList<>();
         String[] note_1 = new String[6];
         String[] note_2 = new String[6];
@@ -41,6 +42,7 @@ public class NoteInfoAccessTest {
 
     @Test
     public void test_edit(){
+        /*Test whether the note can be edited from the test information file.*/
         ArrayList<String[]> list = helper.helper_provideNoteInfoList();
         NoteTableReader read = new NoteTableReader("src/Java/Data/NoteInfoTable/TestNoteInfoTable.csv");
         String[] info_list = new String[6];
@@ -52,18 +54,22 @@ public class NoteInfoAccessTest {
         info_list[5] = "https://wikipedia.com";
         NoteInfoAccess nia = new NoteInfoAccess(read, list);
         assertTrue(nia.edit(list, info_list, "test note 2", read));
+        assertFalse(nia.edit(list, info_list, "whatever title", read));
     }
 
     @Test
     public void test_delete(){
+        /*Test whether the note can be deleted from the test information file.*/
         ArrayList<String[]> list = helper.helper_provideNoteInfoList();
         NoteTableReader read = new NoteTableReader("src/Java/Data/NoteInfoTable/TestNoteInfoTable.csv");
         NoteInfoAccess nia = new NoteInfoAccess(read, list);
         assertTrue(nia.delete(list, "test note 2", read));
+        assertFalse(nia.delete(list, "not exist", read));
     }
 
     @Test
     public void test_search(){
+        /*Test whether the method can successfully search for a list of notes that match the input title.*/
         ArrayList<String[]> list = helper.helper_provideNoteInfoList();
         NoteTableReader read = new NoteTableReader("src/Java/Data/NoteInfoTable/TestNoteInfoTable.csv");
         NoteInfoAccess nia = new NoteInfoAccess(read, list);
