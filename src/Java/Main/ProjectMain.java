@@ -1,7 +1,7 @@
 package Java.Main;
 
-import Java.UserInterface.CommandLineInterface;
-import Java.UserInterface.MainPageInterface;
+import Java.UserInterface.CommandLineUI.CommandLineInterface;
+import Java.UserInterface.CommandLineUI.MainPageInterface;
 
 public class ProjectMain {
     /**

@@ -1,10 +1,9 @@
-package Java.UI;
+package Java.UserInterface.GUI;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
-import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 public class CreatNotes {public static void main(String[] args) {
