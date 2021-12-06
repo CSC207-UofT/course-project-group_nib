@@ -2,7 +2,8 @@ package Java.UserInterface.GUI;
 
 import javax.swing.*;
 
-public class RegisterPage {public static void main(String[] args) {
+public class RegisterPage {
+    public static void main(String[] args) {
     JFrame frame = new JFrame("Register Page");
     // Setting the width and height of frame
     frame.setSize(500, 500);

@@ -6,7 +6,8 @@ import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-public class CreatNotes {public static void main(String[] args) {
+public class CreateNotes {
+    public static void main(String[] args) {
     JFrame frame = new JFrame("Notes Create");
     // Setting the width and height of frame
     frame.setSize(1000, 1000);
@@ -74,7 +75,7 @@ public class CreatNotes {public static void main(String[] args) {
         ReferenceText.setBounds(100,650,200,30);
         panel.add(ReferenceText);
 
-        JButton createButton = new JButton("Creat Notes");
+        JButton createButton = new JButton("Create Notes");
         createButton.setBounds(800, 300, 100, 40);
         panel.add(createButton);
     }
