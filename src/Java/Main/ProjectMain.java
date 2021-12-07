@@ -5,7 +5,7 @@ import Java.UserInterface.CommandLineUI.MainPageInterface;
 
 public class ProjectMain {
     /**
-     * the main method of this project
+     * The main method of this project. Run this file to start the programing.
      */
     public static void main(String[] args) {
         CommandLineInterface CLI = new CommandLineInterface();

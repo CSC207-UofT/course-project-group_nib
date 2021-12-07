@@ -16,6 +16,7 @@ public class MainPageInterface {
 
     /**
      * initialize username, is_select, presenter and create a scanner s
+     *
      * @param username username as String type
      */
     public MainPageInterface(String username) {
@@ -34,26 +35,32 @@ public class MainPageInterface {
         while (!is_select) {
             str = Menu();
             switch (str) {
-                case "1" : CreateNote();
-                break;
-                case "2" : EditNote();
-                break;
-                case "3" : DeleteNote();
-                break;
-                case "4" : SearchNote();
-                break;
-                case "exit" : {
+                case "1":
+                    CreateNote();
+                    break;
+                case "2":
+                    EditNote();
+                    break;
+                case "3":
+                    DeleteNote();
+                    break;
+                case "4":
+                    SearchNote();
+                    break;
+                case "exit": {
                     System.out.println("Thank you for using NB! See you later!");
                     is_select = true;
                     break;
                 }
-                default : System.out.println("Sorry, we don't understand your command.Please try again.");
+                default:
+                    System.out.println("Sorry, we don't understand your command.Please try again.");
             }
         }
     }
 
     /**
      * the menu of operating note
+     *
      * @return return user's input
      */
     public String Menu() {
@@ -109,7 +116,7 @@ public class MainPageInterface {
             }
         }
         note_info.add(references);
-        NoteInfoController nic = new NoteInfoController(username,1, note_info, presenter);
+        NoteInfoController nic = new NoteInfoController(username, 1, note_info, presenter);
         nic.decode();
     }
 
@@ -122,16 +129,29 @@ public class MainPageInterface {
         System.out.println("Type in the title of the note that you would like to edit.");
         String title = s.nextLine();
         note_info.add(title);
-        NoteInfoController nic = new NoteInfoController(username,4, note_info, presenter); //Search first...
+        NoteInfoController nic = new NoteInfoController(username, 4, note_info, presenter); //Search first...
         nic.decode();
         ArrayList<ArrayList<String[]>> search = presenter.getAllInfo();
         ArrayList<String[]> list_of_search = toAL_StringArray(search);
-        if (list_of_search.size() != 0){
+        if (list_of_search.size() != 0) {
             System.out.println("We found the following notes that fit your title.");
+            list_of_search.remove(list_of_search.size() - 1);
             System.out.println(ALtoString(list_of_search));
             System.out.println("Which one would you like to edit on? Please choose one by typing the number at front.");
-            String choose = s.nextLine();
-            int i = Integer.parseInt(choose);
+            String choice;
+            int i;
+            while (true) {
+                choice = s.nextLine();
+                if (isNumeric(choice)){
+                    i = Integer.parseInt(choice);
+                    if (i >= 0 && i < list_of_search.size()) {
+                        break;
+                    } else {
+                        System.out.println("Sorry, this note is not valid. Please try again.");
+                    }}else{
+                    System.out.println("Sorry, this note is not valid. Please try again.");
+                }
+            }
             String[] wanted = list_of_search.get(i);
             ArrayList<String> note_in = new ArrayList<>(Arrays.asList(wanted));
             presenter = new NoteInfoPresenter();
@@ -140,10 +160,9 @@ public class MainPageInterface {
             note_in.set(4, new_content);
             nic.setNew_content(new_content);
             nic.EditNote(note_in, username); //Then edit.
-            System.out.println("The note has been modified successfully.");}
-        else{
+            System.out.println("The note has been modified successfully.");
+        } else {
             System.out.println("Sorry, we don't find any notes with this title.");
-            System.out.println(presenter.getState());
         }
     }
 
@@ -162,6 +181,7 @@ public class MainPageInterface {
         ArrayList<String[]> info = toAL_StringArray(in);
         if (info.size() != 0) {
             System.out.println("We found the following notes that matches.");
+            info.remove(info.size() - 1);
             System.out.println(ALtoString(info));
             System.out.println("Do you find the one you are looking for? (Yes/No)");
             while (true) {
@@ -176,7 +196,9 @@ public class MainPageInterface {
                     System.out.println("Please type in 'Yes' or 'No' :)");
                 }
             }
-        }else{System.out.println("Sorry! We can't find anything that matches. Please try again later.");}
+        } else {
+            System.out.println("Sorry! We can't find anything that matches. Please try again later.");
+        }
     }
 
     /**
@@ -188,20 +210,37 @@ public class MainPageInterface {
         System.out.println("Please type in the title of the note that you would like to delete.");
         String note_title = s.nextLine();
         note_info.add(note_title);
-        NoteInfoController nic = new NoteInfoController(username,4, note_info, presenter); //Search first
+        NoteInfoController nic = new NoteInfoController(username, 4, note_info, presenter); //Search first
         nic.decode();
         ArrayList<ArrayList<String[]>> in = presenter.getAllInfo();
         ArrayList<String[]> info = toAL_StringArray(in);
-        if(info.size() > 0){
+        if (info.size() > 0) {
             System.out.println("We found the following notes that matches.");
+            info.remove(info.size() - 1);
             System.out.println(ALtoString(info));
             System.out.println("Which one would you like to delete? Please choose one by typing the number at front.");
-            int choice = s.nextInt();
-            Collections.addAll(note_info, info.get(choice));
-            nic.DeleteNote(note_info, username); //Then delete
+            String choice;
+            int ch;
+            while (true) {
+                choice = s.nextLine();
+                if (isNumeric(choice)){
+                    ch = Integer.parseInt(choice);
+                if (ch >= 0 && ch < info.size()) {
+                    break;
+                } else {
+                    System.out.println("Sorry, this note is not valid. Please try again.");
+                }
+                    }else{
+                    System.out.println("Sorry, this note is not valid. Please try again.");
+                }
+            }
+            String[] wanted = info.get(ch);
+            ArrayList<String> note_in = new ArrayList<>(Arrays.asList(wanted));
+            nic.DeleteNote(note_in, username); //Then delete
             System.out.println("Note has been deleted successfully!");
+        } else {
+            System.out.println("Sorry you do not have access to the note or we can not find such note.");
         }
-        else{System.out.println("Sorry you do not have access to the note or we can not find such note.");}
 
     }
 
@@ -209,13 +248,14 @@ public class MainPageInterface {
 
     /**
      * helper function
+     *
      * @param array ArrayList of String[]
      * @return return a String of note information
      */
-    public String ALtoString(ArrayList<String[]> array){
+    public String ALtoString(ArrayList<String[]> array) {
         StringBuilder s = new StringBuilder();
         int i = 0;
-        for (String[] item : array){
+        for (String[] item : array) {
             s.append(i).append(" ").append("Author: ").append(item[0]).append('\n').
                     append("Category: ").append(item[1]).append('\n').
                     append("Title: ").append(item[2]).append('\n').
@@ -231,15 +271,33 @@ public class MainPageInterface {
 
     /**
      * Convert the object array list to an array list of string array
+     *
      * @param obj object array list
      * @return return an array list of string array
      */
-    public ArrayList<String[]> toAL_StringArray(ArrayList<ArrayList<String[]>> obj){
+    public ArrayList<String[]> toAL_StringArray(ArrayList<ArrayList<String[]>> obj) {
 
-            ArrayList<String[]> all = new ArrayList<>();
-            for (ArrayList<String[]> item : obj){
-                all.addAll(item);
-                }
-            return all;
+        ArrayList<String[]> all = new ArrayList<>();
+        for (ArrayList<String[]> item : obj) {
+            all.addAll(item);
         }
+        return all;
     }
+
+    public static boolean isNumeric(String string) {
+        int intValue;
+
+        if (string == null || string.equals("")) {
+            System.out.println("Oops!");
+            return false;
+        }
+
+        try {
+            intValue = Integer.parseInt(string);
+            return true;
+        } catch (NumberFormatException e) {
+            System.out.println("Oops!");
+        }
+        return false;
+    }
+}

@@ -17,7 +17,7 @@ public class NoteInfoController {
     private String new_content;
 
     /**
-     * initialize username, operation, note_info anf presenter
+     * Initialize username, operation, note_info anf presenter
      * @param username username as String type
      * @param operation the operation that user chose
      * @param note_info information of note
@@ -57,7 +57,7 @@ public class NoteInfoController {
      */
     public void CreateNote(ArrayList<String>note_info, String username) {
         NoteInfoManipulation use_case = new NoteCreation(api, note_info, username);
-        presenter.setState(use_case.ChangeNote());
+        presenter.setState(use_case.CreateNotes());
     }
 
 
@@ -73,7 +73,7 @@ public class NoteInfoController {
      */
     public void EditNote(ArrayList<String>note_info, String username) {
         NoteInfoManipulation use_case = new NoteEdit(api, note_info, username);
-        presenter.setState(use_case.ChangeNote(new_content));
+        presenter.setState(use_case.EditNotes(new_content));
     }
 
     /**
@@ -103,6 +103,6 @@ public class NoteInfoController {
      */
     public void DeleteNote(ArrayList<String>note_info, String username) {
         NoteInfoManipulation use_case = new NoteDeletion(api, note_info, username);
-        presenter.setState(use_case.ChangeNote());
+        presenter.setState(use_case.DeleteNotes());
     }
 }

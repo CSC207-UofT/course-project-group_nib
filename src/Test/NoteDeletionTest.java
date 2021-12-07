@@ -25,6 +25,6 @@ public class NoteDeletionTest {
         note.add("Original");
         NoteInfoDataAccess api = new NoteInfoAccess(ntr, note_info);
         NoteDeletion delete = new NoteDeletion(api, note, "TestUser");
-        assertTrue(delete.ChangeNote());
+        assertTrue(delete.DeleteNotes());
     }
 }
