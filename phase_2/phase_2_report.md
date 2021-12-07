@@ -225,3 +225,12 @@ In phase 0 we have 8 active members in the group. By the end of phase 1, one of 
 * Optimize the database.
 * Using nodejs or other tools to build a real online server.
 * Improve the UI. Switch it into a web app or Android app for wider applications.
+
+## A Summary of What Each Group Member Has Been Working During the Phrase 2
+
+* Ruiyu Wang: Manage everything. Mainly focused on access and retrieving information from databases.
+* Chengyue Zhang: Mainly focused on testing, design pattern and documentation. Implemented features for notes.
+* Yuxuan Gu: Debugged MainPageController, implemented features for notes and code documentation.
+* Qianning Lian: Create the User Interface for users to interact. Created UI to interact with the user.
+* Ke Gong: Implemented features for notes, reorganize Entity, code documentation.
+* Yuanyuan Che & Bingxian Chen: Sick
