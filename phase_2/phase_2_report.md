@@ -125,7 +125,7 @@ Under this pattern, we increase the modularity of each object. If there is a cha
 
 ### Pull requests
 
-Group members created various branches to store their works for later pull requests to main. Besides those individual contributions, we also used branch and pull requests to create sub-groups and separate tasks.
+Group members created various branches to store their works for later pull requests to main. Besides those individual contributions, we also used branch and pull requests to create sub-groups and separate tasks. It creates the new branches and we have used branch a lot since it can change our code without mattering the original main file. What did we do is to create branch when we tried to add code or delete code. We worried about if the code can actually work or not so we set different branches to work and then after everybody in our group agrees the code, then we merge the branches to the original main. It increases the accuracy of teamwork.
 
 #### UI, Test and Note branches
 
@@ -147,7 +147,7 @@ Therefore, a new branch **Hardfork** is created for us to choose the functionali
 
 ### Issues
 
-We used issues to identify features under completion. For example, we made checkpoints in GUI completion, code documentation, and tests completion.
+We used issues to identify features under completion. For example, we made checkpoints in GUI completion, code documentation, and tests completion. We create new issues identifying new features which can also leave comments for what we have uploaded. We can also leave the TODOs in some files to give check points for future modification. This feature can be convenient for the next person who edits the code. After the issue is completed, we closed it.
 
 
 ## Testing Updates
