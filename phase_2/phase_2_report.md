@@ -117,7 +117,8 @@ Under this pattern, we increase the modularity of each object. If there is a cha
 
 ### Facade Pattern
 
-//TODO
+NoteInfoManipulation contains very little code. Subclasses that contain the functions are: NoteCreation, NoteEdit, NoteDeletion, and NoteSearch. Those classes will depend on an interface to function on the note information data.
+
 
 
 
