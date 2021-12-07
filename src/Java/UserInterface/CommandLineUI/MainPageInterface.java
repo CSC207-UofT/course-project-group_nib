@@ -12,7 +12,7 @@ public class MainPageInterface {
     private final Scanner s;
     private final String username;
     private boolean is_select;
-    private final NoteInfoPresenter presenter;
+    private NoteInfoPresenter presenter;
 
     /**
      * initialize username, is_select, presenter and create a scanner s
@@ -71,6 +71,7 @@ public class MainPageInterface {
      * command line for setting information to note
      */
     public void CreateNote() {
+        presenter = new NoteInfoPresenter();
         ArrayList<String> note_info = new ArrayList<>();
 
         //Add front-end verification before next phase
@@ -116,6 +117,7 @@ public class MainPageInterface {
      * command line for edit note
      */
     public void EditNote() {
+        presenter = new NoteInfoPresenter();
         ArrayList<String> note_info = new ArrayList<>();
         System.out.println("Type in the title of the note that you would like to edit.");
         String title = s.nextLine();
@@ -132,6 +134,7 @@ public class MainPageInterface {
             int i = Integer.parseInt(choose);
             String[] wanted = list_of_search.get(i);
             ArrayList<String> note_in = new ArrayList<>(Arrays.asList(wanted));
+            presenter = new NoteInfoPresenter();
             System.out.println("Please type in the new content that you would like to change to.");
             String new_content = s.nextLine();
             note_in.set(4, new_content);
@@ -148,6 +151,7 @@ public class MainPageInterface {
      * command line for search note
      */
     public void SearchNote() {
+        presenter = new NoteInfoPresenter();
         ArrayList<String> note_info = new ArrayList<>();
         System.out.println("Please type in the title of the note that your are looking for.");
         String title = s.nextLine();
@@ -179,6 +183,7 @@ public class MainPageInterface {
      * command line for delete note
      */
     public void DeleteNote() {
+        presenter = new NoteInfoPresenter();
         ArrayList<String> note_info = new ArrayList<>();
         System.out.println("Please type in the title of the note that you would like to delete.");
         String note_title = s.nextLine();
