@@ -22,7 +22,7 @@ public class UserInfoAccess implements DataAccessInterface {
      * @return return a boolean value, true for correct password, false for incorrect password
      */
     public boolean login(String username, String password){
-        return user_info.UserMatch(username, password);
+        return user_info.userMatch(username, password);
     }
 
     /**
@@ -32,6 +32,6 @@ public class UserInfoAccess implements DataAccessInterface {
      * @return return a boolean value, true for successfully added, vice versa
      */
     public boolean register(String username, String password){
-        return user_info.AddNewUser(username, password);
+        return user_info.addNewUser(username, password);
     }
 }

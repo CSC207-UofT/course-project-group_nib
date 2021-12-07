@@ -30,7 +30,7 @@ public class NotesDisplayController {
     public void getAllNotes(){
         ArrayList<Notes> transferred_notes = new ArrayList<>();
         NoteCollection collection = new NoteCollection(api);
-        ArrayList<String[]> all_notes = collection.CollectNotes();
+        ArrayList<String[]> all_notes = collection.collectNotes();
         presenter.setState(all_notes.size()>0);
         presenter.addInfo(all_notes);
 //        for (String[] item : all_notes){

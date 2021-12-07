@@ -39,13 +39,13 @@ public class NoteInfoController {
      */
     public void decode() {
         switch (operation) {
-            case 1 : CreateNote(this.note_info, this.username);
+            case 1 : createNote(this.note_info, this.username);
             break;
-            case 2 : EditNote(this.note_info, this.username);
+            case 2 : editNote(this.note_info, this.username);
             break;
-            case 3 : DeleteNote(this.note_info, this.username);
+            case 3 : deleteNote(this.note_info, this.username);
             break;
-            case 4 : SearchNote(this.note_info, this.username);
+            case 4 : searchNote(this.note_info, this.username);
             break;
         }
     }
@@ -55,9 +55,9 @@ public class NoteInfoController {
      * @param note_info information of a note
      * @param username name of user
      */
-    public void CreateNote(ArrayList<String>note_info, String username) {
+    public void createNote(ArrayList<String>note_info, String username) {
         NoteInfoManipulation use_case = new NoteCreation(api, note_info, username);
-        presenter.setState(use_case.CreateNotes());
+        presenter.setState(use_case.createNotes());
     }
 
 
@@ -71,9 +71,9 @@ public class NoteInfoController {
      * @param note_info information of a note
      * @param username name of user
      */
-    public void EditNote(ArrayList<String>note_info, String username) {
+    public void editNote(ArrayList<String>note_info, String username) {
         NoteInfoManipulation use_case = new NoteEdit(api, note_info, username);
-        presenter.setState(use_case.EditNotes(new_content));
+        presenter.setState(use_case.editNotes(new_content));
     }
 
     /**
@@ -81,10 +81,10 @@ public class NoteInfoController {
      * @param note_info information of a note
      * @param username name of user
      */
-    public void SearchNote(ArrayList<String>note_info, String username){
+    public void searchNote(ArrayList<String>note_info, String username){
         ArrayList<Notes> transferred_notes = new ArrayList<>();
         NoteInfoManipulation use_case = new NoteSearch(api, note_info, username);
-        ArrayList<String[]> all_notes =  use_case.SearchNotes(note_info.get(0));
+        ArrayList<String[]> all_notes =  use_case.searchNotes(note_info.get(0));
         presenter.setState(all_notes.size() > 0);
         presenter.addInfo(all_notes);
 //        for (String[] item : all_notes){
@@ -101,8 +101,8 @@ public class NoteInfoController {
      * @param note_info information of a note
      * @param username name of user
      */
-    public void DeleteNote(ArrayList<String>note_info, String username) {
+    public void deleteNote(ArrayList<String>note_info, String username) {
         NoteInfoManipulation use_case = new NoteDeletion(api, note_info, username);
-        presenter.setState(use_case.DeleteNotes());
+        presenter.setState(use_case.deleteNotes());
     }
 }

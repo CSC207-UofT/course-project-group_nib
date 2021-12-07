@@ -18,7 +18,7 @@ public class NoteSearch extends NoteInfoManipulation{
      * @param keyword a word for searching
      * @return return a collection of notes
      */
-    public ArrayList<String[]> SearchNotes(String keyword){
+    public ArrayList<String[]> searchNotes(String keyword){
         return getApi().search(keyword, getAuthor());
     }
 }

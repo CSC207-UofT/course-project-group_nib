@@ -63,7 +63,7 @@ public class UserTableReader {
      * @param password password as String type
      * @return return a boolean value, true if password match, false if not match
      */
-    public boolean UserMatch(String user, String password){
+    public boolean userMatch(String user, String password){
         if(user_info_map.containsKey(user)) {
             return user_info_map.get(user).equals(password);
         }else {
@@ -77,11 +77,11 @@ public class UserTableReader {
      * @param password password as String type
      * @return return a boolean value, true if user added, false if not added
      */
-    public boolean AddNewUser(String user, String password){
+    public boolean addNewUser(String user, String password){
         boolean duplicated = user_info_map.containsKey(user);
         if (!duplicated) {
             user_info_map.put(user, password);
-            UpdateTable(user, password);
+            updateTable(user, password);
             return true;
         }else{
             return false;
@@ -93,11 +93,11 @@ public class UserTableReader {
     /**
      * Overloading this method with a specified testing TableReader for testing.
      */
-    public boolean AddNewUser(String user, String password, UserTableReader tr){
+    public boolean addNewUser(String user, String password, UserTableReader tr){
         boolean duplicated = tr.user_info_map.containsKey(user);
         if (!duplicated) {
             tr.user_info_map.put(user, password);
-            UpdateTable(user, password,"src/Java/Data/TestOnly.csv");
+            updateTable(user, password,"src/Java/Data/TestOnly.csv");
             return true;
         }else{
             return false;
@@ -109,7 +109,7 @@ public class UserTableReader {
      * @param user user as String type
      * @param password password as String type
      */
-    public void UpdateTable(String user, String password){
+    public void updateTable(String user, String password){
         try {
             File csv = new File("src/Java/Data/UserInfoTable/UserInfoTable.csv");
 
@@ -126,7 +126,7 @@ public class UserTableReader {
     /**
      * Overloading UpdateTable method just for testing.
      */
-    public void UpdateTable(String user, String password, String filename){
+    public void updateTable(String user, String password, String filename){
         try {
             File csv = new File(filename);
 
@@ -148,10 +148,10 @@ public class UserTableReader {
         // Simple testing
         UserTableReader info = new UserTableReader();
 //        System.out.println(info.UserMatch("Admin", "adminadmin"));
-        info.AddNewUser("a", "12345678");
+        info.addNewUser("a", "12345678");
 //        System.out.println(info.UserMatch("a", "12345678"));
-        System.out.println(info.AddNewUser("a", "12345678"));
-        System.out.println(info.UserMatch("b", "a"));
+        System.out.println(info.addNewUser("a", "12345678"));
+        System.out.println(info.userMatch("b", "a"));
 
     }
 

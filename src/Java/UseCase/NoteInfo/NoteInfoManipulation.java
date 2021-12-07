@@ -17,7 +17,7 @@ public abstract class NoteInfoManipulation {
         this.note_info = note_info;
         this.api = api;
     }
-    public boolean EditNotes(){
+    public boolean editNotes(){
         return false;
     }
     /*
@@ -25,7 +25,7 @@ public abstract class NoteInfoManipulation {
      * @return return false
      */
 
-    public boolean EditNotes(String str){
+    public boolean editNotes(String str){
         return false;
     }
     /*
@@ -34,17 +34,17 @@ public abstract class NoteInfoManipulation {
      * @return return false
      */
 
-    public boolean CreateNotes(){
+    public boolean createNotes(){
         return false;
     }
 
-    public boolean DeleteNotes(){
+    public boolean deleteNotes(){
         return false;
     }
 
 
 
-    public ArrayList<String[]> SearchNotes(String str){
+    public ArrayList<String[]> searchNotes(String str){
         return null;
     }
     /*

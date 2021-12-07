@@ -39,7 +39,7 @@ public class NoteInfoAccess implements NoteInfoDataAccess {
     @Override
     public boolean create(String[] info_list) {
         /*Add the new info_list to the Note Info Table database.*/
-        boolean flag = title_not_duplicated(info_list[2]);
+        boolean flag = titleNotDuplicated(info_list[2]);
 
         if (flag){
             nil.add(info_list);
@@ -114,7 +114,7 @@ public class NoteInfoAccess implements NoteInfoDataAccess {
      * @param title title of the note
      * @return return true if title match, vice versa
      */
-    public boolean title_not_duplicated(String title){
+    public boolean titleNotDuplicated(String title){
         /*Check whether there are notes with duplicated titles.*/
         for(String[] item : nil){
             if(item[2].equals(title)){
@@ -141,7 +141,7 @@ public class NoteInfoAccess implements NoteInfoDataAccess {
     public boolean create(ArrayList<String[]> list, String[] note, NoteTableReader read) {
         /*Add the new info_list to the Note Info Table database.*/
 
-        boolean flag = title_not_duplicated(list, note[2]);
+        boolean flag = titleNotDuplicated(list, note[2]);
 
         if (flag){
             list.add(note);
@@ -211,7 +211,7 @@ public class NoteInfoAccess implements NoteInfoDataAccess {
      * @param title the title of note
      * @return return a boolean value whether the title is duplicate or not
      */
-    public boolean title_not_duplicated(ArrayList<String[]> list, String title){
+    public boolean titleNotDuplicated(ArrayList<String[]> list, String title){
         /*Check whether there are notes with duplicated titles.*/
         for(String[] item : list){
             if(item[2].equals(title)){

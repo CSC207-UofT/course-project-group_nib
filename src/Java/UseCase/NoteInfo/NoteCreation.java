@@ -23,7 +23,7 @@ public class NoteCreation extends NoteInfoManipulation {
      * @return return boolean value, true if changed successfully, false otherwise
      */
     @Override
-    public boolean CreateNotes() {
+    public boolean createNotes() {
         Notes note = new Notes();
 
         ArrayList<String> note_info = getNoteInfo();

@@ -16,7 +16,7 @@ public class NoteEdit extends NoteInfoManipulation{
      * @return return false that the note have not been changed
      */
     @Override
-    public boolean EditNotes() {
+    public boolean editNotes() {
         return false;
     }
 

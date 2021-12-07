@@ -71,7 +71,7 @@ public class NoteTableReader {
      */
     public boolean updateNoteInfoList(ArrayList<String[]> NoteInfoList){
         note_info_list = NoteInfoList;
-        UpdateTable();
+        updateTable();
         return true;
     }
 
@@ -79,7 +79,7 @@ public class NoteTableReader {
     /**
      * update the database
      */
-    public void UpdateTable(){
+    public void updateTable(){
         try {
             File csv = new File("src/Java/Data/NoteInfoTable/NoteInfoTable.csv");
             BufferedWriter bw = new BufferedWriter(new FileWriter(csv, false));
@@ -112,7 +112,7 @@ public class NoteTableReader {
      */
     public boolean updateNoteInfoList(ArrayList<String[]> NoteInfoList, String filename){
         note_info_list = NoteInfoList;
-        UpdateTable(filename);
+        updateTable(filename);
         return true;
     }
 
@@ -120,7 +120,7 @@ public class NoteTableReader {
      * update the database
      * @param filename the pass of csv file
      */
-    public void UpdateTable(String filename){
+    public void updateTable(String filename){
         try {
             File csv = new File(filename);
             BufferedWriter bw = new BufferedWriter(new FileWriter(csv, false));

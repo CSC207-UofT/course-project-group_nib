@@ -19,7 +19,7 @@ public class NoteTransformation {
      * set information to an instance of Notes
      * @return return a note
      */
-    public Notes Transform(){
+    public Notes transform(){
         note.setAuthor(note_info[0]);
         note.setCategory(note_info[1]);
         note.setTitle(note_info[2]);

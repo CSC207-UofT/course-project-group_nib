@@ -12,7 +12,7 @@ public class NoteCollection {
      * get all notes by a form of ArrayList<String[]>
      * @return return a collection of notes
      */
-    public ArrayList<String[]> CollectNotes(){
+    public ArrayList<String[]> collectNotes(){
         return api.getAllNotes();
     }
 }

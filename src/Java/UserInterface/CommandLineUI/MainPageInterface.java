@@ -159,7 +159,7 @@ public class MainPageInterface {
             String new_content = s.nextLine();
             note_in.set(4, new_content);
             nic.setNew_content(new_content);
-            nic.EditNote(note_in, username); //Then edit.
+//            nic.EditNote(note_in, username); //Then edit.
             System.out.println("The note has been modified successfully.");
         } else {
             System.out.println("Sorry, we don't find any notes with this title.");
@@ -236,7 +236,7 @@ public class MainPageInterface {
             }
             String[] wanted = info.get(ch);
             ArrayList<String> note_in = new ArrayList<>(Arrays.asList(wanted));
-            nic.DeleteNote(note_in, username); //Then delete
+//            nic.DeleteNote(note_in, username); //Then delete
             System.out.println("Note has been deleted successfully!");
         } else {
             System.out.println("Sorry you do not have access to the note or we can not find such note.");
