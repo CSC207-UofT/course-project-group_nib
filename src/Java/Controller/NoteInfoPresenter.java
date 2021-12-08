@@ -5,10 +5,23 @@ import Java.UseCase.NoteInfo.NoteInfoOutput;
 import java.util.ArrayList;
 
 /**
- * present the current state after operate note
+ * present the current state after operate note.
+ *
+ * It is composed of a presenter state and a piece of information.
+ *
+ * state: the 'action_state' variable. Reflects whether the operation the controller input
+ * is successful or not.
+ *
+ * information: the 'all_info' list. Reflects any extra information the system is going to provide.
+ * sometimes it provides nothing then there is nothing in the list; sometimes the usecase returns some
+ * notes then there is an array of notes in the list.
+ *
+ * it is initialized as Arraylist<Object> because we want it to be open to extension. Anything
+ * in future implementation can be returned by this presenter.
+ *
  */
 public class NoteInfoPresenter implements NoteInfoOutput {
-    private final ArrayList<ArrayList<String[]>> all_info;
+    private ArrayList<Object> all_info;
     private boolean action_state;
 
     /**
@@ -31,13 +44,13 @@ public class NoteInfoPresenter implements NoteInfoOutput {
      * add information
      * @param any information as object type
      */
-    public void addInfo(ArrayList<String[]> any){all_info.add(any);
+    public void addInfo(Object any){
+        all_info.add(any);
     }
-
 
     /**
      *
-     * @return current state true for success, false for fail
+     * @return current state true for success, false for failure
      */
     @Override
     public boolean getState() {
@@ -45,11 +58,11 @@ public class NoteInfoPresenter implements NoteInfoOutput {
     }
 
     /**
-     * return all information
+     * return all the information
      * @return return ArrayList of Object which contains information
      */
     @Override
-    public ArrayList<ArrayList<String[]>> getAllInfo() {
+    public ArrayList<Object> getAllInfo() {
         return all_info;
     }
 }

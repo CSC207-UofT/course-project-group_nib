@@ -17,28 +17,8 @@ public abstract class NoteInfoManipulation {
         this.note_info = note_info;
         this.api = api;
     }
-    public boolean editNotes(){
-        return false;
-    }
-    /*
-     * declare method ChangeNote and set its default return as false
-     * @return return false
-     */
 
-    public boolean editNotes(String str){
-        return false;
-    }
-    /*
-     * declare method ChangeNote and set its default return as false
-     * @param str the new note
-     * @return return false
-     */
-
-    public boolean createNotes(){
-        return false;
-    }
-
-    public boolean deleteNotes(){
+    public boolean changeNote(){
         return false;
     }
 

@@ -8,14 +8,13 @@ import Java.UseCase.NoteInfo.NoteTransformation;
 import java.util.ArrayList;
 
 /**
- * displaying the presenter (current state)
+ * fetch the all the notes in the database (current state of the system)
  */
 public class NotesDisplayController {
     private final NoteInfoPresenter presenter;
     private final NoteInfoAccess api;
-
     /**
-     * initialize presenter
+     * initialize controller
      * @param presenter contains the states and information
      */
     public NotesDisplayController(NoteInfoPresenter presenter) {
@@ -31,15 +30,13 @@ public class NotesDisplayController {
         ArrayList<Notes> transferred_notes = new ArrayList<>();
         NoteCollection collection = new NoteCollection(api);
         ArrayList<String[]> all_notes = collection.collectNotes();
-        presenter.setState(all_notes.size()>0);
-        presenter.addInfo(all_notes);
-//        for (String[] item : all_notes){
-//            NoteTransformation transformation = new NoteTransformation(item);
-//            transferred_notes.add(transformation.Transform());
-//        }
-//
-//        presenter.setState(transferred_notes.size() > 0);
-//        presenter.addInfo(transferred_notes);
+        for (String[] item : all_notes){
+            NoteTransformation transformation = new NoteTransformation(item);
+            transferred_notes.add(transformation.transform());
+        }
+
+        presenter.setState(transferred_notes.size() > 0);
+        presenter.addInfo(transferred_notes);
 
     }
 

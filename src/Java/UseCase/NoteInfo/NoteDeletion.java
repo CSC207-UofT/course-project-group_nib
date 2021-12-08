@@ -19,7 +19,7 @@ public class NoteDeletion extends NoteInfoManipulation{
      * @return return boolean value true after runs function ChangeNote
      */
     @Override
-    public boolean deleteNotes() {
+    public boolean changeNote() {
         ArrayList<String> target = getNoteInfo();
         NoteInfoDataAccess api = getApi();
         return api.delete(target.get(2));

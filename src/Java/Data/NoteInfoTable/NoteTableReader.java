@@ -99,7 +99,6 @@ public class NoteTableReader {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println("The NoteInfoTable.csv has been updated.");
     }
     
     /*Overloading methods for testing.*/

@@ -13,5 +13,5 @@ public interface NoteInfoOutput {
      * @return return current state as boolean type that true for success, false for fail
      */
     boolean getState();
-    ArrayList<ArrayList<String[]>> getAllInfo();
+    ArrayList<Object> getAllInfo();
 }

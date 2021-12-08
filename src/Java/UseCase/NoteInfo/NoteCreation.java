@@ -23,7 +23,7 @@ public class NoteCreation extends NoteInfoManipulation {
      * @return return boolean value, true if changed successfully, false otherwise
      */
     @Override
-    public boolean createNotes() {
+    public boolean changeNote() {
         Notes note = new Notes();
 
         ArrayList<String> note_info = getNoteInfo();
@@ -52,5 +52,6 @@ public class NoteCreation extends NoteInfoManipulation {
 
         NoteInfoDataAccess api = getApi();
         return api.create(s); /*Return whether the new created note has been uploaded successfully.*/
+
     }
 }

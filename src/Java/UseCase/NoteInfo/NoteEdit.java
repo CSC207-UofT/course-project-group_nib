@@ -12,26 +12,29 @@ public class NoteEdit extends NoteInfoManipulation{
         super(api, note_info, username);
     }
     /**
-     * override the method ChangeNote()
-     * @return return false that the note have not been changed
+     * Change content for this note
+     * @return return whether the note have been changed
      */
     @Override
-    public boolean editNotes() {
-        return false;
-    }
+    public boolean changeNote(){
+        ArrayList<String> target = getNoteInfo();
 
-    /**
-     * Change content for this note
-     * @param new_content the content of the note as Sting type
-     * @return return true that the note have been changed
-     */
-    public boolean ChangeNote(String new_content){
-        ArrayList<String> note_info = getNoteInfo();
-        note_info.set(4, new_content); //Set the content of the note to the new one.
-        NoteInfoDataAccess api = getApi();
-        String[] note_i = note_info.toArray(new String[0]);
-        api.edit(note_i, note_info.get(2));
-        return true;
+        String username = getNoteInfo().get(0);
+        String category = getNoteInfo().get(1);
+        String title = getNoteInfo().get(2);
+        String date = getNoteInfo().get(3);
+        String content = getNoteInfo().get(4);
+        String reference = getNoteInfo().get(5);
+
+        String[] updated_info = {
+                username,
+                category,
+                title,
+                date,
+                content,
+                reference
+        };
+        return getApi().edit(updated_info, title);
     }
 
 }

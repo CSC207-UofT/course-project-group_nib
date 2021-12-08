@@ -44,6 +44,7 @@ public class NoteInfoAccess implements NoteInfoDataAccess {
         if (flag){
             nil.add(info_list);
             ntr.updateNoteInfoList(nil);
+            System.out.println("1");
             return true;
         }
         return false;

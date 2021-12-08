@@ -23,7 +23,7 @@ public class NoteEditionTest {
         note_1.add("Original");
         NoteInfoDataAccess api = new NoteInfoAccess(ntr, note_info_list);
         NoteEdit edit = new NoteEdit(api, note_1, "TestUser");
-        assertTrue(edit.editNotes("New Content"));
-        assertFalse(edit.editNotes());
+        assertTrue(edit.changeNote());
+        assertFalse(edit.changeNote());
     }
 }
