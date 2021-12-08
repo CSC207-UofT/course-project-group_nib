@@ -126,7 +126,7 @@ NoteInfoManipulation contains very little code. Subclasses that contain the func
 
 ### Pull requests
 
-Group members created various branches to store their works for later pull requests to main. Besides those individual contributions, we also used branch and pull requests to create sub-groups and separate tasks. It creates the new branches and we have used branch a lot since it can change our code without mattering the original main file. What did we do is to create branch when we tried to add code or delete code. We worried about if the code can actually work or not so we set different branches to work and then after everybody in our group agrees the code, then we merge the branches to the original main. It increases the accuracy of teamwork.
+Group members created various branches to store their works for later pull requests to main. Branches and pull requests allows individuals to test new codes and features without affecting codes in main branch. Besides those individual contributions, we also used branch and pull requests to create sub-groups and separate tasks. 
 
 #### UI, Test and Note branches
 
@@ -148,7 +148,7 @@ Therefore, a new branch **Hardfork** is created for us to choose the functionali
 
 ### Issues
 
-We used issues to identify features under completion. For example, we made checkpoints in GUI completion, code documentation, and tests completion. We create new issues identifying new features which can also leave comments for what we have uploaded. We can also leave the TODOs in some files to give check points for future modification. This feature can be convenient for the next person who edits the code. After the issue is completed, we closed it.
+We used issues to identify features under completion. For example, we made checkpoints in GUI completion, code documentation, and tests completion. Issues correspond with TODO comments in the codes. An Issue is closed as long as all the related TODOs are implemented.
 
 
 ## Testing Updates
@@ -233,4 +233,4 @@ In phase 0 we have 8 active members in the group. By the end of phase 1, one of 
 * Yuxuan Gu: Debugged MainPageController, implemented features for notes and code documentation.
 * Qianning Lian: Create the User Interface for users to interact. Created UI to interact with the user.
 * Ke Gong: Implemented features for notes, reorganize Entity, code documentation.
-* Yuanyuan Che & Bingxian Chen: Sick
+* Yuanyuan Che & Bingxian Chen: Sick in phase 2.
