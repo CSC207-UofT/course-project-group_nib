@@ -224,6 +224,7 @@ In phase 0 we have 8 active members in the group. By the end of phase 1, one of 
 
 * Consider more design patterns that fit the project.
 * Add more functionalities, such as commenting on others' notes.
+* Extend the usage of notes.
 * Debug, handle invalid inputs.
 
 
@@ -233,11 +234,11 @@ In phase 0 we have 8 active members in the group. By the end of phase 1, one of 
 * Using nodejs or other tools to build a real online server.
 * Improve the UI. Switch it into a web app or Android app for wider applications.
 
-## A Summary of What Each Group Member Has Been Working During the Phrase 2
+## Summary of Works
 
-* Ruiyu Wang: Manage everything. Mainly focused on access and retrieving information from databases.
+* Ruiyu Wang: Project manager and designer. Mainly focused on the interaction with DB, making better design and GUI support.
 * Chengyue Zhang: Mainly focused on testing, design pattern and documentation. Implemented features for notes.
 * Yuxuan Gu: Debugged MainPageController, implemented features for notes and code documentation.
-* Qianning Lian: Create the User Interface for users to interact. Created UI to interact with the user.
-* Ke Gong: Implemented features for notes, reorganize Entity, code documentation.
+* Qianning Lian: Created the User Interface for users to interact.
+* Ke Gong: Implemented features for notes, reorganized Entity, and documented code.
 * Yuanyuan Che & Bingxian Chen: Sick in phase 2.
