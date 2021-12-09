@@ -25,28 +25,23 @@ import java.awt.event.ActionEvent;
 public class RegisterPage extends JFrame implements ActionListener
 {
 
-    private String username;
-    private String password;
-    private String retype_pw;
-    private JPanel contentPane;
-    private JTextField textField;
-    private JPasswordField password_field;
-    private JPasswordField password_retype;
-    Button b1,b2;
+    private final JTextField textField;
+    private final JPasswordField password_field;
+    private final JPasswordField password_retype;
+    final Button b1;
+    final Button b2;
     private Component frame;
 
     /**
      * Launch the application.
      */
     public static void main(String[] args) {
-        EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                try {
-                    RegisterPage frame = new RegisterPage();
-                    frame.setVisible(true);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+        EventQueue.invokeLater(() -> {
+            try {
+                RegisterPage frame = new RegisterPage();
+                frame.setVisible(true);
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         });
     }
@@ -59,7 +54,7 @@ public class RegisterPage extends JFrame implements ActionListener
         setResizable(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 400, 250);
-        contentPane = new JPanel();
+        JPanel contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
         contentPane.setLayout(null);
@@ -119,9 +114,9 @@ public class RegisterPage extends JFrame implements ActionListener
 
             try
             {
-                username = textField.getText();
-                password = String.valueOf(password_field.getPassword());
-                retype_pw = String.valueOf(password_retype.getPassword());
+                String username = textField.getText();
+                String password = String.valueOf(password_field.getPassword());
+                String retype_pw = String.valueOf(password_retype.getPassword());
 
                 if(username.length() == 0 || password.length() == 0 || retype_pw.length() == 0)
                 {

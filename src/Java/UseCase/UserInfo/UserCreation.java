@@ -31,7 +31,7 @@ public class UserCreation extends UserInfoManipulation {
         presenter.setState(registered);
 
         if (registered){
-            User user = new User(username, password);
+            User user = new User(username);
             presenter.setUser(user.getUsername());
         }
         return presenter;

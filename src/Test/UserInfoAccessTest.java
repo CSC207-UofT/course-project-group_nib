@@ -31,7 +31,7 @@ class UserInfoAccessTest {
             BufferedReader reader = new BufferedReader(new FileReader("src/data/UserInfoTable.csv"));
             String line = "newUser,newPassword123";
             String l = reader.readLine();
-            List<String[]> elements = new ArrayList<String[]>();
+            List<String[]> elements = new ArrayList<>();
             while(!Objects.equals(l, line)){
                 elements.add(l.split(","));
                 l = reader.readLine();

@@ -1,19 +1,15 @@
 package Java.UserInterface.GUI;
 
-import Java.Controller.UserInfoController;
-import Java.Controller.UserInfoPresenter;
 import Java.Entity.Note.Notes;
 
 import java.awt.Button;
 import java.awt.Component;
-import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -24,10 +20,9 @@ import javax.swing.JTextField;
 public class NoteDisplay extends JFrame implements ActionListener
 {
 
-    private JPanel contentPane;
     private JTextField usernamefield;
     private JPasswordField passwordfield;
-    Button b1;
+    final Button b1;
     private Component frame;
 
     /**
@@ -43,7 +38,7 @@ public class NoteDisplay extends JFrame implements ActionListener
         setResizable(false);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setBounds(100, 100, 450, 300);
-        contentPane = new JPanel();
+        JPanel contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
         contentPane.setLayout(null);

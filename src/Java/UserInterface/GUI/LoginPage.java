@@ -25,7 +25,9 @@ public class LoginPage extends JFrame implements ActionListener
 
     private final JTextField usernamefield;
     private final JPasswordField passwordfield;
-    Button b1,b2,b3;
+    final Button b1;
+    final Button b2;
+    final Button b3;
     String username;
     String password;
     private Component frame;
@@ -34,14 +36,12 @@ public class LoginPage extends JFrame implements ActionListener
      * Launch the application.
      */
     public static void main(String[] args) {
-        EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                try {
-                    LoginPage frame = new LoginPage();
-                    frame.setVisible(true);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+        EventQueue.invokeLater(() -> {
+            try {
+                LoginPage frame = new LoginPage();
+                frame.setVisible(true);
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         });
     }

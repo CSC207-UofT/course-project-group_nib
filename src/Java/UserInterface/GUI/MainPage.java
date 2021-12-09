@@ -4,7 +4,6 @@ import Java.Controller.NoteInfoController;
 import Java.Controller.NoteInfoPresenter;
 import Java.Controller.NotesDisplayController;
 import Java.Entity.Note.Notes;
-import com.sun.tools.javac.Main;
 
 import java.awt.*;
 
@@ -22,10 +21,14 @@ import java.util.Objects;
 public class MainPage extends JFrame implements ActionListener
 {
 
-    private JPanel contentPane;
+    private final JPanel contentPane;
     private int index;
-    JList<String> list;
-    Button b1,b2,b3,b4,b5;
+    final JList<String> list;
+    final Button b1;
+    final Button b2;
+    final Button b3;
+    final Button b4;
+    final Button b5;
     private ArrayList<Notes> all_note;
     public static String name;
     private Component frame;
@@ -34,14 +37,12 @@ public class MainPage extends JFrame implements ActionListener
      * Launch the application.
      */
     public static void main(String[] args) {
-        EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                try {
-                    MainPage frame = new MainPage(null);
-                    frame.setVisible(true);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+        EventQueue.invokeLater(() -> {
+            try {
+                MainPage frame = new MainPage(null);
+                frame.setVisible(true);
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         });
     }
@@ -103,12 +104,7 @@ public class MainPage extends JFrame implements ActionListener
         list=new JList<>();
         list.setSelectedIndex(0);
         list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-        list.addListSelectionListener(new ListSelectionListener() {
-            @Override
-            public void valueChanged(ListSelectionEvent e) {
-                index = list.getSelectedIndex();
-            }
-        });
+        list.addListSelectionListener(e -> index = list.getSelectedIndex());
 
         scrollPane.setViewportView(list);
 
@@ -172,7 +168,7 @@ public class MainPage extends JFrame implements ActionListener
             }
             else {
                 int result = JOptionPane.showConfirmDialog(null,"Notes cannot be recovered. Are you sure?",
-                        "Deletion Confirmation",0);
+                        "Deletion Confirmation", JOptionPane.YES_NO_OPTION);
                 if (result == 0){
                     ArrayList<String> instruction = new ArrayList<>();
                     instruction.add(note.getTitle());

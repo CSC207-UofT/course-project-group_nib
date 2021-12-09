@@ -39,7 +39,6 @@ public class UserInfoPresenter implements UserInfoOutput {
      * current state for progress
      * @return return current progress as boolean type, true for success, false for fail
      */
-    @Override
     public boolean returnProgress() {
         return success;
     }

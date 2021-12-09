@@ -31,7 +31,7 @@ class UserCreationTest {
             String line = "newUser,newPassword123";
             int i = 0;
             String l = reader.readLine();
-            List<String[]> elements = new ArrayList<String[]>();
+            List<String[]> elements = new ArrayList<>();
             while(!Objects.equals(l, line)){
                 i++;
                 elements.add(l.split(","));

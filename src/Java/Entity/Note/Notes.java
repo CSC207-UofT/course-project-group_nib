@@ -1,8 +1,6 @@
 package Java.Entity.Note;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Date;
 
 public class Notes {
     /*@param category: Category of the note

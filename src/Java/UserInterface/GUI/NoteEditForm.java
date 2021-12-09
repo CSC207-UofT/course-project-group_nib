@@ -2,13 +2,10 @@ package Java.UserInterface.GUI;
 
 import Java.Controller.NoteInfoController;
 import Java.Controller.NoteInfoPresenter;
-import Java.Controller.UserInfoController;
-import Java.Controller.UserInfoPresenter;
 import Java.Entity.Note.Notes;
 
 import java.awt.Button;
 import java.awt.Component;
-import java.awt.EventQueue;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -21,16 +18,15 @@ import java.util.ArrayList;
 public class NoteEditForm extends JFrame implements ActionListener
 {
 
-    private JPanel contentPane;
-    private JTextArea Jcontent;
-    Button b1, b2;
+    private final JTextArea Jcontent;
+    final Button b1;
+    final Button b2;
     private Component frame;
-    private String title;
-    private String author;
-    private String category;
-    private String content;
-    private String reference;
-    private String date;
+    private final String title;
+    private final String author;
+    private final String category;
+    private final String reference;
+    private final String date;
 
     /**
      * Create the frame.
@@ -40,13 +36,13 @@ public class NoteEditForm extends JFrame implements ActionListener
         category = note.getCategory();
         title = note.getTitle();
         date = note.getDate();
-        content = note.getContent();
+        String content = note.getContent();
         reference = note.getReference();
 
         setResizable(false);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setBounds(100, 100, 450, 300);
-        contentPane = new JPanel();
+        JPanel contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
         contentPane.setLayout(null);

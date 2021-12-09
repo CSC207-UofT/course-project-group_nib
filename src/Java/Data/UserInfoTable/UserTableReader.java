@@ -12,7 +12,7 @@ import java.io.IOException;
  * access the database
  */
 public class UserTableReader {
-    Map<String ,String> user_info_map;
+    final Map<String ,String> user_info_map;
 
     /**
      * read the csv file and split the item by comma

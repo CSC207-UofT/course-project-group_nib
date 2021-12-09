@@ -1,10 +1,7 @@
 package Java.UserInterface.GUI;
 import Java.Controller.NoteInfoController;
 import Java.Controller.NoteInfoPresenter;
-import Java.Controller.UserInfoController;
-import Java.Controller.UserInfoPresenter;
 
-import java.awt.BorderLayout;
 import java.awt.Button;
 import java.awt.Component;
 import java.awt.EventQueue;
@@ -16,35 +13,32 @@ import java.awt.Font;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import java.sql.*;
 import java.util.ArrayList;
 
 
 public class NoteCreationForm extends JFrame implements ActionListener
 {
 
-    private JPanel contentPane;
-    private JTextField catField;
-    private JTextField titleField;
-    private JTextField dateField;
-    private JTextArea contentField;
-    private JTextField refField;
-    Button b1,b2;
-    private String username;
+    private final JTextField catField;
+    private final JTextField titleField;
+    private final JTextField dateField;
+    private final JTextArea contentField;
+    private final JTextField refField;
+    final Button b1;
+    final Button b2;
+    private final String username;
     private Component frame;
 
     /**
      * Launch the application.
      */
     public static void main(String[] args) {
-        EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                try {
-                    NoteCreationForm frame = new NoteCreationForm("Test");
-                    frame.setVisible(true);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+        EventQueue.invokeLater(() -> {
+            try {
+                NoteCreationForm frame = new NoteCreationForm("Test");
+                frame.setVisible(true);
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         });
     }
@@ -58,7 +52,7 @@ public class NoteCreationForm extends JFrame implements ActionListener
         setResizable(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 350, 520);
-        contentPane = new JPanel();
+        JPanel contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
         contentPane.setLayout(null);

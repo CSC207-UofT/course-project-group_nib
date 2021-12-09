@@ -31,7 +31,7 @@ public class UserAuthentication extends UserInfoManipulation{
         presenter.setState(success);
 
         if (success){
-            User user = new User(username, password);
+            User user = new User(username);
             presenter.setUser(user.getUsername());
         }
         return presenter;
