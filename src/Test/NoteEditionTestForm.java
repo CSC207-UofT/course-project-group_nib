@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
-public class NoteEditionTest {
+public class NoteEditionTestForm {
     @Test
     public void testNoteEdit(){
         ArrayList<String[]> note_info_list = helper.helper_provideNoteInfoList();

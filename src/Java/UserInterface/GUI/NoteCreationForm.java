@@ -120,12 +120,12 @@ public class NoteCreationForm extends JFrame implements ActionListener
 
         b1= new Button("Submit");
         b1.addActionListener(this);
-        b1.setBounds(192, 438, 67, 23);
+        b1.setBounds(192, 438, 90, 23);
         contentPane.add(b1);
 
         b2 = new Button("Back");
         b2.addActionListener(this);
-        b2.setBounds(90, 438, 67, 23);
+        b2.setBounds(90, 438, 90, 23);
         contentPane.add(b2);
     }
     @Override

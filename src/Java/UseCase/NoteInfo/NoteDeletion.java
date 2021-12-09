@@ -20,8 +20,9 @@ public class NoteDeletion extends NoteInfoManipulation{
      */
     @Override
     public boolean changeNote() {
+        System.out.println("1");
         ArrayList<String> target = getNoteInfo();
         NoteInfoDataAccess api = getApi();
-        return api.delete(target.get(2));
+        return api.delete(target.get(0));
     }
 }

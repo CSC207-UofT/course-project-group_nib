@@ -56,6 +56,7 @@ public class NoteInfoAccess implements NoteInfoDataAccess {
      */
     @Override
     public boolean delete(String title) {
+        System.out.println("1");
         /*Remove the note from csv file.*/
         int count = 0;
         for (String[] item : nil){
@@ -85,7 +86,7 @@ public class NoteInfoAccess implements NoteInfoDataAccess {
 
     /**
      * Search for a note in the csv file
-     * @param search_item the item for searching as String type
+     * @param search_item the title for searching as String type
      * @param username username of the manipulator
      * @return return all matched items as ArrayList<String[]>
      */

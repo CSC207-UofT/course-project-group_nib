@@ -93,6 +93,7 @@ public class NoteInfoController {
      * @param username name of user
      */
     public void deleteNote(ArrayList<String>note_info, String username) {
+        System.out.println("1");
         NoteInfoManipulation usecase = new NoteDeletion(api, note_info, username);
         presenter.setState(usecase.changeNote());
     }

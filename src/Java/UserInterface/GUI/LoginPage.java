@@ -55,8 +55,6 @@ public class LoginPage extends JFrame implements ActionListener
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setBounds(100, 100, 450, 300);
         contentPane = new JPanel();
-//        contentPane.setMaximumSize(new Dimension(2147483647, 2147483647));
-//        contentPane.setForeground(Color.BLACK);
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
         contentPane.setLayout(null);
