@@ -21,7 +21,7 @@ import java.util.ArrayList;
  *
  */
 public class NoteInfoPresenter implements NoteInfoOutput {
-    private ArrayList<Object> all_info;
+    private final ArrayList<Object> all_info;
     private boolean action_state;
 
     /**

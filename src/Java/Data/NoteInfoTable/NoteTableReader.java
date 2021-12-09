@@ -87,12 +87,7 @@ public class NoteTableReader {
             for (String[] line: note_info_list){
                 bw.newLine();
                 bw.write(
-                        line[0]+"," +
-                                line[1] + "," +
-                                line[2] + "," +
-                                line[3] + "," +
-                                line[4] + "," +
-                                line[5]);
+                        line[0]+"," + line[1] + "," + line[2] + "," + line[3] + "," + line[4] + "," + line[5]);
             }
             bw.close();
 
@@ -122,19 +117,13 @@ public class NoteTableReader {
     public void updateTable(String filename){
         try {
             File csv = new File(filename);
-            BufferedWriter bw = new BufferedWriter(new FileWriter(csv, false));
-            bw.write("Author,Category,Title,Date,Content，Reference");
+            BufferedWriter bw1 = new BufferedWriter(new FileWriter(csv, false));
+            bw1.write("Author,Category,Title,Date,Content，Reference");
             for (String[] line: note_info_list){
-                bw.newLine();
-                bw.write(
-                        line[0]+"," +
-                                line[1] + "," +
-                                line[2] + "," +
-                                line[3] + "," +
-                                line[4] + "," +
-                                line[5]);
+                bw1.newLine();
+                bw1.write(line[0]+"," + line[1] + "," + line[2] + "," + line[3] + "," + line[4] + "," + line[5]);
             }
-            bw.close();
+            bw1.close();
 
         } catch (IOException e) {
             e.printStackTrace();

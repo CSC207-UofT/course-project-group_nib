@@ -17,7 +17,6 @@ public class NoteEdit extends NoteInfoManipulation{
      */
     @Override
     public boolean changeNote(){
-        ArrayList<String> target = getNoteInfo();
 
         String username = getNoteInfo().get(0);
         String category = getNoteInfo().get(1);

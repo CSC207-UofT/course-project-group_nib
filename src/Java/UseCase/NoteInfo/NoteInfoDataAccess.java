@@ -11,13 +11,13 @@ public interface NoteInfoDataAccess {
      * @param info_list a list of note information and content
      * @return return a boolean value whether created or not
      */
-    public boolean create(String[] info_list);
+    boolean create(String[] info_list);
 
     /**
      * declare a method delete() with no return value
      * @param title title of the note as String type
      */
-    public boolean delete(String title);
+    boolean delete(String title);
 
     /**
      * declare a method edit()
@@ -25,7 +25,7 @@ public interface NoteInfoDataAccess {
      * @param title title of the note as String type
      * @return return a boolean value whether teh note have been edited or not
      */
-    public boolean edit(String[] info_list, String title);
+    boolean edit(String[] info_list, String title);
 
     /**
      *
@@ -33,11 +33,11 @@ public interface NoteInfoDataAccess {
      * @param username username of the manipulator
      * @return return the searched note's information in an ArrayList of String
      */
-    public ArrayList<String[]> search(String title, String username);
+    ArrayList<String[]> search(String title, String username);
 
     /**
      *
      * @return return an ArrayList of Sting[] of notes
      */
-    public ArrayList<String[]> getAllNotes();
+    ArrayList<String[]> getAllNotes();
 }

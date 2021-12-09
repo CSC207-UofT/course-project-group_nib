@@ -23,9 +23,8 @@ import javax.swing.JTextField;
 public class LoginPage extends JFrame implements ActionListener
 {
 
-    private JPanel contentPane;
-    private JTextField usernamefield;
-    private JPasswordField passwordfield;
+    private final JTextField usernamefield;
+    private final JPasswordField passwordfield;
     Button b1,b2,b3;
     String username;
     String password;
@@ -54,7 +53,7 @@ public class LoginPage extends JFrame implements ActionListener
         setResizable(false);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setBounds(100, 100, 450, 300);
-        contentPane = new JPanel();
+        JPanel contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
         contentPane.setLayout(null);
