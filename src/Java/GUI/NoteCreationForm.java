@@ -1,4 +1,4 @@
-package Java.UserInterface.GUI;
+package Java.GUI;
 import Java.Controller.NoteInfoController;
 import Java.Controller.NoteInfoPresenter;
 
@@ -67,7 +67,7 @@ public class NoteCreationForm extends JFrame implements ActionListener
         category.setBounds(53, 66, 100, 30);
         contentPane.add(category);
 
-        catField = new JTextField();
+        catField = new JTextField(" ");
         catField.setBounds(178, 73, 110, 20);
         contentPane.add(catField);
         catField.setColumns(10);
@@ -77,7 +77,7 @@ public class NoteCreationForm extends JFrame implements ActionListener
         title.setBounds(53, 102, 67, 30);
         contentPane.add(title);
 
-        titleField = new JTextField();
+        titleField = new JTextField(" ");
         titleField.setBounds(178, 102, 110, 20);
         contentPane.add(titleField);
         titleField.setColumns(10);
@@ -87,7 +87,7 @@ public class NoteCreationForm extends JFrame implements ActionListener
         date.setBounds(53, 138, 139, 14);
         contentPane.add(date);
 
-        dateField = new JTextField();
+        dateField = new JTextField(" ");
         dateField.setBounds(178, 138, 110, 20);
         contentPane.add(dateField);
         dateField.setColumns(10);
@@ -97,7 +97,7 @@ public class NoteCreationForm extends JFrame implements ActionListener
         content.setBounds(53, 169, 96, 20);
         contentPane.add(content);
 
-        contentField = new JTextArea();
+        contentField = new JTextArea(" ");
         contentField.setBounds(178, 169, 110, 220);
         contentPane.add(contentField);
         contentField.setColumns(10);
@@ -107,7 +107,7 @@ public class NoteCreationForm extends JFrame implements ActionListener
         reference.setBounds(53, 410, 86, 20);
         contentPane.add(reference);
 
-        refField = new JTextField();
+        refField = new JTextField(" ");
         refField.setBounds(178, 410, 110, 20);
         contentPane.add(refField);
         refField.setColumns(10);

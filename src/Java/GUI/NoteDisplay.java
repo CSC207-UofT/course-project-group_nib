@@ -1,4 +1,4 @@
-package Java.UserInterface.GUI;
+package Java.GUI;
 
 import Java.Entity.Note.Notes;
 

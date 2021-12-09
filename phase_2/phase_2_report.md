@@ -9,6 +9,7 @@ This project is an online resource-sharing system. It is designed to create an o
 ### Project Funtionality
 
 **A demo video is uploaded along with this document for displaying functionalities.**
+https://drive.google.com/file/d/1hLzTcc7brXqvYyNH0g5K-nGHqFNP5bDF/view?usp=sharing 
 
 #### UI
 
@@ -117,9 +118,15 @@ Under this pattern, we increase the modularity of each object. If there is a cha
 
 ### Facade Pattern
 
-NoteInfoManipulation contains very little code. Subclasses that contain the functions are: NoteCreation, NoteEdit, NoteDeletion, and NoteSearch. Those classes will depend on an interface to function on the note information data.
+The idea of the Facade Pattern is to separate a set of parallel operations into smaller tasks for different classes to implement but still call one object for interaction. In our project, we used a different way to implement this while still taking the advantage of the pattern.
 
-
+#### Taking Notes Controller and Use cases as example:
+* After UI collects necessary information from the user, it sends a 'package' of information to the controller. The information in the package varies but it is wrap up into two parts: operation code and support information.
+* Operation code: stored as an integer to represent the operation under execution. For example, code 1 represents `createNote()` operation.
+* Support information: stored as an Arraylist to represent any other information needed. To create a note, the system needs the category of the note, a title, a date, the content, and the reference.
+* The use case classes that execute operations inherit from `NoteInfoManipulation` abstract class. This enables: 1. further extension; 2. integration of common codes; 3. restriction of classes from having different ways of construction, therefore 4. easy alternation and substitution as the child classes can replace each other without any modification.
+* The controller execute the operation by calling the corresponding subclass (in the example, `NoteCreation`) in the form of its parent class. Using the function that `NoteCreation` overrides from the parent class, it is able to use the support information to create a new note, store it and return the information to the presenter.
+* **All in all**: Facade Pattern allows the higher level classes to access only one class for multiple functions while not violating the SRP. Our program also do the same thing by using information packages to interact with one class for functionalities in multiple smaller classes. Although it is not 100% following the pattern's implementation, we call it at least a facade-ish pattern as we use the same idea for designing.
 
 
 ## Use of GitHub Features

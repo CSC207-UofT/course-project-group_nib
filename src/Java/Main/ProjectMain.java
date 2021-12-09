@@ -1,7 +1,7 @@
 package Java.Main;
 
 
-import Java.UserInterface.GUI.LoginPage;
+import Java.GUI.LoginPage;
 
 public class ProjectMain {
     /**

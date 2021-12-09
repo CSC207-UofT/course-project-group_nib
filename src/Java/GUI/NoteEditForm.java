@@ -1,4 +1,4 @@
-package Java.UserInterface.GUI;
+package Java.GUI;
 
 import Java.Controller.NoteInfoController;
 import Java.Controller.NoteInfoPresenter;
